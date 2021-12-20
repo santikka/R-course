@@ -1,0 +1,375 @@
+---
+Section 1:
+  1:  "Luo vektori, joka sisältää vain luvun 1."
+  2:  "Luo vektori, joka sisältää vain luvut 1, 2, 3 ja 4."
+  3:  "Luo vektori, joka sisältää vain luvut 1, 2, 3, ..., 100."
+  4:  "Selvitä, mitä seq-funktion argumentti from tekee. Säätääkö se a) vektorin pituutta b) vektorin alkioiden lukumäärää vai c) vektorin ensimmäistä alkiota. Anna vastauksesi merkkitietona, esim. \"a\"."
+  5:  "Luo vektori, joka koostuu luvuista väliltä 1-20 siten, että toisiaan seuraavien lukujen väli on 0.2."
+  6:  "Ohjelma on generoinut vektorin d. Määritä vektorin d pienin luku."
+  7:  "Määritä vektorin d suurin luku."
+  8:  "Määritä vektorin d pituus. "
+  9:  "Määritä vektorin d alkioiden keskiarvo."
+  10: "Määritä vektorin d alkioiden mediaani."
+  11: "Määritä vektorin d alkioiden keskihajonta."
+  12: "Määritä vektorin d alkioiden varianssi."
+  13: "Määritä vektorin d alkioiden vaihteluväli vektorina muodossa c(minimi,maksimi)."
+  14: "Järjestä vektorin d alkiot kasvavaan suuruusjärjestykseen."
+  15: "Lisää jokaiseen vektorin d alkioon luku 2."
+  16: "Ohjelma on generoinut muuttujaan g vektorin, joka on samanpituinen kuin d. Vähennä vektorista g vektori d, jonka alkiot on kerrottu luvulla 2."
+  17: "Kerro keskenään vektorit g ja d alkioittain niin, että vektoreiden d ja g ensimmäiset alkiot kerrotaan keskenään, toiset alkiot keskenään jne."
+  18: "Määritä vektorin d käänteislukujen neliöt. "
+  19: "Valitse vektorin d viidessadas alkio."
+  20: "Valitse vektorin d viisikymmentä ensimmäistä alkiota."
+  21: "Valitse ne vektorin d alkiot, jotka ovat suurempia kuin 20. Alkioiden tulee olla edelleen samassa järjestyksessä kuin vektorissa d."
+  22: "Määritä ohjelman generoiman vektorin h puuttuvien havaintojen lukumäärä."
+Section 2:
+  1:  "Ohjelma on generoinut vektorin d. Muodosta vektorin d arvoista matriisi, jossa on 6 riviä ja 10 saraketta (6x10-matriisi) ja arvot luetaan sarakkeittain."
+  2:  "Ohjelma on generoinut matriisin E. Muodosta vektori, joka sisältää matriisin E rivien ja sarakkeiden lukumäärät."
+  3:  "Valitse matriisin E toisen rivin kolmannen sarakkeen alkio."
+  4:  "Valitse matriisin E kolmas rivi vektorina."
+  5:  "Ohjelma on generoinut vektorit g1, g2 ja g3. Muodosta näistä matriisi siten, että g1 on ensimmäinen sarake, g2 on toinen sarake ja on g3 kolmas sarake."
+  6:  "Muodosta matriisi, jonka ensimmäinen rivi on g1, toinen g2 ja kolmas g3.,"
+  7:  "Muodosta datakehikko (data.frame) vektoreista g1, g2 ja matriisista H siten, että ensimmäinen sarake on g1, viimeinen sarake on g2 ja väliin jäävät sarakkeet ovat matriisin H sarakkeet."
+  8:  "Muodosta datakehikko kolmesta muuttujasta, joiden arvot ovat height = c(175, 180, 190, 174), weight = c(60, 72, 90, 95) ja category = c(2, 2, 1, 1). Datakehikkoa käytetään seuraavissa tehtävissä."
+  9:  "Tarkastellaan datakehikkoa dk. Kokeile tapply-funktiota ja laske muuttujan weight keskiarvo muuttujan category jokaisella tasolla."
+  10: "Tarkastellaan datakehikkoa dk. Poimi datakehikon sarake nimeltä height."
+  11: "Poimi datakehikon dk alkio [2,2] (eli toinen rivi ja toinen sarake)."
+  12: "Muodosta datakehikosta dk uusi datakehikko, josta on poistettu toinen rivi."
+  13: "Muodosta datakehikosta dk uusi datakehikko, josta on poistettu toinen sarake."
+  14: "Muodosta datakehikosta dk uusi datakehikko, jossa ovat vain muuttujat height ja weight."
+  15: "Lisää datakehikkoon dk viimeiseksi havainnoksi uusi havainto (uusi rivi), jonka muuttujien arvot ovat height = 178, weight = 80 ja category = 2. Voit luoda uutta havaintoa varten uuden datakehikon ja yhdistää tämän datakehikkoon dk rbind-funktiolla."
+Section 3:
+  1:  "Ohjelma on generoinut dataa tiedostoon carbon.txt, joka sijaitsee R:n tämänhetkisessä työhakemistossa. Tutustu aineistoon esimerkiksi jollain tekstinkäsittelyohjelmalla. Lue data sisään R:ään (read.table)."
+  2:  "Ohjelma on generoinut dataa tiedostoon carbon2.txt. Tällä kertaa kenttien erottimena ei kuitenkaan ole perinteinen tyhjä väli, vaan pilkku. Lue data sisään kenttäerotin huomioiden (sep = \",\")."
+  3:  "Ohjelma on generoinut dataa tiedostoon carbon3.txt. Lue data sisään siten, että ensimmäinen rivi tulkitaan sarakkeiden nimiksi. Erona carbon.txt-tiedostoon verrattuna on se, että tässä aineistossa ei ole rivinumeroita, minkä vuoksi on asetettava argumentti header = TRUE read.table-funktiossa."
+  4:  "Ohjelma on generoinut dataa tiedostoon heightweight.data, joka sijaitsee R:n tämänhetkisessä työhakemistossa. Data sisältää eräiden koehenkilöiden pituudet (tuumissa) ja painot (paunoissa). Lue data sisään ja luo siihen kolmas sarake nimeltä BMI, joka sisältää painoindeksin laskettuna kaavalla 703 * weight / height^2."
+  5:  "Lue sisään csv-tiedosto pigs.csv. Aineisto sisältää sikojen kasvulukuja. Tallenna päivän 6 (muuttuja day6) kasvulukujen keskiarvo muuttujaan kahden desimaalin tarkkuudella (read.csv2)."
+  6:  "Ohjelma on generoinut dataa tiedostoon automobile.txt, joka sijaitsee R:n tämänhetkisessä työhakemistossa. Lue aineisto sisään muuttujaan auto. Aineisto sisältää autojen moottoreiden painoja (paunoissa/1000), hevosvoimia sekä tiedon auton vaihteiston tyypistä (automaatti = 0, manuaalinen = 1). Järjestä aineiston rivit siten, että ne ovat hevosvoimien (hp) mukaisessa nousevassa suuruusjärjestyksessä. Lisäksi jos kahdella tai useammalla autolla on yhtäsuuri hevosvoima, niin rivien tulee olla painon (wt) mukaisessa nousevassa suuruusjärjestyksessä (order)."
+  7:  "Lue sisään aineisto tomato.dat (header = TRUE) muuttujaan tomato. Muodosta lista, jonka ensimmäinen alkio on tomato-aineisto ja toinen alkio on YIELD-muuttujan keskiarvo."
+  8:  "Jatketaan tomato-aineiston parissa. Valitse aineistosta ne rivit, joilla YIELD-muuttujan arvo on suurempi kuin 10 ja pienempi kuin 15."
+  9:  "Jatketaan tomato-aineiston parissa. Valitse aineistosta ne rivit, joilla STRAIN-muuttuja saa arvon 1 ja DENSITY-muuttujan arvo on suurempi kuin 10."
+  10: "Jatketaan tomato-aineiston parissa. Valitse aineistosta ne rivit, joilla YIELD-muuttujan arvo on suurempi kuin 15 tai DENSITY-muuttujan arvo on 10."
+Section 4:
+  1:  "Ohjelma on luonut muuttujat x ja y. Piirrä muuttujien hajontakuvio ja aseta kuvan otsikoksi \"Scatterplot\"."
+  2:  "Ohjelma on luonut muuttujat x ja y. Piirrä jälleen muuttujien hajontakuvio, mutta aseta nyt akselien pistemerkit vaakatasoon käyttäen argumenttia las."
+  3:  "Ohjelma on luonut muuttujat x ja y. Piirrä jälleen muuttujien hajontakuvio, mutta aseta nyt pisteiden väri punaiseksi ja käytettävä symboli plusmerkiksi. Käytä argumentteja col ja pch."
+  4:  "Tarkastellaan R:n aineistoa cars, joka sisältää autojen nopeuksia ja pysähtymismatkoja. Piirrä nopeuden ja pysähtymismatkan hajontakuvio. Anna x-akselin nimeksi \"Speed\" ja y-akselin nimeksi \"Stopping distance\"."
+  5:  "Jatketaan aineiston cars parissa. Ohjelma on sovittanut lineaarisen mallin, jossa auton pysähtymismatkaa selitetään auton nopeudella. Regressiosuoran vakiotermi on luotu muuttujaan a ja kulmakerroin muuttujaan b. Piirrä jälleen nopeuden ja pysähtymismatkan hajontakuvio, ja lisää regressiosuora kuvaajaan käyttäen funktiokta abline. "
+  6:  "Jatketaan aineiston cars parissa. Piirrä autojen pysähtymismatkojen histogrammi."
+  7:  "Jatketaan aineiston cars parissa. Piirrä autojen nopeuksien boxplot."
+  8:  "Tarkastellaan R:n aineistoa Nile, joka on aikasarja Niili-joen vuosittaisista virtaamista. Piirrä aikasarja funktiolla plot (ts.plot)."
+  9:  "Ohjelma on luonut muuttujat x ja y. Piirrä muuttujien x ja y viivagraafi, eli kuvio, jossa pisteet yhdistetään viivalla. Käytä argumenttia type."
+  10: "Piirrä edellisen tehtävän viivagraafi uudelleen, mutta aseta nyt y-akselin rajat argumentilla ylim = c(-10, 10). Lisää viivagraafiin ohjelman generoimien muuttujien x ja z hajontakuvio funktiolla points."
+  11: "Tarkastellaan funktion exp(-(x^2 + y^2)) kuvaajaa. Ohjelma on generoinut muuttujat xx, yy ja zz, missä zz sisältää funktion saamat arvot muuttujien xx ja yy määräämissä pisteissä. Piirrä funktion arvojen hilakuvaaja komennolla image(xx, yy, zz)."
+  12: "Jatketaan edellisen tehtävän funktion parissa. Piirrä funktion tasa-arvokäyrät komennolla contour(xx, yy, zz)."
+  13: "Jatketaan edellisen tehtävän funktion parissa. Piirrä funktion funktiopinta komennolla persp(xx, yy, zz). Voit tarkastella pintaa eri näkökulmista: funktion argumentit theta, phi ja r säätävät katselukulmaa ja -etäisyyttä."
+Section 5:
+  1:  "Lue sisään aineisto Children2007.dat muuttujaan children (header = TRUE). Aineisto sisältää vastasyntyneiden pituuksia (senttimetreinä) ja painoja (grammoina). Luo aineistoon uusi sarake nimeltä Gender2, joka sisältää tiedon vauvan sukupuolesta faktorina, ts. jos vauva on tyttö, niin aineiston muuttuja Gender saa arvon 1 jolloin uusi muuttuja saa arvon \"Girl\". vastaavasti jos Gender saa arvon 0, niin uusi muuttuja saa arvon \"Boy\"."
+  2:  "Tutkitaan, poikkeavatko tyttöjen ja poikien keskipituudet toisistaan. Piirrä pituuden boxplotit sukupuolten suhteen samaan kuvaan, ja vastaa kuvan perusteella, kummat olivat keskimäärin pitempiä. Anna vastauksesi merkkijonona \"girls\" tai \"boys\" (boxplot)."
+  3:  "Määritä muuttujan Weight ala- ja yläkvartiilit vektorina muodossa c(ala, ylä)."
+  4:  "Testaa nyt t-testillä, poikkeavatko tyttöjen ja poikien keskipituudet tilastollisesti merkitsevästi toisistaan (käytä testiä, joka olettaa varianssien yhtäsuuruuden). Jos poikkeavat, niin anna vastauksena t-testin testisuureen arvo. Muussa tapauksessa anna vastauksena testin P-arvo."
+  5:  "Laske pituuden varianssit sukupuolittain ja muodosta niistä vektori siten, että poikien pituuden varianssi on ensin."
+  6:  "Selvitä vielä t-testin variansseihin liittyvää homogeenisuusoletusta Levenen testillä, ts. ovatko pituuksien varianssit yhtä suuret eri sukupuolilla. Jos ovat, niin anna vastauksena Levenen testin testisuureen arvo. Muussa tapauksessa anna vastauksena testin p-arvo."
+  7:  "Testaa jakaumiin liittyvää normaalisuusoletusta Shapiro-Wilk-testillä, eli ovatko pituuksien jakaumat normaalit sekä tytöillä että pojilla. Jos ovat, niin anna vastauksena Shapiro-Wilk-testien testisuureiden arvot vektorina siten, että poikien testisuure on ensin. Muussa tapauksessa anna vastauksena testien p-arvot vastaavassa järjestyksessä."
+  8:  "Osoittautuu, että tyttöjen pituusjakauma ei Shapiro-Wilk-testin mukaan ole normaali. Tyttöjen joukossa on kuitenkin poikkeuksellisen pieni vauva, jonka paino on vain 990 g ja pituus 36 cm. Poista tämä havainto aineistosta ja tallenna muokattu aineisto muuttujaan children2. Tee nyt normaalisuustesti uudelleen. Onko tyttöjen pituusjakauma nyt testin mukaan normaali? Jos on, niin anna Shapiro-Wilk-testin testisuureen arvo vastauksena. Muussa tapauksessa anna testin p-arvo."
+  9:  "Valitse children2-aineiston 10 ensimmäistä riviä funktiolla head."
+  10: "Määritä children2-aineiston muuttujien nimet funktiolla names."
+  11: "Muodosta children2-aineistosta yhteenveto funktiolla summary."
+  12: "Jatketaan edelleen children2-aineiston parissa, jossa alkuperäisestä aineistosta on poistettu yksi poikkeava havainto. Tee nyt t-testi uudelleen olettaen samat varianssit eri sukupuolten pituuksille. Onko keskipituuksissa nyt tilastollisesti merkitsevä ero? Jos on, niin anna vastauksena t-testin testisuureen arvo. Muussa tapauksessa anna vastauksena testin p-arvo."
+  13: "Jatketaan children2-aineiston parissa. Piirrä pituuden ja painon hajontakuvio siten, että pituus on x-akselilla ja paino y-akselilla. Vastaa hajontakuvion perusteella, onko lineaarinen riippuvuus positiivista vai negatiivista. Anna vastauksesi merkkijonona \"pos\" tai \"neg\" (plot)."
+  14: "Jatketaan children2-aineiston parissa. Laske pituuden ja painon korrelaatiokerroin."
+  15: "Jatketaan children2-aineiston parissa. Sovita aineistoon lineaarinen regressiomalli, jossa painoa selitetään pituudella ja tallenna malli muuttujaan m. Tutki qqnorm-kuvaajan avulla mallin jäännösten (m$residuals) normaalisuutta. Voit myös tutkia normaalisuutta Shapiro-Wilk-testillä. Vastaa näiden perusteella, ovatko jäännökset normaalisia. Jos ovat, niin anna vastauksena totuusarvo TRUE, muutoin FALSE."
+  16: "Jatketaan mallin m parissa, jossa painoa selitetään pituudella. Määritä pituuden regressiokertoimen (kulmakertoimen) keskivirhe."
+  17: "Jatketaan mallin m parissa, jossa painoa selitetään pituudella. Selittääkö pituus painoa eli onko pituuden regressiokerroin tilastollisesti merkitsevä? Jos on, niin anna vastauksena totuusarvo TRUE. Muussa tapauksessa vastaa FALSE."
+Section 6:
+  1:  "Lue sisään aineisto tomato.dat muuttujaan tomato. Aineistoa tarvitaan myös seuraavissa tehtävissä. Aineistossa on mitattu tomaattisatoa (YIELD) eri lajikkeilla (STRAIN) ja erilaisin istutustiheyksin (DENSITY). Piirrä sadon viiksilaatikot (boxplot) lajikkeen suhteen samaan kuvaan. Muodosta vektori, jossa ovat lajikkeiden tunnukset niiden keskisatomäärien mukaisessa suuruusjärjestyksessä. Esimerkiksi jos lajikkeella 1 on mielestäsi suurin keskisato, lajikkeella 2 toiseksi suurin ja lajikkeella 3 pienin, tulisi sinun muodostaa vektori c(1, 2, 3)."
+  2:  "Jatketaan tomato-aineiston parissa. Luo aineistoon uusi muuttuja fSTRAIN, joka sisältää tiedon lajikkeesta faktorina siten, että faktorin tasot ovat STRAIN1, STRAIN2 ja STRAIN3."
+  3:  "Jatketaan tomato-aineiston parissa ja testataan keskisatomäärien yhtäsuuruutta varianssianalyysillä, jonka oletuksena on ryhmien samavarianssisuus. Selvitä Levenen testillä, ovatko satomäärien varianssit yhtä suuret eri lajikkeilla. Jos ovat, niin anna vastauksena Levenen testin testisuureen arvo. Muussa tapauksessa anna testin p-arvo."
+  4:  "Jatketaan tomato-aineiston parissa. Tee aineistolle varianssianalyysi. Onko lajikkeiden keskisatomäärissä tilastollisesti merkitsevä ero? Jos on, niin anna vastauksena totuusarvo TRUE. Muussa tapauksessa vastaa FALSE."
+  5:  "Jatketaan tomato-aineiston parissa. Tarkastellaan edellisessä kohdassa saatua varianssitaulua. Muodosta vektori, jossa ovat lajike-faktorin vapausasteet ja F-testisuureen arvo yhden desimaalin tarkkuudella muodossa c(vapausasteet, F-testisuure)."
+  6:  "Jatketaan tomato-aineiston parissa. Tarkastellaan edelleen saatua varianssitaulua. Määritä lajike-faktoriin liittyvä neliösumma."
+  7:  "Jatketaan tomato-aineiston parissa. Tee parittaiset vertailut Tukeyn parivertailulla. Määritä sellaisten lajikeparien lukumäärä, joiden keskisatomäärät eroavat testin mukaan tilastollisesti merkitsevästi toisistaan (TukeyHSD)."
+  8:  "Tilastotieteen peruskurssille on ilmoittautunut yhteensä 210 henkilöä. Ohjelma on generoinut kaksi vektoria, mandatory ja firstyear, jotka sisältävät vastaavasti tiedon siitä, onko kurssi opiskelijalle pakollinen ja onko opiskelija ensimmäisen vuoden opiskelija (TRUE = on, FALSE = ei ole). Muodosta näiden vektoreiden avulla 2 x 2 -ristiintaulukko, jossa ensimmäisellä rivillä ja sarakkeella on niiden ensimmäisen vuoden opiskelijoiden frekvenssi, joille kurssi on pakollinen. Vastaavasti ensimmäisen rivin toisella sarakkeella tulee olla niiden ensimmäisen vuoden opiskelijoiden frekvenssi, joille kurssi ei ole pakollinen. Toisella rivillä tulee olla vastaavat frekvenssit vanhemmille opiskelijoille. Käytä funktiota 'table' taulukon muodostamiseen. Tallenna saatu ristiintaulukko myös muuttujaan tilp."
+  9:  "Jatketaan edellisen kohdan ristiintaulukon tilp parissa. Tutki, ovatko oletukset khiin neliö -testiä varten voimassa (vähintään 80 % soluissa odotettu frekvenssi >= 5 ja ei soluja, joissa odotettu frekvenssi on < 1). Jos oletukset ovat voimassa, niin anna vastauksena totuusarvo TRUE. Muussa tapauksessa vastaa FALSE."
+  10: "Jatketaan edellisen kohdan ristiintaulukon tilp parissa. Halutaan selvittää, riippuuko kurssin pakollisuus opiskeluvuosista. Tee khiin neliö -testi ilman jatkuvuuskorjausta (correct = FALSE). Jos toteat, että riippuvuus on tilastollisesti merkitsevää, niin anna vastauksena testin testisuureen arvo. Muussa tapauksessa anna vastauksena testin p-arvo."
+Section 7:
+  1:  "Luo funktio kelvin(celsius), joka muuttaa argumenttina annetun lämpötilan Celsius-asteista Kelvin-asteiksi kaavalla celsius + 273.15 ja palauttaa muunnetun lämpötilan."
+  2:  "Luo funktio bmi(weight, height), joka laskee ja palauttaa saamiensa painon (kg) ja pituuden (m) arvojen perusteella näihin liittyvän painoindeksin weight / height^2."
+  3:  "Muodosta funktio fun(x, a, b), joka laskee ja palauttaa arvon a*x^2 + b."
+  4:  "Luo tehtävän 1 Celsius-Kelvin-muunnin siten, että argumentilla celsius on oletusarvo 20 ja muunnoskaava on kelvin = celsius + 273.15."
+  5:  "Luo funktio fun(x), joka palauttaa arvon 0, jos x on pienempi tai yhtäsuuri kuin 0, ja arvon 1 muulloin."
+  6:  "Luo funktio fun(x, y), joka palauttaa arvon 1, jos x^2 + y^2 <= 1, ja arvon 0 muulloin. Toisin sanoen luo funktio, joka saa arvon 1 yksikköympyrän sisällä, ja muutoin arvon 0."
+  7:  "Muodosta funktio fun(x), joka palauttaa arvon 0, kun x <= -1, arvon x^2, kun -1 < x < 1, ja arvon 1, kun x >= 1."
+  8:  "Muodosta funktio fun(a, b, x, y), joka palauttaa arvon x, jos a = 1 ja b = 1, arvon y, jos a = 1 ja b = 0, ja arvon 0 muulloin."
+  9:  "Luo funktio removerows(x, k), joka poistaa joka k:nnen rivin annetusta datakehikosta x alkaen rivistä 1. Esimerkiksi jos k = 3, tulee funktion poistaa rivit 1, 4, 7, ... ."
+  10: "Luo funktio ordercols(x), joka järjestää syötteenä annetun datakehikon sarakkeet aakkosjärjestykseen niiden nimien perusteella. Esimerkiksi jos alkuperäisen datakehikon sarakkeet olisivat järjestyksessä C, A, B, niin funktion tulee palauttaa datakehikko, jossa sarakkeiden järjestys on A, B, C."
+  11: "Luo funktio sumsq(x), joka laskee ja palauttaa syötteenä annetun vektorin x neliösumman."
+Section 8:
+  1: "Laske todennäköisyys P(-1 < X < 2.5), kun X ~ N(3, 1.5) ts. X noudattaa normaalijakaumaa keskiarvolla 3 ja varianssilla 1.5. Anna vastauksesi kahden desimaalin tarkkuudella."
+  2: "Millä y:n arvolla P(X > y) = 0.6, kun X ~ t(20) ts. X noudattaa t-jakaumaa vapausasteilla 20. Anna vastauksesi kolmen desimaalin tarkkuudella."
+  3: "Etsi funktion exp(x + 4) + 3*x juuri. Anna vastauksesi kahden desimaalin tarkkuudella. Käytä funktiota uniroot."
+  4: "Etsi funktion x * log(x) lokaali minimi välillä 0 < x < 1. Anna vastauksesi kahden desimaalin tarkkuudella muodossa c(x, minimiarvo), missä x on minimipiste. Käytä funktiota optimize."
+  5: "Etsi funktion x^2 * exp(-0.5*(x^2 + y^2)) lokaali maksimi joukossa 0 < x < 2, -1 < y < 1. Anna vastauksesi kahden desimaalin tarkkuudella muodossa c(x,y,maksimiarvo), missä x ja y ovat maksimipisteen koordinaatit. Käytä funktiota optim."
+  6: "Laske funktion 1 / (sin x)^3 integraali välillä 1 < x < 3. Anna vastauksesi kahden desimaalin tarkkuudella. Käytä funktiota integrate."
+  7: "Funktiolla x^3 - 5*x^2 + x + sqrt(2) on kaksi reaalista juurta välillä -1 < x < 1. Etsi nämä juuret käyttäen funktiota uniroot. Anna vastauksesi kahden desimaalin tarkkuudella muodossa c(x1, x2), missä x1 on juurista pienin."
+Section 9:
+  1:  "Muodosta 3x3x3-taulukko, jonka kaikki alkiot ovat nollia (array)."
+  2:  "Ohjelma on generoinut matriisit G ja E, joilla on samat dimensiot. Laske 2*E*G+G^2+1 (ts. matriisien E ja G alkioiden tulot kerrottuna kahdella ja matriisin G alkioiden neliöt summataan, ja summaan lisätään 1 alkioittain)."
+  3:  "Laske matriisin E ja matriisin G transpoosin matriisitulo E %*% t(G) ja anna vastauksena tuloksena saatavan matriisin determinantti."
+  4:  "Ohjelma on generoinut matriisin H. Onko matriisi H kääntyvä? Jos on, niin anna vastauksena totuusarvo TRUE. Jos ei ole, niin anna vastauksena FALSE."
+  5:  "Muodosta vektori taulukon E alkioista E[1,1], E[1,2] ja E[2,1]."
+  6:  "Ohjelma on generoinut matriisin K, jossa kukin rivi sisältää yhden alkion indeksin [i,j]. Korvaa taulukon E ne alkiot, jotka indeksimatriisi K sisältää, nollilla."
+  7:  "Muodosta matriisi, jonka kaikki alkiot ovat nollia ja jossa on 14 riviä ja 3 saraketta."
+  8:  "Ohjelma on generoinut matriisin A. Määritä A:n rivien lukumäärä."
+  9:  "Määritä matriisin A sarakkeiden lukumäärä."
+  10: "Ohjelma on generoinut merkkitietovektorin words. Poimi vektorista vain sellaiset merkkijonot, jotka alkavat jollakin numerolla välillä 4-8 ja joissa on vähintään 4 merkkiä. Järjestä valitut alkiot aakkosjärjestykseen. Käytä funktiota grep ja kuviota ^[4-8]{1}.{3,}$."
+  11: "Ohjelma on generoinut merkkitietovektorin words. Poimi vektorista vain sellaiset merkkijonot, jotka sisältävät vähintään yhden kirjaimen ja numeron. Järjestä valitut alkiot aakkosjärjestykseen. Käytä funktiota grep ja kuviota ^.*(?=.*\\d)(?=.*[a-z]).*$."
+  12: "Ohjelma on generoinut merkkitietomuuttujan rk1. Korvaa merkkijonon kaikki i-kirjaimet e-kirjaimella. Käytä funktiota gsub."
+  13: "Ohjelma on generoinut merkkitietomuuttujan rk2. Poista merkkijonosta kaikki välilyönnit. Käytä funktiota gsub ja välilyönnille symbolia \\s."
+Section 10:
+  1: "Lue sisään R:n sisäinen aineisto DNase komennolla data, ja anna aineisto vastauksena."
+  2: "Lue aineisto Children2007edit.dat datakehikkoon children. Sovita aineistoon lineaarinen regressiomalli, jossa painoa selitetään sekä pituudella että sukupuolella (vain päävaikutukset). Tallenna sovitettu malli muuttujaan m1. Anna vastauksena mallin korjattu R^2-luku."
+  3: "Jatketaan mallin m1 parissa, jossa painoa selitetään sekä pituudella että sukupuolella. Ovatko kaikki mallin selittäjät tilastollisesti merkitseviä? Jos ovat, niin anna vastauksena totuusarvo TRUE. Muussa tapauksessa anna vastauksena FALSE."
+  4: "Jatketaan children-aineiston parissa. Sovitetaan nyt aineistoon uusi lineaarinen regressiomalli, jossa mukaan otetaan nyt myös pituuden ja sukupuolen yhdysvaikutus. Tallenna sovitettu malli muuttujaan m2. Anna vastauksena mallin yhdysvaikutustermin estimaatti."
+  5: "Vertaa yhdysvaikutusmallia m2 päävaikutusmalliin m1 käyttäen funktiota anova, esimerkiksi anova(m1, m2). Voidaanko yhdysvaikutustermi jättää mallista pois? Jos voidaan, niin anna vastauksena totuusarvo TRUE. Muussa tapauksessa anna vastauksena FALSE."
+  6: "Ohjelma on generoinut dataa tiedostoon automobile.txt, joka sijaitsee R:n tämänhetkisessä työhakemistossa. Lue aineisto sisään muuttujaan auto. Aineisto sisältää autojen moottoreiden painoja (wt) (paunoissa/1000), hevosvoimia (hp) sekä tiedon auton vaihteiston tyypistä (am) (automaatti = 0, manuaalinen = 1). Sovita aineistoon logistinen regressiomalli, jossa vaihteiston tyyppiä selitetään moottorin painolla ja tallenna malli muuttujaan logreg. Estimoi mallin avulla todennäköisyys, että autossa, jonka moottori painaa 2500 paunaa, on asennettuna manuaalivaihteisto (predict)."
+  7: "Jatketaan mallin logreg parissa, jossa vaihteiston tyyppiä selitetään moottorin painolla. Määritä painon regressiokertoimen estimaatti ja sen keskivirhe. Anna vastauksesi kahden desimaalin tarkkuudella vektorina muodossa c(estimaatti, keskivirhe)."
+  8: "Jatketaan auto-aineiston parissa. Sovitetaan nyt aineistoon logistinen regressiomalli, jossa vaihdetyyppiä selitetään sekä auton moottorin painolla että hevosvoimilla ja tallenna malli muuttujaan logreg2. Estimoi mallin avulla todennäköisyys, että autossa, jonka moottori painaa 2500 paunaa ja jossa on hevosvoimia 110, on asennettuna manuaalivaihteisto (predict)."
+  9: "Jatketaan mallin logreg2 parissa, jossa vaihteiston tyyppiä selitetään moottorin painolla ja hevosvoimilla. Tarkastellaan edellisessä tehtävässä aineistoon sovitettua mallia. Onko moottorin painolla ja hevosvoimilla vaikutusta vaihteiston tyyppiin? Jos on, niin anna vastauksena totuusarvo TRUE. Muussa tapauksessa anna vastauksena FALSE."
+Section 11:
+  1: "Ohjelma on generoinut funktion fn1, joka sijaitsee merkkitietovektorissa fun1. Yritä muuntaa vektori funktioksi komennolla eval(parse(text = fun1)), joka aiheuttaa virheen. Selvitä miksi funktio ei toimi, mitä sen tulee tehdä ja korjaa se. Anna vastauksena korjattu funktio."
+  2: "Ohjelma on generoinut funktion fn2, joka sijaitsee merkkitietovektorissa fun2. Muunna vektori funktioksi komennolla eval(parse(text = fun2)). Ohjelma on myös generoinut funktiolle testidatan vektoriin d. Kutsu funktiota testidatalla ja selvitä miksi funktio ei toimi, mitä sen tulee tehdä ja korjaa se. Anna vastauksena korjattu funktio."
+  3: "Ohjelma on generoinut funktion fn3, joka sijaitsee merkkitietovektorissa fun3. Muunna vektori funktioksi komennolla eval(parse(text = fun3)). Funktio ottaa syötteenään matriisin ja sarakkeen indeksin i. Funktion tulisi järjestää matriisin rivit siten, että sarakkeen i arvot ovat kasvavassa suuruusjärjestyksessä. Ohjelma on generoinut testimatriisin B ja testi-indeksin i. Kutsu funktiota näillä testiobjekteilla, selvitä miksi funktio ei toimi ja korjaa se. Anna vastauksena korjattu funktio."
+  4: "Ohjelma on generoinut funktion funktio4, joka sijaitsee merkkitietovektorissa fun4. Muunna vektori funktioksi komennolla eval(parse(text = fun4)). Ohjelma on myös generoinut funktiolle testidatan vektoriin g. Kutsu funktiota testidatalla ja selvitä miksi funktio jää ikuiseen silmukkaan, mitä sen tulee tehdä ja korjaa se. Anna vastauksena korjattu funktio."
+  5: "Luo funktio fibonacci(n), joka palauttaa vektorin, jossa on n ensimmäistä Fibonaccin lukujonon alkiota. Fibonaccin jonoon kuluvat luvut 1, 1, 2, 3, 5, 8, 13, 21, ... eli jonon kaksi ensimmäistä arvoa ovat 1, 1, ja sitä seuraavat arvot lasketaan aina kahden edeltävän arvon summana."
+  6: "Luo funktio connections(A), joka ottaa syötteenään matriisin A, jonka alkiot ovat ykkösiä ja nollia. Tällaisella matriisilla voidaan kuvata esim. kohteiden välisiä suoria lentoreittejä siten, että rivi-indeksi kuvastaa lähtöpaikkaa ja sarakeindeksi määränpäätä. Funktion connections pitää etsiä matriisista A ne alkiot, jotka ovat ykkösiä, ja tallentaa niiden indeksit 2-sarakkeiseen matriisiin siten, että ensimmäisessä sarakkeessa on rivin ja toisessa sarakkeen indeksi. Funktion tulee järjestää palautettava matriisi ensimmäisen sarakkeen mukaan nousevaan suuruusjärjestykseen."
+Exam 1 JYU:
+  1:
+    - "Lue sisään aineisto tiedostosta PISA_value.txt muuttujaan pisa."
+  2:
+    - "Jatketaan edellisen tehtävän PISA-aineiston parissa. Ohjelma on generoinut kokonaislukuvektorin ind. Muokkaa aineistoa siten, että siinä ovat vain ne rivit, joiden rivinumerot ovat vektorissa ind. Sijoita muokattu aineisto muuttujaan pisa."
+  3:
+    - "Jatketaan edellisessä tehtävässä muokkaamasi PISA-aineiston parissa. Ohjelma on generoinut merkkitietovektorin mut. Muokkaa aineistoa siten, että siinä ovat vain ne muuttujat, joiden nimet ovat vektorissa mut. Sijoita muokattu aineisto muuttujaan pisa."
+  4:
+    - "Jatketaan edellisessä tehtävässä muokkaamasi PISA-aineiston parissa. Monet aineiston muuttujista sisältävät puuttuvaa tietoa. Muokkaa aineistoa siten, että se sisältää vain täydelliset havaintorivit, eli sellaiset rivit, joissa ei ole puuttuvaa tietoa (NA) yhdessäkään muuttujassa. Sijoita muokattu aineisto muuttujaan pisa."
+  5:
+    - "Selvitä, mitä par-funktion argumentti pin tekee. Säätääkö se a) plotin marginaaleja b) plotin kokoa c) plotin taustaväriä vai d) plotissa käytettäviä symboleja. Anna vastauksesi merkkitietona, esim. \"a\"."
+    - "Selvitä, mitä hist-funktion argumentti probability tekee. Säätääkö se a) jakovälien lukumäärää b) otsikkoa c) pystyakselin skaalausta vai d) vaaka-akselin skaalausta. Anna vastauksesi merkkitietona, esim. \"a\"."
+    - "Selvitä, mitä seuraavista komponenteista lm-objekti EI sisällä: a) residuals, b) rank, c) errors vai d) coefficients. Anna vastauksesi merkkitietona, esim. \"a\"."
+  6:
+    - "Ohjelma on generoinut kokonaislukuvektorin ind2. Valitse ne PISA-aineiston muuttujan mathscore arvot, joiden indeksit eivät ole vektorissa ind2."
+    - "Määritä vektoriin vast PISA-aineiston muuttujien natlang ja math arvojen erotukset."
+    - "Määritä PISA-aineiston dimensiot muodossa c(rivien lukumäärä, sarakkeiden lukumäärä)."
+  "7,8,9":
+    - "Laske PISA-aineiston muuttujan readscore keskiarvo."
+    - "Laske PISA-aineiston muuttujan sciescore varianssi."
+    - "Laske PISA-aineiston muuttujan mathscore keskihajonta."
+    - "Laske PISA-aineiston muuttujan natlang mediaani."
+    - "Laske PISA-aineiston muuttujan urban moodi ts. se arvo, josta on eniten havaintoja. Anna moodia vastaava sijaintipaikka merkkitietona, esim. \"city\"."
+    - "Laske PISA-aineiston muuttujan math minimi."
+  10:
+    - "Piirrä aineiston muuttujien mathscore ja sciescore välinen hajontakuvio. Arvioi kuvan perusteella, esiintyykö matematiikan (mathscore) ja luonnontieteiden (sciescore) pistemäärien välillä lineaarista riippuvuutta. Jos esiintyy, niin laske muuttujien välinen korrelaatio. Muussa tapauksessa anna vastaukseksi 0."
+    - "Piirrä aineiston muuttujien mathscore ja readscore välinen hajontakuvio. Arvioi kuvan perusteella, esiintyykö matematiikan (mathscore) ja lukutaidon (readscore) pistemäärien välillä lineaarista riippuvuutta. Jos esiintyy, niin laske muuttujien välinen korrelaatio. Muussa tapauksessa anna vastaukseksi 0."
+    - "Piirrä aineiston muuttujien readscore ja sciescore välinen hajontakuvio. Arvioi kuvan perusteella, esiintyykö lukutaidon (readscore) ja luonnontieteiden (sciescore) pistemäärien välillä lineaarista riippuvuutta. Jos esiintyy, niin laske muuttujien välinen korrelaatio. Muussa tapauksessa anna vastaukseksi 0."
+  11:
+    - "Piirrä boxplot aineiston muuttujasta mathscore. Onko joukossa poikkeavia havaintoja? Jos on, niin anna vastaukseksi totuusarvo TRUE. Muussa tapauksessa anna vastaukseksi FALSE."
+    - "Piirrä boxplot aineiston muuttujasta readscore. Onko joukossa poikkeavia havaintoja? Jos on, niin anna vastaukseksi totuusarvo TRUE. Muussa tapauksessa anna vastaukseksi FALSE."
+    - "Piirrä boxplot aineiston muuttujasta sciescore. Onko joukossa poikkeavia havaintoja? Jos on, niin anna vastaukseksi totuusarvo TRUE. Muussa tapauksessa anna vastaukseksi FALSE."
+  12:
+    - "Muokkaa PISA-aineistoa siten, että luot sen viimeisiksi sarakkeiksi kolme uutta muuttujaa seuraavassa järjestyksessä: fgender, furban ja fregion, jotka vastaavat aineiston muuttujia ST04Q01, urban ja region, mutta ovat faktoreita. Nimeä faktoreiden tasot kurssin sivuilta löytyvän dokumentin PISA_variables.pdf mukaisesti (Muuttujalla ST04Q01 eli sukupuolella on kaksi tasoa, muuttujalla urban on kaksi tasoa ja muuttujalla region on viisi tasoa. Huomioi myös isot ja pienet kirjaimet tasojen nimissä). Huomaa myös, että Ahvenanmaalta ei ole havaintoja, joten fregion-faktorin tasojen määrä on itse määritettävä. Sijoita muokattu aineisto muuttujaan pisa."
+  13:
+    - "Määritä ne tyttöjen matematiikan pistemäärät (mathscore), jotka ovat suurempia kuin 600."
+    - "Määritä ne poikien luonnontieteiden pistemäärät (sciescore), jotka ovat pienempiä kuin 500."
+    - "Määritä ne kaupungissa koulua käyvien lukutaidon pistemäärät, jotka ovat suurempia kuin 400, mutta alle 500 (furban, readscore)."
+    - "Määritä Länsi-Suomen kaikkien oppilaiden matematiikan (viimeisimmät) kouluarvosanat (fregion, math)."
+  14:
+    - "Määritä aluekohtaiset matematiikan pistemäärien keskiarvot (mathscore, fregion). Järjestä keskiarvot kurssin sivuilta löytyvän dokumentin PISA_muuttujat.pdf mukaiseen aluejärjestykseen. Huomaa, että Ahvenanmaalta ei ole havaintoja, joten keskiarvoja on vain neljä kappaletta."
+    - "Määritä aluekohtaiset lukutaidon pistemäärien keskihajonnat (readscore, fregion). Järjestä keskihajonnat kurssin sivuilta löytyvän dokumentin PISA_muuttujat.pdf mukaiseen aluejärjestykseen. Huomaa, että Ahvenanmaalta ei ole havaintoja, joten keskihajontoja on vain neljä kappaletta."
+    - "Määritä aluekohtaiset luonnontieteiden pistemäärien varianssit (sciescore, fregion). Järjestä varianssit kurssin sivuilta löytyvän dokumentin PISA_muuttujat.pdf mukaiseen aluejärjestykseen. Huomaa, että Ahvenanmaalta ei ole havaintoja, joten variansseja on vain neljä kappaletta."
+  15:
+    - "Järjestä matematiikan pistemäärät (mathscore) nousevaan suuruusjärjestykseen."
+    - "Järjestä lukutaidon pistemäärät (readscore) laskevaan suuruusjärjestykseen."
+    - "Järjestä äidinkielen viimeisimmät kouluarvosanat (natlang) nousevaan suuruusjärjestykseen."
+    - "Järjestä matematiikan viimeisimmät kouluarvosanat (math) laskevaan suuruusjärjestykseen."
+  16:
+    - "Muodosta vektori, jonka pituus on 1000 ja jossa luvut 0 ja 1 toistuvat vuoron perään, ts. 0, 1, 0, 1, 0, 1, ... ."
+    - "Muodosta vektori, jonka pituus on 1000 ja jossa luvut 0 ja 1 toistuvat aina kaksi kertaa peräkkäin vuoron perään, ts. 0, 0, 1, 1, 0, 0, ... ."
+    - "Muodosta vektori, jonka pituus on 20, ensimmäinen alkio on 1 ja seuraava alkio on aina kaksi kertaa niin suuri kuin edellinen, ts. 1, 2, 4, 8, ... ."
+  17:
+    - "Muodosta datakehikko, joka sisältää PISA-aineiston 10 ensimmäistä ja 10 viimeistä riviä vastaavassa järjestyksessä."
+    - "Poimi PISA-aineiston muuttujien nimet ja järjestä ne aakkosjärjestykseen."
+  18:
+    - "Testaa poikien matematiikan pistemäärän jakauman normaalisuutta Shapiro-Wilk -testillä (fgender, mathscore). Jos jakauma on testin mukaan normaali, niin anna vastauksena testisuureen arvo. Muussa tapauksessa anna vastauksena testin p-arvo."
+    - "Testaa tyttöjen matematiikan pistemäärän jakauman normaalisuutta Shapiro-Wilk -testillä (fgender, mathscore). Jos jakauma on testin mukaan normaali, niin anna vastauksena testisuureen arvo. Muussa tapauksessa anna vastauksena testin p-arvo."
+    - "Testaa luonnontieteiden pistemäärän jakauman normaalisuutta Shapiro-Wilk -testillä (sciescore). Jos jakauma on testin mukaan normaali, niin anna vastauksena testisuureen arvo. Muussa tapauksessa anna vastauksena testin p-arvo."
+  19:
+    - "Testaa poikien ja tyttöjen lukutaidon pistemäärien samavarianssisuutta Levenen testillä (fgender, readscore). Jos varianssit ovat testin mukaan samat, niin anna vastauksena testisuureen arvo. Muussa tapauksessa anna vastauksena testin p-arvo."
+    - "Testaa maaseudun koulujen ja kaupunkien koulujen oppilaiden luonnontieteiden pistemäärien samavarianssisuutta Levenen testillä (sciescore, furban). Jos varianssit ovat testin mukaan samat, niin anna vastauksena testisuureen arvo. Muussa tapauksessa anna vastauksena testin p-arvo."
+    - "Testaa ovatko oppilaiden matematiikan pistemäärien varianssit samat eri alueilla Levenen testillä (mathscore, fregion). Jos varianssit ovat testin mukaan samat, niin anna vastauksena testisuureen arvo. Muussa tapauksessa anna vastauksena testin p-arvo."
+  20:
+    - "Ohjelma on valinnut PISA-aineistosta kaksi muuttujaa ja tallentanut niiden nimet vektoriin ST. Muodosta näiden muuttujien välinen ristiintaulukko. Tallenna taulukko myös muuttujaan tab, sillä tarvitset sitä seuraavissa tehtävissä."
+    - "Muodosta aineistosta sukupuolen (ST04Q01) ja koulun sijaintipaikan (urban) välinen ristiintaulukko. Tallenna taulukko myös muuttujaan tab, sillä tarvitset sitä seuraavissa tehtävissä."
+  21:
+    - "Jatketaan edellisen tehtävän ristiintaulukon parissa (tab). Tutki ovatko khiin neliö -testin oletukset voimassa (vähintään 80 % soluissa odotettu frekvenssi >= 5 ja ei soluja, joissa odotettu frekvenssi on < 1). Jos ovat, niin anna vastauksena totuusarvo TRUE. Muussa tapauksessa anna vastauksena FALSE."
+    - "Jatketaan edellisen tehtävän ristiintaulukon parissa (tab). Tutki ovatko khiin neliö -testin oletukset voimassa (vähintään 80 % soluissa odotettu frekvenssi >= 5 ja ei soluja, joissa odotettu frekvenssi on < 1). Jos ovat, niin anna vastauksena totuusarvo TRUE. Muussa tapauksessa anna vastauksena FALSE."
+  22:
+    - "Jatketaan edellisen tehtävän ristiintaulukon parissa (tab). Tee nyt khiin neliö -testi ja määritä testisuureen arvo. Älä käytä jatkuvuuskorjausta."
+    - "Jatketaan edellisen tehtävän ristiintaulukon parissa (tab). Tee nyt khiin neliö -testi ja määritä testisuureen arvo. Älä käytä jatkuvuuskorjausta."
+  23:
+    - "Testaa, onko poikien ja tyttöjen matematiikan pistemäärien keskiarvoissa eroa t-testillä (fgender, mathscore). Oleta heteroskedastisuus. Jos eroa on, niin anna vastauksena testisuureen arvo. Muussa tapauksessa anna vastauksena testin p-arvo."
+    - "Testaa, onko maaseudun ja kaupunkien koulujen oppilaiden luonnontieteiden pistemäärien keskiarvoissa eroa t-testillä (sciescore, furban). Oleta homoskedastisuus. Jos eroa on, niin anna vastauksena testisuureen arvo. Muussa tapauksessa anna vastauksena testin p-arvo."
+  24:
+    - "Sovita aineistoon lineaarinen regressiomalli, jossa matematiikan pistemäärää (mathscore) selitetään luonnontieteiden pistemäärällä (sciescore). Määritä regressiokertoimen (regressiosuoran kulmakertoimen) estimaatti ja keskivirhe vektorina muodossa c(estimaatti, keskivirhe)."
+    - "Sovita aineistoon lineaarinen regressiomalli, jossa lukutaidon pistemäärää selitetään (readscore) luonnontieteiden pistemäärällä (sciescore). Määritä regressiokertoimen (regressiosuoran kulmakertoimen) estimaatti ja keskivirhe vektorina muodossa c(estimaatti,keskivirhe)."
+    - "Testaa varianssianalyysilla, onko luonnontieteiden pistemäärien (sciescore) keskiarvoissa eroa eri alueilla (fregion). Määritä faktorin fregion vapausasteet ja neliösumma vektorina muodossa c(vapausasteet, neliösumma)."
+    - "Testaa varianssianalyysilla, onko matematiikan pistemäärien (mathscore) keskiarvoissa eroa eri alueilla (fregion). Määritä faktorin fregion vapausasteet ja neliösumma vektorina muodossa c(vapausasteet, neliösumma)."
+Exam 2 JYU:
+  1:
+    - "Laske todennäköisyys P(-3 < X < 2), kun X ~ N(0, 4) ts. X noudattaa normaalijakaumaa keskiarvolla 0 ja varianssilla 4."
+    - "Laske todennäköisyys P(X >= 2), kun X ~ N(3, 0.5) ts. X noudattaa normaalijakaumaa keskiarvolla 3 ja varianssilla 0.5."
+    - "Laske todennäköisyys P(X < 0), kun X ~ N(-2, 3) ts. X noudattaa normaalijakaumaa keskiarvolla -2 ja varianssilla 3."
+  2:
+    - "Millä y:n arvolla P(X > y) = 0.6, kun X ~ N(0, 2) ts. X noudattaa normaalijakaumaa keskiarvolla 0 ja varianssilla 2."
+    - "Millä y:n arvolla P(X < y) = 0.2, kun X ~ t(40) ts. X noudattaa t-jakaumaa vapausasteilla 40."
+    - "Millä y:n arvolla P(X > y) = 0.35, kun X ~ X^2(10) ts. X noudattaa khiin neliö -jakaumaa vapausasteilla 10."
+  3:
+    - "Etsi funktion exp(2*x + 5) + 3*x juuri. Anna vastauksesi kahden desimaalin tarkkuudella."
+    - "Etsi funktion log(x^2 + 5) - x^2 + 1 juuret. Anna vastauksesi kahden desimaalin tarkkuudella muodossa c(x1, x2), missä x1 on juurista pienempi."
+    - "Etsi funktion sin(log(x)) kaksi pienintä reaalista juurta x1 ja x2, joille pätee 20 < x1, x2 < 600. Anna vastauksesi kahden desimaalin tarkkuudella muodossa c(x1, x2), missä x1 on juurista pienempi."
+  4:
+    - "Etsi funktion x*log(x) lokaali minimi välillä 0 < x < 1. Anna vastauksesi kahden desimaalin tarkkuudella muodossa c(x,m), missä x on minimipiste ja m on funktion arvo minimipisteessä."
+    - "Etsi funktion exp(x^4 - 3*x^2) lokaali minimi välillä -2 < x < 0. Anna vastauksesi kahden desimaalin tarkkuudella muodossa c(x, m), missä x on minimipiste  ja m on funktion arvo minimipisteessä."
+    - "Etsi funktion sin(log(x)) lokaali minimi välillä 30 < x < 200. Anna vastauksesi kahden desimaalin tarkkuudella muodossa c(x, m), missä x on minimipiste ja m on funktion arvo minimipisteessä."
+  5:
+    - "Etsi funktion x*log(x^2) lokaali maksimi välillä -1 < x < 0. Anna vastauksesi kahden desimaalin tarkkuudella muodossa c(x, m), missä x on maksimipiste ja m on funktion arvo maksimipisteessä."
+    - "Etsi funktion exp(x^4 - 3*x^2) lokaali maksimi välillä -1 < x < 1. Anna vastauksesi kahden desimaalin tarkkuudella muodossa c(x, m), missä x on maksimipiste ja m on funktion arvo maksimipisteessä."
+    - "Etsi funktion 1/cos(sin(x)) lokaali maksimi välillä 0 < x < 2. Anna vastauksesi desimaalin tarkkuudella muodossa c(x, m), missä x on maksimipiste ja m on funktion arvo maksimipisteessä."
+  6:
+    - "Etsi funktion x^2 + 3*x + y^2 - 5*y - 2 lokaali minimi joukossa -2 < x < 1, 1 < y < 3. Anna vastauksesi kahden desimaalin tarkkuudella muodossa c(x, y, m), missä x ja y ovat minimipisteen koordinaatit ja m on funktion arvo minimipisteessä."
+    - "Etsi funktion exp(x^2 - 2*x + 2*y^2 + 4*y + z^3 - z - 3) lokaali minimi joukossa -2 < x < 2, -2 < y < 2, 0 < z < 1. Anna vastauksesi kahden desimaalin tarkkuudella muodossa c(x, y, z, m), missä x, y ja z ovat minimipisteen koordinaatit ja m on funktion arvo minimipisteessä."
+    - "Etsi funktion 2*x^2 - 6*x + y^2 + 3 lokaali minimi joukossa 1 < x < 2, -1 < y < 1. Anna vastauksesi kahden desimaalin tarkkuudella muodossa c(x, y, m), missä x ja y ovat minimipisteen koordinaatit ja m on funktion arvo minimipisteessä."
+  7:
+    - "Etsi funktion x^2 * exp(-(x^2 + y^2)) lokaali maksimi joukossa -2 < x < 0, -1 < y < 1. Anna vastauksesi kahden desimaalin tarkkuudella muodossa c(x,y,m), missä x ja y ovat maksimipisteen koordinaatit ja m on funktion arvo maksimipisteessä."
+    - "Etsi funktion exp(-x^2 + 5*x - 6*y^2 + 2*y + z^3 - z - 3) lokaali maksimi joukossa 1 < x < 3, 0 < y < 1, -1 < z < 0. Anna vastauksesi kahden desimaalin tarkkuudella muodossa c(x, y, z, m), missä x, y ja z ovat maksimipisteen koordinaatit ja m on funktion arvo maksimipisteessä."
+    - "Etsi funktion -3*x^2 + x - y^2 - y + 11 lokaali maksimi joukossa 0 < x < 1, -1 < y < 0. Anna vastauksesi kahden desimaalin tarkkuudella muodossa c(x, y, m), missä x ja y ovat maksimipisteen koordinaatit ja m on funktion arvo maksimipisteessä."
+  8:
+    - "Laske funktion 1/(sin(x))^2 integraali välillä 1.5 < x < 3. Anna vastauksesi kahden desimaalin tarkkuudella."
+    - "Laske funktion exp(-x^2) integraali välillä 0.5 < x < Inf. Anna vastauksesi kahden desimaalin tarkkuudella."
+    - "Laske funktion log(x^2 + 2*x + 1) integraali välillä 1 < x < 5.5. Anna vastauksesi kahden desimaalin tarkkuudella."
+  9:
+    - "Luo funktio removerows(x, k), joka poistaa joka k:nnen rivin annetusta datakehikosta x alkaen rivistä 1. Esimerkiksi jos k = 3, tulee funktion poistaa rivit 1, 4, 7, ... ."
+    - "Luo funktio ordercols(x), joka järjestää syötteenä annetun datakehikon sarakkeet aakkosjärjestykseen niiden nimien perusteella. Esimerkiksi jos alkuperäisen datakehikon sarakkeet olisivat järjestyksessä C, A, B, niin funktion tulee palauttaa datakehikko, jossa sarakkeiden järjestys on nyt A, B, C."
+  10:
+    - "Luo funktio largest(a, b), joka palauttaa arvon 1 jos a > b, ja 0 muutoin."
+    - "Luo funktio sumsq(x), joka laskee syötteenä annetun vektorin x neliösumman."
+    - "Luo funktio fun(x, y), joka ottaa syötteenään kaksi reaalilukua x ja y, ja palauttaa arvon 1 jos x^2 + y^2 <= 1, ja arvon 0 muulloin. Toisin sanoen luo funktio, joka saa arvon 1 yksikköympyrän sisällä, ja muutoin arvon 0."
+  11:
+    - "Luo funktio kurtosis(x), joka laskee huipukkuusluvun parametrina annettavasta havaintovektorista x. Huipukkuusluvun kaava on kurssin sivuilta löytyvässä dokumentissa formulas.pdf."
+    - "Luo funktio skewness(x), joka laskee vinousluvun parametrina annettavasta havaintovektorista x. Vinousluvun kaava on kurssin sivuilta löytyvässä dokumentissa formulas.pdf."
+    - "Luo funktio likelihood(x, mu, sigma), joka laskee normaalijakauman N(mu, sigma^2) (keskiarvo = mu, varianssi = sigma^2) logaritmisen uskottavuusfunktion arvon havaintovektorille x. Logaritmisen uskottavuusfunktion kaava on kurssin sivuilta löytyvässä dokumentissa formulas.pdf."
+  12:
+    - "Luo funktio moments(x, k), joka laskee k ensimmäistä otoskeskusmomenttia ja palauttaa nämä vektorina. Parametri x on havaintovektori ja k on positiivinen kokonaisluku. Otoskeskusmomentin kaava on kurssin sivuilta löytyvässä dokumentissa formulas.pdf."
+    - "Luo funktio statistics(x), joka palauttaa listana: vektorin x ja sen tunnusluvut jotka on saatu funktiolla summary. Funktion palauttamassa listassa tulee siis olla kaksi alkiota"
+
+Exam UEF:
+  1:
+    - "Lue sisään aineisto tiedostosta PISA_value.txt muuttujaan pisa."
+  2:
+    - "Jatketaan edellisen tehtävän PISA-aineiston parissa. Ohjelma on generoinut kokonaislukuvektorin ind. Muokkaa aineistoa siten, että siinä ovat vain ne rivit, joiden rivinumerot ovat vektorissa ind. Sijoita muokattu aineisto muuttujaan pisa."
+  3:
+    - "Jatketaan edellisessä tehtävässä muokkaamasi PISA-aineiston parissa. Ohjelma on generoinut merkkitietovektorin mut. Muokkaa aineistoa siten, että siinä ovat vain ne muuttujat, joiden nimet ovat vektorissa mut. Sijoita muokattu aineisto muuttujaan pisa."
+  4:
+    - "Jatketaan edellisessä tehtävässä muokkaamasi PISA-aineiston parissa. Monet aineiston muuttujista sisältävät puuttuvaa tietoa. Muokkaa aineistoa siten, että se sisältää vain täydelliset havaintorivit, eli sellaiset rivit, joissa ei ole puuttuvaa tietoa (NA) yhdessäkään muuttujassa. Sijoita muokattu aineisto muuttujaan pisa."
+  5:
+    - "Selvitä, mitä par-funktion argumentti pin tekee. Säätääkö se a) plotin marginaaleja b) plotin kokoa c) plotin taustaväriä vai d) plotissa käytettäviä symboleja. Anna vastauksesi merkkitietona, esim. \"a\"."
+    - "Selvitä, mitä hist-funktion argumentti probability tekee. Säätääkö se a) jakovälien lukumäärää b) otsikkoa c) pystyakselin skaalausta vai d) vaaka-akselin skaalausta. Anna vastauksesi merkkitietona, esim. \"a\"."
+    - "Selvitä, mitä seuraavista komponenteista lm-objekti EI sisällä: a) residuals, b) rank, c) errors vai d) coefficients. Anna vastauksesi merkkitietona, esim. \"a\"."
+  6:
+    - "Ohjelma on generoinut kokonaislukuvektorin ind2. Valitse ne PISA-aineiston muuttujan mathscore arvot, joiden indeksit eivät ole vektorissa ind2."
+    - "Määritä vektoriin vast PISA-aineiston muuttujien natlang ja math arvojen erotukset."
+    - "Määritä PISA-aineiston dimensiot muodossa c(rivien lukumäärä, sarakkeiden lukumäärä)."
+  "7,8,9":
+    - "Laske PISA-aineiston muuttujan readscore keskiarvo."
+    - "Laske PISA-aineiston muuttujan sciescore varianssi."
+    - "Laske PISA-aineiston muuttujan mathscore keskihajonta."
+    - "Laske PISA-aineiston muuttujan natlang mediaani."
+    - "Laske PISA-aineiston muuttujan urban moodi ts. se arvo, josta on eniten havaintoja. Anna moodia vastaava sijaintipaikka merkkitietona, esim. \"city\"."
+    - "Laske PISA-aineiston muuttujan math minimi."
+  10:
+    - "Piirrä aineiston muuttujien mathscore ja sciescore välinen hajontakuvio. Arvioi kuvan perusteella, esiintyykö matematiikan (mathscore) ja luonnontieteiden (sciescore) pistemäärien välillä lineaarista riippuvuutta. Jos esiintyy, niin laske muuttujien välinen korrelaatio. Muussa tapauksessa anna vastaukseksi 0."
+    - "Piirrä aineiston muuttujien mathscore ja readscore välinen hajontakuvio. Arvioi kuvan perusteella, esiintyykö matematiikan (mathscore) ja lukutaidon (readscore) pistemäärien välillä lineaarista riippuvuutta. Jos esiintyy, niin laske muuttujien välinen korrelaatio. Muussa tapauksessa anna vastaukseksi 0."
+    - "Piirrä aineiston muuttujien readscore ja sciescore välinen hajontakuvio. Arvioi kuvan perusteella, esiintyykö lukutaidon (readscore) ja luonnontieteiden (sciescore) pistemäärien välillä lineaarista riippuvuutta. Jos esiintyy, niin laske muuttujien välinen korrelaatio. Muussa tapauksessa anna vastaukseksi 0."
+  11:
+    - "Piirrä boxplot aineiston muuttujasta mathscore. Onko joukossa poikkeavia havaintoja? Jos on, niin anna vastaukseksi totuusarvo TRUE. Muussa tapauksessa anna vastaukseksi FALSE."
+    - "Piirrä boxplot aineiston muuttujasta readscore. Onko joukossa poikkeavia havaintoja? Jos on, niin anna vastaukseksi totuusarvo TRUE. Muussa tapauksessa anna vastaukseksi FALSE."
+    - "Piirrä boxplot aineiston muuttujasta sciescore. Onko joukossa poikkeavia havaintoja? Jos on, niin anna vastaukseksi totuusarvo TRUE. Muussa tapauksessa anna vastaukseksi FALSE."
+  12:
+    - "Muokkaa PISA-aineistoa siten, että luot sen viimeisiksi sarakkeiksi kolme uutta muuttujaa seuraavassa järjestyksessä: fgender, furban ja fregion, jotka vastaavat aineiston muuttujia ST04Q01, urban ja region, mutta ovat faktoreita. Nimeä faktoreiden tasot kurssin sivuilta löytyvän dokumentin PISA_variables.pdf mukaisesti (Muuttujalla ST04Q01 eli sukupuolella on kaksi tasoa, muuttujalla urban on kaksi tasoa ja muuttujalla region on viisi tasoa. Huomioi myös isot ja pienet kirjaimet tasojen nimissä). Huomaa myös, että Ahvenanmaalta ei ole havaintoja, joten fregion-faktorin tasojen määrä on itse määritettävä. Sijoita muokattu aineisto muuttujaan pisa."
+  13:
+    - "Määritä ne tyttöjen matematiikan pistemäärät (mathscore), jotka ovat suurempia kuin 600."
+    - "Määritä ne poikien luonnontieteiden pistemäärät (sciescore), jotka ovat pienempiä kuin 500."
+    - "Määritä ne kaupungissa koulua käyvien lukutaidon pistemäärät, jotka ovat suurempia kuin 400, mutta alle 500 (furban, readscore)."
+  14:
+    - "Määritä Länsi-Suomen kaikkien oppilaiden matematiikan (viimeisimmät) kouluarvosanat (fregion, math)."
+    - "Määritä aluekohtaiset matematiikan pistemäärien keskiarvot (mathscore, fregion). Järjestä keskiarvot kurssin sivuilta löytyvän dokumentin PISA_muuttujat.pdf mukaiseen aluejärjestykseen. Huomaa, että Ahvenanmaalta ei ole havaintoja, joten keskiarvoja on vain neljä kappaletta."
+    - "Määritä aluekohtaiset lukutaidon pistemäärien keskihajonnat (readscore, fregion). Järjestä keskihajonnat kurssin sivuilta löytyvän dokumentin PISA_muuttujat.pdf mukaiseen aluejärjestykseen. Huomaa, että Ahvenanmaalta ei ole havaintoja, joten keskihajontoja on vain neljä kappaletta."
+    - "Määritä aluekohtaiset luonnontieteiden pistemäärien varianssit (sciescore, fregion). Järjestä varianssit kurssin sivuilta löytyvän dokumentin PISA_muuttujat.pdf mukaiseen aluejärjestykseen. Huomaa, että Ahvenanmaalta ei ole havaintoja, joten variansseja on vain neljä kappaletta."
+  15:
+    - "Järjestä matematiikan pistemäärät (mathscore) nousevaan suuruusjärjestykseen."
+    - "Järjestä lukutaidon pistemäärät (readscore) laskevaan suuruusjärjestykseen."
+    - "Järjestä äidinkielen viimeisimmät kouluarvosanat (natlang) nousevaan suuruusjärjestykseen."
+    - "Järjestä matematiikan viimeisimmät kouluarvosanat (math) laskevaan suuruusjärjestykseen."
+  16:
+    - "Muodosta vektori, jonka pituus on 1000 ja jossa luvut 0 ja 1 toistuvat vuoron perään, ts. 0, 1, 0, 1, 0, 1, ... ."
+    - "Muodosta vektori, jonka pituus on 1000 ja jossa luvut 0 ja 1 toistuvat aina kaksi kertaa peräkkäin vuoron perään, ts. 0, 0, 1, 1, 0, 0, ... ."
+    - "Muodosta vektori, jonka pituus on 20, ensimmäinen alkio on 1 ja seuraava alkio on aina kaksi kertaa niin suuri kuin edellinen, ts. 1, 2, 4, 8, ... ."
+  17:
+    - "Muodosta datakehikko, joka sisältää PISA-aineiston 10 ensimmäistä ja 10 viimeistä riviä vastaavassa järjestyksessä."
+    - "Poimi PISA-aineiston muuttujien nimet ja järjestä ne aakkosjärjestykseen."
+  18:
+    - "Testaa poikien matematiikan pistemäärän jakauman normaalisuutta Shapiro-Wilk -testillä (fgender, mathscore). Jos jakauma on testin mukaan normaali, niin anna vastauksena testisuureen arvo. Muussa tapauksessa anna vastauksena testin p-arvo."
+    - "Testaa tyttöjen matematiikan pistemäärän jakauman normaalisuutta Shapiro-Wilk -testillä (fgender, mathscore). Jos jakauma on testin mukaan normaali, niin anna vastauksena testisuureen arvo. Muussa tapauksessa anna vastauksena testin p-arvo."
+    - "Testaa luonnontieteiden pistemäärän jakauman normaalisuutta Shapiro-Wilk -testillä (sciescore). Jos jakauma on testin mukaan normaali, niin anna vastauksena testisuureen arvo. Muussa tapauksessa anna vastauksena testin p-arvo."
+  19:
+    - "Testaa poikien ja tyttöjen lukutaidon pistemäärien samavarianssisuutta Levenen testillä (fgender, readscore). Jos varianssit ovat testin mukaan samat, niin anna vastauksena testisuureen arvo. Muussa tapauksessa anna vastauksena testin p-arvo."
+    - "Testaa maaseudun koulujen ja kaupunkien koulujen oppilaiden luonnontieteiden pistemäärien samavarianssisuutta Levenen testillä (sciescore, furban). Jos varianssit ovat testin mukaan samat, niin anna vastauksena testisuureen arvo. Muussa tapauksessa anna vastauksena testin p-arvo."
+    - "Testaa ovatko oppilaiden matematiikan pistemäärien varianssit samat eri alueilla Levenen testillä (mathscore, fregion). Jos varianssit ovat testin mukaan samat, niin anna vastauksena testisuureen arvo. Muussa tapauksessa anna vastauksena testin p-arvo."
+  20:
+    - "Ohjelma on valinnut PISA-aineistosta kaksi muuttujaa ja tallentanut niiden nimet vektoriin ST. Muodosta näiden muuttujien välinen ristiintaulukko. Tallenna taulukko myös muuttujaan tab, sillä tarvitset sitä seuraavissa tehtävissä."
+    - "Muodosta aineistosta sukupuolen (ST04Q01) ja koulun sijaintipaikan (urban) välinen ristiintaulukko. Tallenna taulukko myös muuttujaan tab, sillä tarvitset sitä seuraavissa tehtävissä."
+  21:
+    - "Jatketaan edellisen tehtävän ristiintaulukon parissa (tab). Tutki ovatko khiin neliö -testin oletukset voimassa (vähintään 80 % soluissa odotettu frekvenssi >= 5 ja ei soluja, joissa odotettu frekvenssi on < 1). Jos ovat, niin anna vastauksena totuusarvo TRUE. Muussa tapauksessa anna vastauksena FALSE."
+    - "Jatketaan edellisen tehtävän ristiintaulukon parissa (tab). Tutki ovatko khiin neliö -testin oletukset voimassa (vähintään 80 % soluissa odotettu frekvenssi >= 5 ja ei soluja, joissa odotettu frekvenssi on < 1). Jos ovat, niin anna vastauksena totuusarvo TRUE. Muussa tapauksessa anna vastauksena FALSE."
+  22:
+    - "Jatketaan edellisen tehtävän ristiintaulukon parissa (tab). Tee nyt khiin neliö -testi ja määritä testisuureen arvo. Älä käytä jatkuvuuskorjausta."
+    - "Jatketaan edellisen tehtävän ristiintaulukon parissa (tab). Tee nyt khiin neliö -testi ja määritä testisuureen arvo. Älä käytä jatkuvuuskorjausta."
+  23:
+    - "Testaa, onko poikien ja tyttöjen matematiikan pistemäärien keskiarvoissa eroa t-testillä (fgender, mathscore). Oleta heteroskedastisuus. Jos eroa on, niin anna vastauksena testisuureen arvo. Muussa tapauksessa anna vastauksena testin p-arvo."
+    - "Testaa, onko maaseudun ja kaupunkien koulujen oppilaiden luonnontieteiden pistemäärien keskiarvoissa eroa t-testillä (sciescore, furban). Oleta homoskedastisuus. Jos eroa on, niin anna vastauksena testisuureen arvo. Muussa tapauksessa anna vastauksena testin p-arvo."
+  24:
+    - "Sovita aineistoon lineaarinen regressiomalli, jossa matematiikan pistemäärää (mathscore) selitetään luonnontieteiden pistemäärällä (sciescore). Määritä regressiokertoimen (regressiosuoran kulmakertoimen) estimaatti ja keskivirhe vektorina muodossa c(estimaatti, keskivirhe)."
+    - "Sovita aineistoon lineaarinen regressiomalli, jossa lukutaidon pistemäärää selitetään (readscore) luonnontieteiden pistemäärällä (sciescore). Määritä regressiokertoimen (regressiosuoran kulmakertoimen) estimaatti ja keskivirhe vektorina muodossa c(estimaatti,keskivirhe)."
+    - "Testaa varianssianalyysilla, onko luonnontieteiden pistemäärien (sciescore) keskiarvoissa eroa eri alueilla (fregion). Määritä faktorin fregion vapausasteet ja neliösumma vektorina muodossa c(vapausasteet, neliösumma)."
+    - "Testaa varianssianalyysilla, onko matematiikan pistemäärien (mathscore) keskiarvoissa eroa eri alueilla (fregion). Määritä faktorin fregion vapausasteet ja neliösumma vektorina muodossa c(vapausasteet, neliösumma)."
+  25:
+    - "Laske todennäköisyys P(-3 < X < 2), kun X ~ N(0, 4) ts. X noudattaa normaalijakaumaa keskiarvolla 0 ja varianssilla 4."
+    - "Laske todennäköisyys P(X >= 2), kun X ~ N(3, 0.5) ts. X noudattaa normaalijakaumaa keskiarvolla 3 ja varianssilla 0.5."
+    - "Laske todennäköisyys P(X < 0), kun X ~ N(-2, 3) ts. X noudattaa normaalijakaumaa keskiarvolla -2 ja varianssilla 3."
+  26:
+    - "Millä y:n arvolla P(X > y) = 0.6, kun X ~ N(0, 2) ts. X noudattaa normaalijakaumaa keskiarvolla 0 ja varianssilla 2."
+    - "Millä y:n arvolla P(X < y) = 0.2, kun X ~ t(40) ts. X noudattaa t-jakaumaa vapausasteilla 40."
+    - "Millä y:n arvolla P(X > y) = 0.35, kun X ~ X^2(10) ts. X noudattaa khiin neliö -jakaumaa vapausasteilla 10."
+  27:
+    - "Luo funktio removerows(x, k), joka poistaa joka k:nnen rivin annetusta datakehikosta x alkaen rivistä 1. Esimerkiksi jos k = 3, tulee funktion poistaa rivit 1, 4, 7, ... ."
+    - "Luo funktio ordercols(x), joka järjestää syötteenä annetun datakehikon sarakkeet aakkosjärjestykseen niiden nimien perusteella. Esimerkiksi jos alkuperäisen datakehikon sarakkeet olisivat järjestyksessä C, A, B, niin funktion tulee palauttaa datakehikko, jossa sarakkeiden järjestys on nyt A, B, C."
+  28:
+    - "Luo funktio sumsq(x), joka laskee syötteenä annetun vektorin x neliösumman."
+    - "Luo funktio fun(x, y), joka ottaa syötteenään kaksi reaalilukua x ja y, ja palauttaa arvon 1 jos x^2 + y^2 <= 1, ja arvon 0 muulloin. Toisin sanoen luo funktio, joka saa arvon 1 yksikköympyrän sisällä, ja muutoin arvon 0."
+    - "Luo funktio statistics(x), joka palauttaa listana: vektorin x ja sen tunnusluvut jotka on saatu funktiolla summary. Funktion palauttamassa listassa tulee siis olla kaksi alkiota"
+  29:
+    - "Luo funktio kurtosis(x), joka laskee huipukkuusluvun parametrina annettavasta havaintovektorista x. Huipukkuusluvun kaava on kurssin sivuilta löytyvässä dokumentissa formulas.pdf."
+    - "Luo funktio skewness(x), joka laskee vinousluvun parametrina annettavasta havaintovektorista x. Vinousluvun kaava on kurssin sivuilta löytyvässä dokumentissa formulas.pdf."
+  30:
+    - "Luo funktio likelihood(x, mu, sigma), joka laskee normaalijakauman N(mu, sigma^2) (keskiarvo = mu, varianssi = sigma^2) logaritmisen uskottavuusfunktion arvon havaintovektorille x. Logaritmisen uskottavuusfunktion kaava on kurssin sivuilta löytyvässä dokumentissa formulas.pdf."
+    - "Luo funktio moments(x, k), joka laskee k ensimmäistä otoskeskusmomenttia ja palauttaa nämä vektorina. Parametri x on havaintovektori ja k on positiivinen kokonaisluku. Otoskeskusmomentin kaava on kurssin sivuilta löytyvässä dokumentissa formulas.pdf."
+---

@@ -1,0 +1,374 @@
+---
+Section 1:
+  1:  "Create a vector that consists of the number 1."
+  2:  "Create a vector that consists of the numbers 1, 2, 3, and 4."
+  3:  "Create a vector that consists of the numbers 1, 2, 3, ..., 100."
+  4:  "Learn about the arguments of function seq. Does the argument 'from' define a) the length of the vector, b) the number of elements in the vector, or c) the first element of the vector? Give your answer as a character, e.g. \"a\""
+  5:  "Create a vector that consists of the numbers between 1 and 20 with a step of 0.2."
+  6:  "The program has generated a vector d. Select the minimal value in the vector."
+  7:  "Select the maximal value in the vector d."
+  8:  "Determine the length of the vector d."
+  9:  "Calculate the average of values in the vector d."
+  10: "Calculate the median of values in the vector d."
+  11: "Calculate the standard deviation of values in the vector d."
+  12: "Calculate the variance of values in the vector d."
+  13: "Determine the range of values in the vector d. Give your answer as a vector: c(minimum, maximum)."
+  14: "Sort the values in the vector d in ascending order of magnitude."
+  15: "Add 2 to each value of the vector d."
+  16: "The program has generated a vector g. This vector has the same length as the vector d. Multiply each element in the vector d by 2, and subtract the resulting vector from the vector g."
+  17: "Multiply the vector g by the vector d element-wise. That is, the first elements will be multiplied with each other, then the second elements with each other, etc."
+  18: "Calculate the squares of the reciprocals in the vector d."
+  19: "Select the 500th element in the vector d."
+  20: "Select the first 50 elements in the vector d."
+  21: "Select all the elements that are larger than 20 in the vector d. The order of the elements should remain the same as in the vector d."
+  22: "Determine the number of missing values in the program-generated vector h."
+Section 2:
+  1:  "The program has generated a vector d. Create a matrix with 6 rows and 10 columns (6x10-matrix) from the vector d. The values need to be read column-wise."
+  2:  "The program has generated a matrix called E. Create a vector of two elements that contains the number of the rows and columns in the matrix E."
+  3:  "Select the element that is located on the 2nd row, 3rd column of the matrix E."
+  4:  "Select the 3rd row of the matrix E as a vector."
+  5:  "The program has generated vectors g1, g2, and g3. Create a matrix with g1 in the 1st column, g2 in the 2nd column, and g3 in the 3rd column."
+  6:  "Create a matrix with g1 in the 1st row, g2 in the 2nd row, and g3 in the 3rd row."
+  7:  "Create a data frame (data.frame) using the vectors g1 and g2, and the matrix H. The first column is g1, the last column is g2, and the columns in between contain the matrix H."
+  8:  "Create a data frame from three variables: height = c(175, 180, 190, 174), weight = c(60, 72, 90, 95), and category = c(2, 2, 1, 1). The data frame will be used in the later assignments."
+  9:  "Let's examine the data frame called dk. Apply the function 'tapply' and calculate the mean of the variable 'weight' for each category (defined by the variable 'category')."
+  10: "Let's examine the data frame dk. Select the column 'height' in the data frame."
+  11: "Select the element at the index [2,2] (2nd row, 2nd column) in the data frame 'dk'."
+  12: "Create a new data frame from the data frame dk such that the 2nd row is deleted."
+  13: "Create a new data frame from the data frame dk such that the 2nd column is deleted."
+  14: "Create a new data frame from the data frame dk only with the variables height and weight."
+  15: "Add a new row to the data frame dk. The values of the variables are: height = 178, weight = 80, and category = 2. You can create a new data frame with the new row and merge it with data frame dk using the function rbind."
+Section 3:
+  1:  "The program has generated data in the file carbon.txt, located in the current working directory of R. Open and examine the data e.g., with a text editor. Read the data into R (read.table)."
+  2:  "The program has generated data in the file carbon2.txt. This time the separator of the cells is not an empty space, but a comma. Read the data and take into account the separator (sep = \",\")."
+  3:  "The program has generated data in the file carbon3.txt. Read the data with the first row as a header (the names of the columns are set by the first row). In contrast to the file carbon.txt, this file does not include row numbers. Hence, while applying the function read.table, the following argument must be set: header = TRUE."
+  4:  "The program has generated a data file heightweight.data, located in the current working directory of R. The data include the heights (in inches) and weights (in pounds) of the test subjects. Read the data. Create a third column called BMI that contains the body mass index calculated as: 703 * weight / height^2."
+  5:  "Read in the data file pigs.csv. The data contain variables of pigs' growth. Calculate the average growth at day 6 with accuracy of 2 decimals. (read.csv2)"
+  6:  "The program has generated data in the file automobile.txt, located in the current working directory of R. Read the data into an object 'auto'. The data contain motor weights (in pounds/1000), horsepower measurements, and transmission types (automatic = 0, manual = 1) of cars. Sort the data in the increasing order of the horsepower measurement (hp). If several cars have the same horsepower measurement, sort these cars in the increasing order of the motorweight (wt) (order)."
+  7:  "Read the data called tomato.dat (header = TRUE) into the object 'tomato'. Create a list with the tomato data as the first element and the mean of the variable YIELD as the second element."
+  8:  "Let's continue with the tomato-data. Select those rows of the data where the value of the variable YIELD is larger than 10 and smaller than 15."
+  9:  "Let's continue with the tomato-data. Select those rows of the data where the variable STRAIN has the value 1 and the variable DENSITY has a value larger than 10."
+  10: "Let's continue with the tomato-data. Select those rows of the data where the value of the variable YIELD is larger than 15 or the value of the variable DENSITY is 10."
+Section 4:
+  1:  "The program has generated the variables x and y. Create a scatterplot of the variables and set the title of the plot to \"Scatterplot\"."
+  2:  "The program has generated the variables x and y. Again, create a scatterplot of the variables, but this time set the tick marks to be horizontal using the argument las."
+  3:  "The program has generated the variables x and y. Again, create a scatterplot of the variables, but this time set the color of the points to red and the point symbol to the plus sign. Use the arguments col and pch."
+  4:  "Let's examine the cars data from R. The data includes speeds and stopping distances of cars. Draw the scatterplot of the speeds and stopping distances. Label the x-axis \"Speed\" and the y-axis \"Stopping distance\"."
+  5:  "Let's continue with the data cars. The program has fitted a linear model which explains the stopping distance by the speed. The intercept and slope of the regression line have been generated in the variables a and b, respectively. Draw again the scatterplot of the speeds and stopping distances, and add the regression line to the plot using the function abline."
+  6:  "Let's continue with the data cars. Plot a histogram of the stopping distances."
+  7:  "Let's continue with the data cars. Draw a boxplot of the speeds."
+  8:  "Let's examine the data Nile from R. It is a time series about the annual flows of the river Nile. Draw the time series by applying the function plot (ts.plot)."
+  9:  "The program has generated the variables x and y. Plot the line graph of the variables. In other words, plot a figure in which the dots are connected with a line. Use the argument type."
+  10: "Redraw the line graph from the previous assignment. Apply the argument ylim = c(-10, 10) to change the boundaries of the y-axis. Add the scatterplot of the program-generated variables x and z to the line graph figure. Use the function called points."
+  11: "Let's examine the graph of the function exp(-(x^2 + y^2)). The program has generated the variables xx, yy and zz, where zz contains the values of the function at the points given by xx and yy. Draw a grid of the function values using the command image(xx, yy, zz)."
+  12: "Let's continue with the function from the previous assignment. Draw the contours of the function with the command contour(xx, yy, zz)."
+  13: "Let's continue with the function from the previous assignment. Draw the function plane with the command persp(xx, yy, zz). You can observe the plane from different points of view: arguments called theta, phi and r adjust the viewing angle and the viewing distance."
+Section 5:
+  1:  "Read the data Children2007.dat into a data frame called children. The data contain the lengths (in cm) and weights (in grams) of newborn babies. Create a new column called Gender2 which holds the gender as a factor. That means that if the baby is a girl, then the variable Gender has value 1 so the new variable gets the value \"Girl\". Similarly, if Gender has value 0 then new variable has value \"Boy\"."
+  2:  "Let's study if the average heights of boys and girls differ from each other. Draw the boxplots for the heights given the gender in the same figure. Answer based on the figure which gender was taller on average. Give your response as as string \"girls\" or \"boys\" (boxplot)."
+  3:  "Compute the lower and upper quartiles of variable Weight. Give your answer as a vector c(lower, upper)."
+  4:  "Use the t-test to evaluate whether the average heights of girls and boys are statistically significantly different. Use such a test that assumes the equivalence of the variances. If there is a statistically significant difference, give value of the t-test statistic as the answer. Otherwise, give the p-value of the test as the answer."
+  5:  "Calculate the variances of height for both genders and store them in a vector so that the variance of the boys' height comes first."
+  6:  "Investigate the assumption of homogenous variances, which is used by the t-test. In other words using Levene's test, test whether the variance of the height is different between genders. If they are different, give Levene's test statistic as the answer. If not, give p-value as the answer."
+  7:  "Test the assumption that the data follows the normal distribution using the Shapiro-Wilk test. More precisely, use the test to examine whether the distributions of height are normal for both boys and girls. If they are, store the test statistics of the Shapiro-Wilk tests as a vector so that the statistic of the boys comes first. Otherwise, store the p-values of the tests."
+  8:  "It seems that the distribution of the girls' heights is not normal according to the Shapiro-Wilk test. There is an exceptionally small baby among the girls, weighing only 990 g and being 36 cm tall. Remove this observation from the data frame and save the new data frame in the object children2. Apply the Shapiro-Wilk test again. Is the distribution of girls height now normal according to the test? If that is the case, give the test statistic as the answer. Otherwise, give the p-value of the test."
+  9:  "Choose the first 10 rows of children2 data using function 'head'."
+  10: "Extract the names of variables for the children2 data using function 'names'."
+  11: "Create a summary of children2 data using function 'summary'."
+  12: "Let's continue with the data frame children2 (without the outlier). Apply the t-test again with assumption that the variances of the heights of girls and boys are equivalent. Is the difference between average heights statistically significant?  If it is, give the value of the test statistic as your answer. Otherwise, give the p-value of the test."
+  13: "Let's continue with the data frame children2. Create a scatterplot of height and weight where the x-axis represents the height and the y-axis represents the weight. Based on the scatterplot, evaluate whether the linear dependency is positive or negative. Give your answer as a string that is either \"pos\" or \"neg\" (plot)."
+  14: "Let's continue with the data frame children2. Calculate the correlation coefficient of height and weight."
+  15: "Let's continue with the data frame children2. Create a linear regression model such that the weight is explained by the height. Save the model as an object called m. Study the normality of the model residuals using qqnorm-plot (m$residuals). You can also investigate the normality of the residuals by applying the Shapiro-Wilk test. Based on these, evaluate whether the residuals are normally distributed. If they are, give the boolean TRUE as your answer. Otherwise, give the boolean FALSE."
+  16: "Let's continue with the model m where the weight is explained by the height. Give the standard error of the regression coefficient (slope) as the answer."
+  17: "Let's continue with the model m where the weight is explained by the height. Does the height really explain the weight? In other words, evaluate whether the regression coefficient of height is statistically significant. If that is the case, store the boolean TRUE. Otherwise, store the boolean FALSE."
+Section 6:
+  1:  "Read in the data tomato.dat into an object called tomato. The data will be needed in the following assignments. The data contain the yield of tomatoes (YIELD) of different strains (STRAIN) from different planting densities (DENSITY). Create boxplots of the yields grouped by the strains in the same figure (boxplot). Create a vector including the labels of the strains in decreasing order sorted by the mean of the yield. For example, if strain 1 has the largest average yield, strain 2 has the second largest, and strain 3 has the smallest, then the created vector should be c(1, 2, 3)."
+  2:  "Let's continue with the tomato data. Create a new variable fSTRAIN in the data. The variable contains the strain information as a factor with the factor levels STRAIN1, STRAIN2 and STRAIN3."
+  3:  "Let's continue with the tomato data and test the equality of the average yields with an analysis of variances, which assumes homogeneity of the variances. Apply the Levene's test and find out whether the variances of the yields of the different strains are equal. If they are, submit the value of Levene's test statistic. Otherwise, submit the p-value of the test."
+  4:  "Let's continue with the tomato data. Apply the analysis of variance to the data. Is there a statistically significant difference between the average yields of the strains? If there is, submit the boolean TRUE. Otherwise, submit the boolean FALSE."
+  5:  "Let's continue with the tomato data. Let's examine the analysis of variance table created in the previous assignment. Create a vector with the degrees of freedom of the strain factor and the F-value of the test c(degrees of freedom, F-value). Do this with the accuracy of one decimal."
+  6:  "Let's continue with the tomato data and the analysis of variance table. Calculate the sum of squares related to the strain factor."
+  7:  "Let's continue with the tomato data. Carry out pair-wise comparisons using the Tukey method. Calculate the number of the strain pairs that show a statistically significant difference in the average yields (TukeyHSD)."
+  8:  "210 students have enrolled to the course Basics in Statistics. The program has generated two vectors, 'mandatory' and 'firstyear', including information whether a course is mandatory to a student and whether the student is studying their first year (TRUE = yes, FALSE = no). Based on these vectors, create a 2 x 2 cross tabulation with the frequency of the first year students studying the mandatory course in the first column of the first row. The second column of the first row presents the frequency of the first year students studying the elective course. The second row contains corresponding frequencies of the senior students. Apply the function table to create the tabulation. Also, save the table into the object 'tilp'."
+  9:  "Let's continue with the cross tabulation 'tilp' from the previous assignment. Examine whether the assumptions of the chi-squared test apply (at least 80 % of the cells have the expected frequency >= 5 and there are no cells with the expected frequency < 1). If the assumptions hold submit the boolean TRUE. Otherwise, submit the boolean FALSE."
+  10: "Let's continue with the cross tabulation 'tilp' from the previous assignment. We want to find out whether the compulsion of the course depends on the study year. Apply the chi-squared test without the correction for continuity (correct = FALSE). If you find out that there is a statistically significant dependency, submit the value of the test statistic. Otherwise, submit the p-value of the test."
+Section 7:
+  1:  "Create a function kelvin(celsius) which takes a temperature as its argument, converts the temperature from Celsius to Kelvin by the formula celsius + 273.15 and returns the converted value."
+  2:  "Create a function bmi(weight, height) which takes a weight (kg) and a height (m) as its arguments, calculates the body mass index by the formula weight / height^2 and returns the result."
+  3:  "Create a function fun(x, a, b) which returns the result from the calculation a*x^2 + b."
+  4:  "Recreate the Celsius-Kelvin converter from the first assignment so that the argument celsius has the value 20 by default and the formula for conversion is kelvin = celsius + 273.15."
+  5:  "Create a function fun(x) which returns the value 0 if the argument x is smaller than or equal to 0, and the value 1 otherwise."
+  6:  "Create a function fun(x, y) which returns the value 1 if x^2 + y^2 <= 1, and the value 0 otherwise. In other words, create a function which receives the value 1 inside the unit circle, and the value 0 otherwise."
+  7:  "Create a function fun(x) which returns the value 0 when x <= -1, the value x^2 when -1 < x < 1, and the value 1 when x >= 1."
+  8:  "Create a function fun(a, b, x, y) which returns the value x if a = 1 and b = 1, the value y if a = 1 and b = 0, and the value 0 otherwise."
+  9:  "Create a function removerows(x, k) which removes every k:th row from the argument dataframe x, starting from the first row. For example, if k = 3 the function removes the rows 1, 4, 7, ... ."
+  10: "Create a function ordercols(x) which arranges the columns of the argument dataframe to the alphabetical order based on their names. For example, if the columns of the original dataframe would be in the order C, A, B, the function should return a dataframe with the column order A, B, C."
+  11: "Create a function sumsq(x) which calculates and returns the sum of squares of the argument vector x."
+Section 8:
+  1: "Calculate the probability P(-1 < X < 2.5) when X ~ N(3, 1.5), i.e. X is normally distributed with the mean of 3 and the variance of 1.5. Answer with the accuracy of two decimals."
+  2: "Find out y in P(X > y) = 0.6. X ~ t(20), i.e. X follows the t-distribution with 20 degrees of freedom. Answer with the accuracy of three decimals."
+  3: "Find the root of the function exp(x + 4) + 3*x. Answer with the accuracy of two decimals. Use the function 'uniroot'."
+  4: "Find the local minimum of the function x * log(x) within the interval 0 < x < 1 . Answer with the accuracy of two decimals as the vector c(x, minimum value), x being the location of the minimum in the range. Use the function 'optimize'."
+  5: "Find out the local maximum of the function x^2 * exp(-0.5*(x^2 + y^2)) in the set 0 < x < 2, -1 < y < 1. Answer with the accuracy of two decimals as the vector c(x, y, maximum value), x and y being the coordinates of the maximum. Use the function 'optim'."
+  6: "Calculate the integral of the function 1 / (sin x)^3 over the interval 1 < x < 3. Answer with the accuracy of two decimals. Use the function 'integrate'."
+  7: "The function x^3 - 5*x^2 + x + sqrt(2) has two real roots on the interval -1 < x < 1. Find these two roots with the function 'uniroot'. Answer with accuracy of two decimals as the vector c(x1, x2) where x1 is the smallest of the two roots."
+Section 9:
+  1:  "Define a 3x3x3-array whose every element is zero (array)."
+  2:  "The program has generated matrices G and E that have the same dimensions. Compute 2 * E * G + G^2 + 1 (i.e., the element-wise sum of the element-wise product of E and G multiplied by 2, the squared elements of G and the number 1)."
+  3:  "Compute the matrix product of E and the transpose of G and submit the determinant of the resulting matrix as your answer."
+  4:  "The program has generated the matrix H. Is H invertible? If it is, sumbit the boolean TRUE as your answer. Otherwise, submit FALSE."
+  5:  "Create a vector from the elements E[1,1], E[1,2] and E[2,1] of the array E."
+  6:  "The program has generated the matrix K where every row contains the index of a single element [i,j]. Replace those elements of E by 0 whose index is in K."
+  7:  "Create a matrix consisting entirely of zeros that has 14 rows and 3 columns."
+  8:  "The program has generated the matrix A. Determine the number of rows of A."
+  9:  "Determine the number of columns of A."
+  10: "The program has generated a character vector called words. Select those elements of the vector that start with a digi between 4-8 and have at least 4 characters. Sort the selected elements in alphabetical order. You can use the function grep and the pattern ^[4-8]{1}.{3,}$."
+  11: "The program has generated a character vector called words. Select those elements of the vector that contain at least one letter and a digit. Sort the selected elements in alphabetical order. You can use the function grep and the pattern ^.*(?=.*\\d)(?=.*[a-z]).*$."
+  12: "The program has generated a character string called rk1. Replace all instances of the letter i with the letter e. You can use the function gsub."
+  13: "The program has generated a character string called rk2. Remove all spaces from the string. You can use the function gsub and the symbol \\s for representing spaces."
+Section 10:
+  1: "Read the internal R data DNase using the function 'data', and submit the data as your answer."
+  2: "Read the data Children2007edit.dat into a data frame called children. Create a linear regression model where the weight is explained by height and gender (main effects only). Save the fitted model as the object m1. Submit the adjusted R^2 of the model as your answer."
+  3: "Let's continue with the model m1 where weight is explained by height and gender. Are all of the predictors statistically significant? If they are, submit the boolean TRUE as your answer. Otherwise, submit FALSE."
+  4: "Let's continue with the children data. Create a new linear regression model where the weight is explained by height and gender as before, but also by the interaction between height and gender. Save the fitted model as the object m2. Submit the estimate of the interaction term as your answer."
+  5: "Compare the interaction model m2 with the main effects model m1 with the function anova, e.g., anova(m1, m2). Can the interaction term be omitted from the model? If it can, submit the boolean TRUE. Otherwise, submit FALSE."
+  6: "The program has generated data in the file automobile.txt, located in the current working directory of R. Read the data into an object 'auto'. The data contain motor weights (in pounds/1000), horsepower measurements, and transmission types (automatic = 0, manual = 1) of cars. Create a logistic regression model where the transmission type is explained by the motor weight, and save the model in the object logreg. Use the model to estimate the probability that a car weighing 2500 pounds has automatic transmission (predict)."
+  7: "Let's continue with the model logreg where the transmission type is explained by the motor weight.  Determine the estimate and the standard error of the regression coefficient of weight. Submit your answer as a vector c(estimate, standard error) with accuracy of two decimals."
+  8: "Let's continue with the 'auto' data. Create a new logistic regression model where the transmission type is explained by both motor weight and horsepower, and save the model in the object logreg2. Use the model to estimate the probability that a car weighing 2500 pounds with 110 horsepower has automatic transmission (predict)."
+  9: "Let's continue with the model logreg2 where the transmission type is explained by both motor weight and horsepower. Do both motor weight and horsepower have a statistically significant effect on the transmission type? If they have, submit the boolean TRUE as your answer. Otherwise, submit FALSE."
+Section 11:
+  1: "The program has generated the function fn1 located in the character vector fun1. Try to convert the vector into a function with the command eval(parse(text = fun1)), which will result in an error. Determine why the function does not work, what it should do, and correct it. Submit the corrected function as your answer."
+  2: "The program has generated the function fn2 located in the character vector fun1. Convert the vector into a function with the command eval(parse(text = fun2)). The program has also generated test data for the function in the vector d. Call the function fn2 with the test data d and determine why the function does not work, what it should do, and correct it. Submit the corrected function as your answer."
+  3: "The program has generated the function fn3 located in the character vector fun3. Convert the vector into a function with the command eval(parse(text = fun3)). The function arguments are a matrix and a column index i. The function should sort the rows matrix such that the values in the column i are in increasing order of magnitude. The program has also generated a test matrix B and a test index i. Call the function fn3 with the test objects, determine why the function does not work, and correct it. Submit the corrected function as your answer."
+  4: "The program has generated the function fn4 located in the character vector fun4. Convert the vector into a function with the command eval(parse(text = fun4)). The program has also generated test data for the function in the vector g. Call the function fn4 with the test data and determine why the function gets stuck in an infinite loop, what it should do, and correct it. Submit the corrected function as your answer."
+  5: "Create the function fibonacci(n) that returns a vector with the first n elements of the Fibonacci sequence. The Fibonacci sequence consists of the numbers 1, 1, 2, 3, 5, 8, 12, 21, ... meaning that the first two elements of the sequence are 1, 1, and the next element is always the sum of the two preceding elements."
+  6: "Create the function connections(A) whose argument A is a matrix containing only zeros and ones. A matrix of this kind can be used to represent e.g., the flight routes between locations such that the row index indicates the origin and the column index indicates the destination. The connections function should find those elements of A that are equal to one and collect their indices in a 2-column matrix such that the first column contains the row index, and the second column contains the column index. The function should sort the rows of the resulting matrix such that the values in the first column are in increasing order of magnitude."
+Exam 1 JYU:
+  1:
+    - "Read in the data from the file PISA_value.txt into the variable pisa."
+  2:
+    - "Let's continue with the PISA data from the previous assignment. The program has generated a vector of integers called ind. Modify the data so that only those rows whose row numbers are included in the vector ind are preserved. Assign the modified data into the variable pisa."
+  3:
+    - "Let's continue with the PISA data that was modified in the previous assignment. The program has generated a character vector called mut. Modify the data so that only those variables whose names are included in the vector mut are preserved. Assign the modified data into the variable pisa."
+  4:
+    - "Let's continue with the PISA data that was modified in the previous assignment. Multiple variables of the data have missing values. Modify the data so that it includes only the complete rows, i.e., the rows with no missing values (NA). Assign the modified data into the variable pisa."
+  5:
+    - "Examine the argument pin of the function par. Does the argument adjust a) the marginals of the plot, b) the size of the plot, c) the background color of the plot, or d) the symbols used in the plot? Answer as a character, e.g., \"a\"."
+    - "Examine the argument called probability of the function hist. Does the argument adjust a) the number of the partitions, b) the title, c) the scaling of the vertical axis, or d) the scaling of the horizontal axis? Answer as a character, e.g. \"a\"."
+    - "Which of the following components is NOT included in an lm object: a) residuals, b) rank, c) errors, or d) coefficients? Answer as a character, e.g. \"a\"."
+  6:
+    - "The program has generated a vector of integers 'ind2'. Using the PISA data, select those elements of the variable mathscore whose indices are not included in the vector ind2."
+    - "Using the PISA data, calculate the differences of the values stored in the variables natlang and math."
+    - "Find out the dimensions of the PISA data. Answer as follows: c(the number of the rows, the number of the columns)."
+  "7,8,9":
+    - "Using the PISA data, calculate the mean of the variable readscore."
+    - "Using the PISA data, calculate the variance of the variable sciescore."
+    - "Using the PISA data, calculate the standard deviation of the variable mathscore."
+    - "Using the PISA data, calculate the median of the variable natlang."
+    - "Using the PISA data, calculate the mode of the variable urban. I.e., find out the value with the most observations. The answer should be the location corresponding to the mode. Answer as a character, e.g. \"city\"."
+    - "Using the PISA data, calculate the minimum of the variable math."
+  10:
+    - "Plot a scatter plot of the variables mathscore and sciescore. Based on the diagram, determine whether there is a linear dependency between the score of mathematics (mathscore) and the score of natural sciences (sciescore). If there is, calculate the correlation between the variables. Otherwise, answer 0."
+    - "Plot a scatter plot of the variables mathscore and readscore. Based on the diagram, determine whether there is a linear dependency between the score of mathematics (mathscore) and the score of reading skills (readscore). If there is, calculate the correlation between the variables. Otherwise, answer 0."
+    - "Plot a scatter plot of the variables readscore and sciescore. Based on the diagram, determine whether there is a linear dependency between the score of reading skills (readscore) and the score of natural sciences (sciescore). If there is, calculate the correlation between the variables. Otherwise, answer 0."
+  11:
+    - "Create a boxplot based on the variable readscore. Are there any outliers? If there are, answer with the boolean TRUE. Otherwise, answer with the boolean FALSE."
+    - "Create a boxplot based on the variable mathscore. Are there any outliers? If there are, answer with the boolean TRUE. Otherwise, answer with the boolean FALSE."
+    - "Create a boxplot based on the variable sciescore. Are there any outliers? If there are, answer with the boolean TRUE. Otherwise, answer with the boolean FALSE."
+  12:
+    - "Modify the PISA data by adding three new variables with the following names and order: fgender, furban and fregion. The variables should be added as the last columns of the data table. They should correspond to the existing variables ST04Q01, urban and region, as well as be in a factor form. Name the levels of the factors according the file PISA_variables.pdf found from the course page (The variable ST04Q01 has two levels, as well as the variable urban, but the variable region has five levels. Also, pay attention to the lower case and upper case letters in the level names). Keep in mind that there are no observations from Åland (Ahvenanmaa), so the number of the fregion factor levels has to be adjusted manually. Assign the modified data into the variable pisa."
+  13:
+    - "Find out the girls' scores in mathematics (mathscore) that are higher than 600."
+    - "Find out the boys' scores in natural sciences (sciescore) that are lower than 500."
+    - "Find out the scores of reading skills of those students who attend school in cities and whose scores are higher than 400 and lower than 500 (readscore, furban)."
+    - "Find out the latest grades in mathematics of all the students attending school in Western Finland (Länsi-Suomi) (math, fregion)."
+  14:
+    - "Calculate the average scores in mathematics by region (mathscore, fregion). Sort the average scores according the order of regions presented in the file PISA_variables.pdf (found on the course page). Please keep in mind that there are no observations from Åland (Ahvenanmaa). Thus, only four average scores can be calculated."
+    - "Calculate the standard deviations of the scores in reading skills by region (readscore, fregion). Sort the standard deviations according the order of regions presented in the file PISA_muuttujat.pdf (found on the course page). Please keep in mind that there are no observations from Åland (Ahvenanmaa). Thus, only four standard deviations can be calculated."
+    - "Calculate the variances of the scores in natural sciences by region (sciescore, fregion). Sort the variances according the order of regions presented in the file PISA_variables.pdf (found on the course page). Please keep in mind that there are no observations from Åland (Ahvenanmaa). Thus, only four variances can be calculated."
+  15:
+    - "Sort the scores in mathematics (mathscore) so that they are in the ascending order of magnitude."
+    - "Sort the scores in reading skills (readscore) so that they are in the descending order of magnitude."
+    - "Sort the latest grades in native language (natlang) so that they are in the ascending order of magnitude."
+    - "Sort the latest grades in mathematics (math) so that they are in the descending order of magnitude."
+  16:
+    - "Create a vector with the length of 1000. The vector should alternate between the numbers 0 and 1 (0, 1, 0, 1, 0, 1, ...)."
+    - "Create a vector with the length of 1000. The vector should alternate between repeating the number 0 twice and then repeating the number 1 twice (0, 0, 1, 1, 0, 0, ...)."
+    - "Create a vector with the length of 20. Each element should contain a value double its precedent. Start with the value 1 (1, 2, 4, 8, ...)."
+  17:
+    - "Create a data frame including the 10 first and the 10 last rows of the PISA data. The rows should occur in the order they were presented in the PISA data."
+    - "Find out the names of the variables in the PISA data, and sort the names in the alphabetical order."
+  18:
+    - "Apply the Shapiro-Wilk test to the boys' scores in mathematics (fgender, mathscore). Based on the test, evaluate the normality of the score distribution. If the distribution is normal, answer with the value of the test statistic. Otherwise, answer with the p-value of the test."
+    - "Apply the Shapiro-Wilk test to the girls' scores in mathematics (fgender, mathscore). Based on the test, evaluate the normality of the score distribution. If the distribution is normal, answer with the value of the test statistic. Otherwise, answer with the p-value of the test."
+    - "Apply the Shapiro-Wilk test to the scores in natural sciences (sciescore). Based on the test, evaluate the normality of the score distribution. If the distribution is normal, answer with the value of the test statistic. Otherwise, answer with the p-value of the test."
+  19:
+    - "Apply the Levene's test to the boys' and the girls' scores in reading skills (fgender, readscore). Based on the test, evaluate the homoscedasticity. If the variances do not differ, answer with the value of the test statistic. Otherwise, answer with the p-value of the test."
+    - "Apply the Levene's test to the scores in natural sciences of the students attending school both in cities and in countryside (sciescore, furban). Based on the test, evaluate the homoscedasticity. If the variances do not differ, answer with the value of the test statistic. Otherwise, answer with the p-value of the test."
+    - "Apply the Levene's test to the scores in mathematics of the students from different regions (mathscore, fregion). Based on the test, evaluate the homoscedasticity. If the variances do not differ, answer with the value of the test statistic. Otherwise, answer with the p-value of the test."
+  20:
+    - "The program has chosen two variables of the PISA data and saved their names in the vector called ST. Cross tabulate the two variables. Save the tabulation into a variable called tab as it will be utilized in the following assignments."
+    - "Cross tabulate the variables ST04Q01 and urban of the PISA data. Save the tabulation into a variable called tab as it will be utilized in the following assignments."
+  21:
+    - "Let's continue with the cross tabulation of the previous assignment (tab). Find out whether the assumptions of the Chi-squared test apply (i.e., at least 80 % of the cells have the expected frequency of >= 5, and there are no cells with the expected frequency of < 1). If the assumptions apply, answer with the boolean TRUE. Otherwise, answer with the boolean FALSE."
+    - "Let's continue with the cross tabulation of the previous assignment (tab). Find out whether the assumptions of the Chi-squared test apply (i.e., at least 80 % of the cells have the expected frequency of >= 5, and there are no cells with the expected frequency of < 1). If the assumptions apply, answer with the boolean TRUE. Otherwise, answer with the boolean FALSE."
+  22:
+    - "Let's continue with the cross tabulation of the previous assignment (tab). Apply the Chi-squared test and find out the value of the test statistic. Do not apply the continuity correction."
+    - "Let's continue with the cross tabulation of the previous assignment (tab). Apply the Chi-squared test and find out the value of the test statistic. Do not apply the continuity correction."
+  23:
+    - "Apply the t-test to find out whether the averages of the boys' and the girls' scores in mathematics (fgender, mathscore) differ. Assume that there is heteroscedasticity. If there is a difference, answer with the value of the test statistic. Otherwise, answer with the p-value of the test."
+    - "Apply the t-test to the scores in natural sciences of the students attending school both in cities and in countryside (sciescore, furban). Assume that there is homoscedasticity. If there is a difference, answer with the value of the test statistic. Otherwise, answer with the p-value of the test."
+  24:
+    - "Fit a linear regression model in which the score in mathematics (mathscore) is explained by the score in natural sciences (sciescore). Calculate the estimate and the standard error of the regression coefficient (the coefficient is the slope of the regression line). Answer with a vector c(estimate, standard error)."
+    - "Fit a linear regression model in which the score in reading skills (readscore) is explained by the score in natural sciences (sciescore). Calculate the estimate and the standard error of the regression coefficient (the coefficient is the slope of the regression line). Answer with a vector c(estimate, standard error)."
+    - "Apply the analysis of variance and examine whether the means of the scores in natural sciences (sciescore) differ by region (fregion). Calculate the degrees of freedom and the sum of squares of the factor fregion. Answer with a vector c(degrees of freedom, sum of squares)."
+    - "Apply the analysis of variance and examine whether the means of the scores in mathematics (mathscore) differ by region (fregion). Calculate the degrees of freedom and the sum of squares of the factor fregion. Answer with a vector c(degrees of freedom, sum of squares)."
+Exam 2 JYU:
+  1:
+    - "Calculate the probability P(-3 < X < 2) when X ~ N(0, 4), i.e., X is normally distributed with the mean of 0 and the variance of 4."
+    - "Calculate the probability P(X >= 2) when X ~ N(3, 0.5), i.e., X is normally distributed with the mean of 3 and the variance of 0.5."
+    - "Calculate the probability P(X < 0) when X ~ N(-2, 3), i.e., X is normally distributed with the mean of -2 and the variance of 3."
+  2:
+    - "Find y in P(X > y) = 0.6. X ~ N(0, 2), i.e., X is normally distributed with the mean of 0 and the variance of 2."
+    - "Find y in P(X < y) = 0.2. X ~ t(40), i.e., X follows the t-distribution with 40 degrees of freedom."
+    - "Find y in P(X > y) = 0.35. X ~ X^2(10), i.e., X follows the chi-square distribution with 10 degrees of freedom."
+  3:
+    - "Find the root of the function exp(2*x + 5) + 3*x. Answer with the accuracy of two decimals."
+    - "Find the roots of the function log(x^2 + 5) - x^2 + 1. Answer with the accuracy of two decimals  as a vector c(x1, x2) in which the element x1 is the smaller root value."
+    - "Find the two smallest real roots x1 and x2 of the function sin(log(x)) for which the condition 20 < x1, x2 < 600 applies. Answer with the accuracy of two decimals as a vector c(x1, x2) where 'x1' is the smaller root."
+  4:
+    - "Find the local minimum of the function x*log(x) on the interval 0 < x < 1. Answer with the accuracy of two decimals as a vector c(x, m) in which 'x' is the x-coordinate of the minimum and  'm' is the function value in this location."
+    - "Find the local minimum of the function exp(x^4 - 3*x^2) on the interval  -2 < x < 0. Answer with the accuracy of two decimals as a vector c(x, m) in which 'x' is the x-coordinate of the minimum and 'm' is the function value in this location."
+    - "Find the local minimum of the function sin(log(x)) on the interval 30 < x < 200. Answer with the accuracy of two decimals as a vector c(x, m) in which 'x' is the x-coordinate of the minimum and  'm' is the function value in this location."
+  5:
+    - "Find the local maximum of the function x*log(x^2) on the interval -1 < x < 0. Answer with the accuracy of two decimals as a vector c(x, m) in which 'x' is the x-coordinate of the maximum and 'm' is the function value in this location."
+    - "Find the local maximum of the function exp(x^4 - 3*x^2) on the interval -1 < x < 1. Answer with the accuracy of two decimals as a vector c(x,m) in which 'x' is the x-coordinate of the maximum and 'm' is the function value in this location."
+    - "Find the local maximum of the function 1/cos(sin(x)) on the interval 0 < x < 2. Answer with the accuracy of two decimals as a vector c(x, m) in which 'x' is the x-coordinate of the maximum and 'm' is the function value in this location."
+  6:
+    - "Find the local minimum of the function x^2 + 3*x + y^2 - 5*y - 2 in the set -2 < x < 1, 1 < y < 3. Answer with the accuracy of two decimals as a vector c(x, y, m) in which 'x' and 'y' are coordinates of the minimum and 'm' is the function value in this location."
+    - "Find the local minimum of the function exp(x^2 - 2*x + 2*y^2 + 4*y + z^3 - z - 3) in the set -2 < x < 2, -2 < y < 2, 0 < z < 1. Answer with the accuracy of two decimals as a vector c(x, y, z, m) in which 'x', 'y' and 'z' are the coordinates of the minimum and 'm' is the function value in this location."
+    - "Find the local minimum of the function 2*x^2 - 6*x + y^2 + 3 in the set 1 < x < 2, -1 < y < 1. Answer with the accuracy of two decimals as a vector c(x, y, m) in which 'x' and 'y' are the coordinates of the minimum and 'm' is the function value in this location."
+  7:
+    - "Find the local maximum of the function x^2 * exp(-(x^2 + y^2)) in the set -2 < x < 0, -1 < y < 1. Answer with the accuracy of two decimals as a vector c(x, y, m) in which 'x' and 'y' are the coordinates of the maximum and 'm' is the function value in this location."
+    - "Find the local maximum of the function exp(-x^2 + 5*x - 6*y^2 + 2*y + z^3 - z - 3) in the set 1 < x < 3, 0 < y < 1, -1 < z < 0. Answer with the accuracy of two decimals as a vector c(x, y, z, m) in which 'x', 'y' and 'z' are the coordinates of the maximum and 'm' is the function value in this location."
+    - "Find the local maximum of the function -3*x^2 + x - y^2 - y + 11 in the set 0 < x < 1, -1 < y < 0. Answer with the accuracy of two decimals and as a vector c(x, y, m) in which 'x' and 'y' are the coordinates of the maximum and 'm' is the function value in this location."
+  8:
+    - "Calculate the integral of the function 1/(sin(x))^2 over the interval 1.5 < x < 3. Answer with the accuracy of two decimals."
+    - "Calculate the integral of the function exp(-x^2) over the interval 0.5 < x < Inf. Answer with the accuracy of two decimals."
+    - "Calculate the integral of the function log(x^2 + 2*x + 1) over the interval  1 < x < 5.5. Answer with the accuracy of two decimals."
+  9:
+    - "Create a function removerows(x, k) which deletes every k:th row of the dataframe x, starting from the first row. For example, with k = 3, the function should delete the rows 1, 4, 7, ... ."
+    - "Create a function ordercols(x) which arranges the columns of the dataframe x into alphabetical order based on their names. For example, if the original dataframe has the column order of C, A, B, the function should return a dataframe with the colum order of A, B, C."
+  10:
+    - "Create a function largest(a, b) which returns the value 1 when a > b, and the value 0 otherwise."
+    - "Create a function sumsq(x) which calculates the sum of squares of the vector x."
+    - "Create a function fun(x, y) which takes two real numbers x and y as its arguments and returns the value 1 when x^2 + y^2 <= 1, and the value 0 otherwise. In other words, create a function which attains the value 1 inside unit circle, and the value 0 otherwise."
+  11:
+    - "Create a function kurtosis(x) which calculates the kurtosis of the sample vector x. The formula to calculate the kurtosis is included in the file formulas.pdf that can be found on the course page."
+    - "Create a function skewness(x) which calculates the skewness of the sample vector x. The formula to calculate the skewness is included in the file formulas.pdf that can be found on the course page."
+    - "Create a function likelihood(x, mu, sigma) which calculates the logarithmic likelihood function value of the normal distribution N(mu, sigma^2) (mean = mu, variance = sigma^2) based on the sample vector x. The formula of the logarithmic likelihood function is included in the file formulas.pdf that can be found on the course page."
+  12:
+    - "Create a function moments(x, k) which calculates the k first sample central moments and returns them as a vector. The parameter x is the sample vector and the parameter k is a positive integer. The formula to calculate the sample central moments is included in the file formulas.pdf that can be found on the course page."
+    - "Create a function statistics(x) which returns the following as a list: the vector x and its statistics obtained with the function summary. I.e., the list includes two items."
+Exam UEF:
+  1:
+    - "Read in the data from the file PISA_value.txt into the variable pisa."
+  2:
+    - "Let's continue with the PISA data from the previous assignment. The program has generated a vector of integers called ind. Modify the data so that only those rows whose row numbers are included in the vector ind are preserved. Assign the modified data into the variable pisa."
+  3:
+    - "Let's continue with the PISA data that was modified in the previous assignment. The program has generated a character vector called mut. Modify the data so that only those variables whose names are included in the vector mut are preserved. Assign the modified data into the variable pisa."
+  4:
+    - "Let's continue with the PISA data that was modified in the previous assignment. Multiple variables of the data have missing values. Modify the data so that it includes only the complete rows, i.e., the rows with no missing values (NA). Assign the modified data into the variable pisa."
+  5:
+    - "Examine the argument pin of the function par. Does the argument adjust a) the marginals of the plot, b) the size of the plot, c) the background color of the plot, or d) the symbols used in the plot? Answer as a character, e.g., \"a\"."
+    - "Examine the argument called probability of the function hist. Does the argument adjust a) the number of the partitions, b) the title, c) the scaling of the vertical axis, or d) the scaling of the horizontal axis? Answer as a character, e.g. \"a\"."
+    - "Which of the following components is NOT included in an lm object: a) residuals, b) rank, c) errors, or d) coefficients? Answer as a character, e.g. \"a\"."
+  6:
+    - "The program has generated a vector of integers 'ind2'. Using the PISA data, select those elements of the variable mathscore whose indices are not included in the vector ind2."
+    - "Using the PISA data, calculate the differences of the values stored in the variables natlang and math."
+    - "Find out the dimensions of the PISA data. Answer as follows: c(the number of the rows, the number of the columns)."
+  "7,8,9":
+    - "Using the PISA data, calculate the mean of the variable readscore."
+    - "Using the PISA data, calculate the variance of the variable sciescore."
+    - "Using the PISA data, calculate the standard deviation of the variable mathscore."
+    - "Using the PISA data, calculate the median of the variable natlang."
+    - "Using the PISA data, calculate the mode of the variable urban. I.e., find out the value with the most observations. The answer should be the location corresponding to the mode. Answer as a character, e.g. \"city\"."
+    - "Using the PISA data, calculate the minimum of the variable math."
+  10:
+    - "Plot a scatter plot of the variables mathscore and sciescore. Based on the diagram, determine whether there is a linear dependency between the score of mathematics (mathscore) and the score of natural sciences (sciescore). If there is, calculate the correlation between the variables. Otherwise, answer 0."
+    - "Plot a scatter plot of the variables mathscore and readscore. Based on the diagram, determine whether there is a linear dependency between the score of mathematics (mathscore) and the score of reading skills (readscore). If there is, calculate the correlation between the variables. Otherwise, answer 0."
+    - "Plot a scatter plot of the variables readscore and sciescore. Based on the diagram, determine whether there is a linear dependency between the score of reading skills (readscore) and the score of natural sciences (sciescore). If there is, calculate the correlation between the variables. Otherwise, answer 0."
+  11:
+    - "Create a boxplot based on the variable mathscore. Are there any outliers? If there are, answer with the boolean TRUE. Otherwise, answer with the boolean FALSE."
+    - "Create a boxplot based on the variable readscore. Are there any outliers? If there are, answer with the boolean TRUE. Otherwise, answer with the boolean FALSE."
+    - "Create a boxplot based on the variable sciescore. Are there any outliers? If there are, answer with the boolean TRUE. Otherwise, answer with the boolean FALSE."
+  12:
+    - "Modify the PISA data by adding three new variables with the following names and order: fgender, furban and fregion. The variables should be added as the last columns of the data table. They should correspond to the existing variables ST04Q01, urban and region, as well as be in a factor form. Name the levels of the factors according the file PISA_variables.pdf found from the course page (The variable ST04Q01 has two levels, as well as the variable urban, but the variable region has five levels. Also, pay attention to the lower case and upper case letters in the level names). Keep in mind that there are no observations from Åland (Ahvenanmaa), so the number of the fregion factor levels has to be adjusted manually. Assign the modified data into the variable pisa."
+  13:
+    - "Find out the girls' scores in mathematics (mathscore) that are higher than 600."
+    - "Find out the boys' scores in natural sciences (sciescore) that are lower than 500."
+    - "Find out the scores of reading skills of those students who attend school in cities and whose scores are higher than 400 and lower than 500 (readscore, furban)."
+    - "Find out the latest grades in mathematics of all the students attending school in Western Finland (Länsi-Suomi) (math, fregion)."
+  14:
+    - "Calculate the average scores in mathematics by region (mathscore, fregion). Sort the average scores according the order of regions presented in the file PISA_variables.pdf (found on the course page). Please keep in mind that there are no observations from Åland (Ahvenanmaa). Thus, only four average scores can be calculated."
+    - "Calculate the standard deviations of the scores in reading skills by region (readscore, fregion). Sort the standard deviations according the order of regions presented in the file PISA_muuttujat.pdf (found on the course page). Please keep in mind that there are no observations from Åland (Ahvenanmaa). Thus, only four standard deviations can be calculated."
+    - "Calculate the variances of the scores in natural sciences by region (sciescore, fregion). Sort the variances according the order of regions presented in the file PISA_variables.pdf (found on the course page). Please keep in mind that there are no observations from Åland (Ahvenanmaa). Thus, only four variances can be calculated."
+  15:
+    - "Sort the scores in mathematics (mathscore) so that they are in the ascending order of magnitude."
+    - "Sort the scores in reading skills (readscore) so that they are in the descending order of magnitude."
+    - "Sort the latest grades in native language (natlang) so that they are in the ascending order of magnitude."
+    - "Sort the latest grades in mathematics (math) so that they are in the descending order of magnitude."
+  16:
+    - "Create a vector with the length of 1000. The vector should alternate between the numbers 0 and 1 (0, 1, 0, 1, 0, 1, ...)."
+    - "Create a vector with the length of 1000. The vector should alternate between repeating the number 0 twice and then repeating the number 1 twice (0, 0, 1, 1, 0, 0, ...)."
+    - "Create a vector with the length of 20. Each element should contain a value double its precedent. Start with the value 1 (1, 2, 4, 8, ...)."
+  17:
+    - "Create a data frame including the 10 first and the 10 last rows of the PISA data. The rows should occur in the order they were presented in the PISA data."
+    - "Find out the names of the variables in the PISA data, and sort the names in the alphabetical order."
+  18:
+    - "Apply the Shapiro-Wilk test to the boys' scores in mathematics (fgender, mathscore). Based on the test, evaluate the normality of the score distribution. If the distribution is normal, answer with the value of the test statistic. Otherwise, answer with the p-value of the test."
+    - "Apply the Shapiro-Wilk test to the girls' scores in mathematics (fgender, mathscore). Based on the test, evaluate the normality of the score distribution. If the distribution is normal, answer with the value of the test statistic. Otherwise, answer with the p-value of the test."
+    - "Apply the Shapiro-Wilk test to the scores in natural sciences (sciescore). Based on the test, evaluate the normality of the score distribution. If the distribution is normal, answer with the value of the test statistic. Otherwise, answer with the p-value of the test."
+  19:
+    - "Apply the Levene's test to the boys' and the girls' scores in reading skills (fgender, readscore). Based on the test, evaluate the homoscedasticity. If the variances do not differ, answer with the value of the test statistic. Otherwise, answer with the p-value of the test."
+    - "Apply the Levene's test to the scores in natural sciences of the students attending school both in cities and in countryside (sciescore, furban). Based on the test, evaluate the homoscedasticity. If the variances do not differ, answer with the value of the test statistic. Otherwise, answer with the p-value of the test."
+    - "Apply the Levene's test to the scores in mathematics of the students from different regions (mathscore, fregion). Based on the test, evaluate the homoscedasticity. If the variances do not differ, answer with the value of the test statistic. Otherwise, answer with the p-value of the test."
+  20:
+    - "The program has chosen two variables of the PISA data and saved their names in the vector called ST. Cross tabulate the two variables. Save the tabulation into a variable called tab as it will be utilized in the following assignments."
+    - "Cross tabulate the variables ST04Q01 and urban of the PISA data. Save the tabulation into a variable called tab as it will be utilized in the following assignments."
+  21:
+    - "Let's continue with the cross tabulation of the previous assignment (tab). Find out whether the assumptions of the Chi-squared test apply (i.e., at least 80 % of the cells have the expected frequency of >= 5, and there are no cells with the expected frequency of < 1). If the assumptions apply, answer with the boolean TRUE. Otherwise, answer with the boolean FALSE."
+    - "Let's continue with the cross tabulation of the previous assignment (tab). Find out whether the assumptions of the Chi-squared test apply (i.e., at least 80 % of the cells have the expected frequency of >= 5, and there are no cells with the expected frequency of < 1). If the assumptions apply, answer with the boolean TRUE. Otherwise, answer with the boolean FALSE."
+  22:
+    - "Let's continue with the cross tabulation of the previous assignment (tab). Apply the Chi-squared test and find out the value of the test statistic. Do not apply the continuity correction."
+    - "Let's continue with the cross tabulation of the previous assignment (tab). Apply the Chi-squared test and find out the value of the test statistic. Do not apply the continuity correction."
+  23:
+    - "Apply the t-test to find out whether the averages of the boys' and the girls' scores in mathematics (fgender, mathscore) differ. Assume that there is heteroscedasticity. If there is a difference, answer with the value of the test statistic. Otherwise, answer with the p-value of the test."
+    - "Apply the t-test to the scores in natural sciences of the students attending school both in cities and in countryside (sciescore, furban). Assume that there is homoscedasticity. If there is a difference, answer with the value of the test statistic. Otherwise, answer with the p-value of the test."
+  24:
+    - "Fit a linear regression model in which the score in mathematics (mathscore) is explained by the score in natural sciences (sciescore). Calculate the estimate and the standard error of the regression coefficient (the coefficient is the slope of the regression line). Answer with a vector c(estimate, standard error)."
+    - "Fit a linear regression model in which the score in reading skills (readscore) is explained by the score in natural sciences (sciescore). Calculate the estimate and the standard error of the regression coefficient (the coefficient is the slope of the regression line). Answer with a vector c(estimate, standard error)."
+    - "Apply the analysis of variance and examine whether the means of the scores in natural sciences (sciescore) differ by region (fregion). Calculate the degrees of freedom and the sum of squares of the factor fregion. Answer with a vector c(degrees of freedom, sum of squares)."
+    - "Apply the analysis of variance and examine whether the means of the scores in mathematics (mathscore) differ by region (fregion). Calculate the degrees of freedom and the sum of squares of the factor fregion. Answer with a vector c(degrees of freedom, sum of squares)."
+  25:
+    - "Calculate the probability P(-3 < X < 2) when X ~ N(0, 4), i.e., X is normally distributed with the mean of 0 and the variance of 4."
+    - "Calculate the probability P(X >= 2) when X ~ N(3, 0.5), i.e., X is normally distributed with the mean of 3 and the variance of 0.5."
+    - "Calculate the probability P(X < 0) when X ~ N(-2, 3), i.e., X is normally distributed with the mean of -2 and the variance of 3."
+  26:
+    - "Find y in P(X > y) = 0.6. X ~ N(0, 2), i.e., X is normally distributed with the mean of 0 and the variance of 2."
+    - "Find y in P(X < y) = 0.2. X ~ t(40), i.e., X follows the t-distribution with 40 degrees of freedom."
+    - "Find y in P(X > y) = 0.35. X ~ X^2(10), i.e., X follows the chi-square distribution with 10 degrees of freedom."
+  27:
+    - "Create a function removerows(x, k) which deletes every k:th row of the dataframe x, starting from the first row. For example, with k = 3, the function should delete the rows 1, 4, 7, ... ."
+    - "Create a function ordercols(x) which arranges the columns of the dataframe x into alphabetical order based on their names. For example, if the original dataframe has the column order of C, A, B, the function should return a dataframe with the colum order of A, B, C."
+  28:
+    - "Create a function sumsq(x) which calculates the sum of squares of the vector x."
+    - "Create a function fun(x, y) which takes two real numbers x and y as its arguments and returns the value 1 when x^2 + y^2 <= 1, and the value 0 otherwise. In other words, create a function which attains the value 1 inside unit circle, and the value 0 otherwise."
+    - "Create a function statistics(x) which returns the following as a list: the vector x and its statistics obtained with the function summary. I.e., the list includes two items."
+  29:
+    - "Create a function kurtosis(x) which calculates the kurtosis of the sample vector x. The formula to calculate the kurtosis is included in the file formulas.pdf that can be found on the course page."
+    - "Create a function skewness(x) which calculates the skewness of the sample vector x. The formula to calculate the skewness is included in the file formulas.pdf that can be found on the course page."
+  30:
+    - "Create a function likelihood(x, mu, sigma) which calculates the logarithmic likelihood function value of the normal distribution N(mu, sigma^2) (mean = mu, variance = sigma^2) based on the sample vector x. The formula of the logarithmic likelihood function is included in the file formulas.pdf that can be found on the course page."
+    - "Create a function moments(x, k) which calculates the k first sample central moments and returns them as a vector. The parameter x is the sample vector and the parameter k is a positive integer. The formula to calculate the sample central moments is included in the file formulas.pdf that can be found on the course page."
+---

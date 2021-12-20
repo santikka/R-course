@@ -1,0 +1,134 @@
+---
+title: "The Rcourse Package"
+author: "Santtu Tikka"
+date: "9/29/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Rcourse Package
+
+This document describes the structure and functionality of the `Rcourse` package. Further, some workflows are described for making corrections in the exercises and exams should the need arise.
+
+## User Interface
+
+The user interface of the package is built on the task callback system (see `?addTaskCallback` for more information). In simple terms, a callback is a piece of R code that is executed each time that the user inputs an R expression into the console window. In this package, the callback system is employed in the following manner: when the user starts a new exercise section, a new callback *listener* is created that reacts to specific keywords typed by the user, such as the function names used for navigation. The script file `listener.R` contains all of the functionality related to the keyword detection and processing.
+
+New task callback functions are created by the exercise sections (see `create_section.R`) and the final exam (see `exam.R`). Each callback is assigned its own environment, which is not visible to the user, and exists only within its own scope as long as the callback is alive. After each R expression that the user inputs, these callback functions will call the `listen` method to process the expression. Only one callback function can exists at any time to prevent the user from starting multiple exercise sections or exams simultaneously.
+
+## Localization System
+
+Messages to the user should be presented using either `translate_message` or `custom_message` functions (defined in `utils.R`), where the latter provides finer control over the message shown. The function `translate_message` will automatically translate its input to the language currently selected by the user, whereas `custom_message` is used for more complicated messages. The translation functionality is provided by the `l` operator defined in `language.R`.
+
+Each text string shown to the user should include both English and Finnish versions, where the English string should match the actual R character object written in the code. All user interface text elements are defined in `Rcourse_interface_en.yaml` and `Rcourse_interface_fi.yaml`. All text used for exercise problems and exams is defined in `Rcourse_translation_spreadsheet.xlsx`. These files are located under the *translations* directory. Localized names for exported functions are defined in `language.R`. Currently, the exercise questions are the same for JYU and UEF, but support already exists for separating them in the future, if found necessary or otherwise suitable.
+
+Localized functions will only work when their respective language is selected by the user. If the corresponding language is the currently selected language, these functions will then proceed to call their internal variants, which can be identified by an underscore at the end of the function name (e.g., `exam_` is the internal version of both `exam` and `loppukoe`).
+
+Persistent language selection across R sessions is accomplished by writing the selection into `.Rprofile` of the user as the option named `Rcourse_language` (if `.Rprofile` does not exist, it is created). To avoid repeated entries of the option field, the file is first parsed and any existing definitions for this option are replaced by the new selection.
+
+## Exercises and Exams
+
+A simple class for exercise (and exam) problems is provided by `exercise_class.R`. The simplest form of an exercise consists of a `question` (a character string) that formulates the problem to be solved, and a `solution`, which is an R object that defines the correct solution to the problem.
+The object submitted by the user as an answer to the question is compared to the solution via the `verify` function. More complicated exercises can also be constructed: these can provide data for the user, involve the creation of functions, automatically coerce the users answers to a specific format etc. See the `exercises.R` and `exam.R` script files for various examples on how to define exercise instances. Note that the exercise class does not have any methods of its own, and is not really an "object" in the traditional OO sense.
+
+The function `compile` defined in `compile.R` is used to combine multiple exercise problems into a coherent section, or an exam question (exam questions often have multiple alternatives, where only one is shown to the user by random). The navigation system described in the **User Interface** section is incorporated using a function factory system defined in `create_section.R`. See `define_sections.R` on how the exercise sections are created using the function factory.
+
+For the actual text shown to the user as questions, see the **Localization System** section. The questions are made available as a global variable of lists of character vectors called `section_questions`. The questions of section number `x` are accessed by `section_questions[[x]]` (a character vector). Similarly, exam questions are available in `exam_questions_jyu` for JYU (with 2 elements for each part of the exam), and `exam_questions_uef`, for the UEF exam.
+
+### Providing Data for Assignments
+
+Exercise and exam problems can provide data to the user. This data is assigned to the global environment, thus overwriting variables of the same name that the user may have constructed. This protects against user error, where necessary variables may have been accidentally destroyed, or incorrectly specified, especially so in the exams (the PISA-data, for example).
+
+In practice, the environment of the relevant listener contains an element called `data`, which should contain all of the objects that will be provided at some point during the assignment. Data that are made available in individual exercise problems should be defined as an argument for `compile` (see `exercises.R` and `exam.R` for examples). This argument should be a list, where the name of each element is the object name that will be made available for the user, and the actual value should be the name of the object to be assigned in the environment of the listener (a character string).
+
+Note that the often used `list(list(...))` construct will enforce replication of the innermost list when the same data is defined for multiple problems simultaneously.
+
+### Blueprint for Assignment Construction
+An exercise section is a function with a single argument `e` that corresponds to the listener environment. Sections are constructed using the following blueprint:
+```{r, eval = FALSE}
+exercises_[[x]] <- function(e) {
+    
+    obj_user_1 <- ...
+    ...
+    obj_user_m <- ...
+    
+    obj_internal_1 <- ...
+    ...
+    obj_internal_k <- ...
+    
+    solutions <- list(
+        `1` = ...,
+        ...
+        `n` = ...
+    )
+    
+    code <- list(
+        `1` = "...",
+        ...
+        `n` = "..."
+    )
+    
+    e$data <- list(obj_user_1 = "obj_user_1", ..., obj_user_m = "obj_user_m")
+    data <- ...
+    
+    e$ex <- compile(questions = section_questions[[x]],
+                    solutions = solutions,
+                    code = code,
+                    data = data)
+    
+}
+```
+Here, `x` is the section number. Further, `obj_user_i` are R objects that will be exposed to the user as data at some point. In contrast, `obj_internal_j` are R objects that are only used for defining the solutions, however `obj_user_i` objects can also be used for this purpose. The named indices `1` through `n` are only used for clarity, making it easier to see which solution/code elements corresponds to a specific question number at a glance.
+
+For exams, there are no sections as such, but each exam question is constructed as it were a section using `compile`, but only one random option will be shown to the user. Similar to the exercise functions, a single exam is a function with the same environment argument `e`, but multiple sections are defined in it. The following blueprint is used in the exams for constructing assignments:
+```{r, eval = FALSE}
+    obj_user_1 <- ...
+    ...
+    obj_user_m <- ...
+    
+    obj_internal_1 <- ...
+    ...
+    obj_internal_k <- ...
+
+    e$data$obj_user_1 <- obj_user_1
+    ...
+    e$data$obj_user_m <- obj_user_m
+    e$ex[x] <- compile(
+        questions = eq[["x"]], # 'eq' is a list of the exam questions for assignment number 'x'
+        solutions = list(...), # a list with p elements (number of options) of whic q < p are chosen 
+        mutable = logical(1),
+        select = q, # q is the number of assignments randomly selected from this assignment (usually, just one)
+        data = list(...) # same as 'solutions'
+    )
+```
+The roles of `obj_user_i` and `obj_internal_j` are the same ass before. Here, `x` refers to the assignment number instead. The variable `q` gives the number of assignments to be chosen at random from `p` options (the length of `eq[["x"]]`, `solutions`, and `data` should all be `p`).
+
+## Sysdata
+
+The file `sysdata.rda` is a collection of R objects that are globally visible to the functions of the package internally, but are not visible to the user. The reason that the contents of this file are not simply defined in an R script, is that some objects within are constructed from files whose contents may change during the course of the package development.
+
+The conversion from the interface YAML files `Rcourse_interface_en.yaml` and `Rcourse_interface_fi.yaml`, and the Excel spreadsheet `Rcourse_translation_spreadsheet.xlsx` into actual R objects is carried out by the `make_sysdata` function, found in `sysdata.R` in the *sysdata* directory. It is also useful to define such data here, that will be needed across multiple exercise sections and the exams. The function `make_sysdata` constructs the `sysdata.rda` file as output in the appropriate relative directory (assuming that the working directory is the *sysdata* directory when `make_sysdata` is called). The function will output errors and/or warnings if some text fields are misspecified in the YAML files.
+
+## Internal Global Variables
+
+Global variables/functions/data from standard R packages to be used within the Rcourse package should be included in `globals.R` using the function `globalVariables` from the `utils` package. Other internal data for the package should be made available in `sysdata.rda` (see the **Sysdata** section).
+
+## Instructions
+
+Here are listed some common scenarios that may arise, such as fixing the text of an exercise or exam problem, or making corrections to the solutions.
+
+### Modifying an exercise or exam question
+If only the problem formulation needs to be changed (e.g., due to a typo or for added clarification), but not the question itself in a fundamental way, it suffices to edit the appropriate section in `Rcourse_translation_spreadsheet.xlsx`, after which `make_sysdata` needs to be rerun and the package rebuilt. When making modifications, remember to keep both Finnish and English problem formulations equivalent.
+
+If more in-depth changes are required (e.g., if the solution, code or data needs to be modified), then one must edit the appropriate fields in `exercises.R` (for exercises) which hosts all code related to defining the exercises, or `exam.R` for exam problems (see **Exercises and Exams** for further details).
+
+### Adding a new exercise or exam question
+The text shown as the question has to be added to the appropriate sheet in both English and Finnish to the `Rcourse_translation_spreadsheet.xlsx` file. Afterwards, `make_sysdata` needs to be rerun.
+
+Next, the solution to the question has to be added to the `solutions` list (in `exercises.R` or `exam.R`, depending on whether an exercise question or exam question is being added) in the corresponding section. The same applies for `data`, `code` and other fields that are required to construct the question and provide the necessary data for the user.
+
+### Changing exercise section order
+While not strictly necessary, it is recommended to keep the order of the sections the same both in `Rcourse_translation_spreadsheet.xlsx` and in any R scripts involving the section, to avoid potential confusion. For the package, the sections are defined in `define_sections.R`, which includes a call to `create_section` for each exercise section, where the first argument denotes the section number. Thus, one should rename the sheets in `Rcourse_translation_spreadsheet.xlsx` to match the desired order, and then reorganize the `create_section` calls to match the new order.

@@ -1,0 +1,32 @@
+\documentclass[12pt,a4]{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[margin=1in]{geometry}
+
+\fancyhf{}
+\fancyhead[L]{\textbf{R-course\\R-kurssi}}
+\fancyhead[R]{\textbf{Formulas used in the final exam\\Loppukokeessa käytettyjä kaavoja}}
+
+\begin{document}
+\pagestyle{fancy}
+
+\paragraph{Skewness (vinousluku)}
+\[
+    g_1 = \frac{\frac1n \sum_{i=1}^n (x_i - \bar x)^3}{\left(\frac1n \sum_{i=1}^n(x_i - \bar x)^2\right)^{3/2}}
+\]
+\paragraph{Kurtosis (huipukkuusluku)}
+\[
+    g_2 = \frac{\frac1n \sum_{i=1}^n (x_i - \bar x)^4}{\left(\frac1n \sum_{i=1}^n(x_i - \bar x)^2\right)^2} - 3
+\]
+\paragraph{Log-likelihood function of the normal distribution $N(\mu, \sigma^2)$ \\ (normaalijakauman $N(\mu, \sigma^2$) logaritminen uskottavuusfunktio)}
+\[
+    \ell(\mu, \sigma^2;x) = -\frac{n}2\log(2\pi\sigma^2) - \frac1{2\sigma^2}\sum_{i=1}^n (x_i-\mu)^2
+\]
+\paragraph{Sample central moment of order $k$ ($k$. otoskeskusmomentti)}
+\[
+    m_k = \frac1n \sum_{i=1}^n (x_i - \bar x)^k
+\]
+\end{document}
