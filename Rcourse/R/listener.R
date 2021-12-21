@@ -46,7 +46,6 @@ listen.default <- function(e) {
                 e$mutable <- sapply(e$ex, function(x) x$params$mutable)
                 e$times <- integer(e$n_ex)
                 e$current_start <- Sys.time()
-                e$evaluator <- evaluate_submission
             } else {
                 e$completed <- logical(e$n_ex)
             }

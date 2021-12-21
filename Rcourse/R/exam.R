@@ -396,7 +396,7 @@ exams_$JYU[[2]] <- function(e) {
             ),
             `3` = list(
                 is_function = TRUE,
-                test_input = c_input,
+                test_input = c_input
             )
         ),
         `11` = list(

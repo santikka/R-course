@@ -189,7 +189,6 @@ verification <- function(e) {
         "time_start",
         "answers",
         "times",
-        "evaluator",
         "ex",
         "data",
         "select",
@@ -198,11 +197,13 @@ verification <- function(e) {
         "seed",
         "id"
     )
+    # Note, e is an environment, so
+    # we cannot subset with e[keep_fields] directly
     for (field in keep_fields) {
         out[[field]] <- e[[field]]
     }
     out_file <- paste0(getwd(), "/verification_", out$part, "_", out$num, "_", 
-                       as.integer(out$time_start) %% 1e7, ".RData", collapse = "")
+                       out$seed, ".RData", collapse = "")
     save(out, file = out_file)
     translate_message("Verification file was successfully saved in the working directory!")
     message("*** ", out_file, " ***")
