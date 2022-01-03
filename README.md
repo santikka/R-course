@@ -1,6 +1,8 @@
 # R-course
-An interactive R-course by University of Jyväskylä and
-University of Eastern Finland.
+An interactive R-course by University of Jyväskylä and University of Eastern Finland.
+
+## Acknowledgements
+The following people have contributed to this package: Santtu Tikka, Juho Kopra, Kasperi Kansanen.
 
 ## Contents
 This repository contains the data used by the course package, 
@@ -37,5 +39,5 @@ Provides the character strings for the interactive package UI in both
 English and Finnish as the files `Rcourse_interface_en.yaml` and
 `Rcource_interface_fi.yaml`, respectively. The translations of the exercise
 problems and the final exam can be found in the file 
-`Rcourse_translation_spreadsheet.xlsx`. If any of these files are changed,
-`sysdata.rda` has to be recreated for the package, and the package rebuilt.
+`Rcourse_questions_en.yaml` and `Rcourse_questions_fi` for their respective languages. 
+If any of these files are changed, `sysdata.rda` has to be recreated for the package, and the package rebuilt.
