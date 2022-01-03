@@ -29,11 +29,6 @@ Contains the script `sysdata.R` which implements the function `make_sysdata()`.
 This function creates the file `Rcourse/R/sysdata.rda` based on the files in the 
 translations directory.
 
-### tests
-Additional tests to verify the correct answers of the final exam of the course.
-These are purposely separate from the package tests, since the callback
-structure used by the UI cannot be tested non-interactively.
-
 ### translations
 Provides the character strings for the interactive package UI in both 
 English and Finnish as the files `Rcourse_interface_en.yaml` and
