@@ -113,8 +113,6 @@ exercises_[[2]] <- function(e) {
         `14` = "dk[ ,c(\"height\", \"weight\")]",
         `15` = "rbind(dk, c(178, 80, 2))"
     )
-    alts <- replicate(length(solutions), list())
-    alts[[9]] <- list(as.numeric(solutions[[9]]))
     e$data <- list(d = d, E = E, g1 = g1, g2 = g2, g3 = g3, H = H, dk = dk)
     data <- vector(mode = "list", length = length(solutions))
     data[[1]] <- list(d = "d")
@@ -124,7 +122,6 @@ exercises_[[2]] <- function(e) {
     data[9:15] <- list(list(dk = "dk"))
     e$ex <- compile(questions = section_questions[[2]],
                     solutions = solutions,
-                    alts = alts,
                     data = data,
                     code = code)
 }
@@ -283,11 +280,8 @@ exercises_[[5]] <- function(e) {
     data[2:8] <- list(list(children = "children"))
     data[9:15] <- list(list(children2 = "children2"))
     data[16:17] <- list(list(children2 = "children2", m = "m"))
-    alts <- replicate(length(solutions), list())
-    alts[[5]] <- list(tapply(children$Height, children$Gender2, var))
     e$ex <- compile(questions = section_questions[[5]],
                     solutions = solutions,
-                    alts = alts,
                     data = data,
                     code = code)
 }
@@ -373,44 +367,72 @@ exercises_[[7]] <- function(e) {
         `11` = list(p1 = list(x = x2), p2 = list(x = x3))
     )
     solutions <- list(
-        `1` = function(celsius) { celsius + 273.15 },
-        `2` = function(weight, height) { weight / height^2 },
-        `3` = function(x, a, b) { a * x^2 + b },
-        `4` = function(celsius = 20) { celsius + 273.15 },
+        `1` = function(celsius) { 
+            return(celsius + 273.15) 
+        },
+        `2` = function(weight, height) {
+            return(weight / height^2)
+        },
+        `3` = function(x, a, b) { 
+            return(a * x^2 + b)
+        },
+        `4` = function(celsius = 20) { 
+            return(celsius + 273.15)
+        },
         `5` = function(x) { 
-            if (x <= 0) 0
-            else 1
+            if (x <= 0) {
+                return(0)   
+            } else {
+                return(1)
+            }
         },
         `6` = function(x, y) {
-            if (x^2 + y^2 <= 1) 1
-            else 0
+            if (x^2 + y^2 <= 1) {
+                return(1)
+            } else {
+                return(0)
+            }
         },
         `7` = function(x) {
-            if (x <= -1) 0
-            else if (-1 < x & x < 1) x^2
-            else 1
+            if (x <= -1) {
+                return(0)
+            } else if (-1 < x & x < 1) {
+                return(x^2)
+            } else {
+                return(1)
+            }
         },
         `8` = function(a, b, x, y) {
-            if (a == 1 & b == 1) x
-            else if (a == 1 & b == 0) y
-            else 0
+            if (a == 1 & b == 1) {
+                return(x)
+            } else if (a == 1 & b == 0) {
+                return(y)
+            } else {
+                return(0)
+            }
         },
-        `9` = function(x, k) x[-seq(1, nrow(x), by = k), ],
-        `10` = function(x) x[,order(colnames(x))],
-        `11` = function(x) sum(x^2)
+        `9` = function(x, k) {
+            return(x[-seq(1, nrow(x), by = k), ])
+        },
+        `10` = function(x) {
+            return(x[,order(colnames(x))])
+        },
+        `11` = function(x) {
+            return(sum(x^2))
+        }
     )
     code <- list(
-        `1` = "kelvin <- function(celsius) celsius + 273.15 ",
-        `2` = "bmi <- function(weight, height) weight / height^2",
-        `3` = "fun <- function(x, a, b) a * x^2 + b",
-        `4` = "fun <- function(celsius = 20) celsius + 273.15",
-        `5` = "fun <- function(x) if (x <= 0) 0 else 1",
-        `6` = "fun <- function(x, y) {\n    if (x^2 + y^2 <= 1) 1\n    else 0\n}",
-        `7` = "fun <- function(x) {\n    if (x <= -1) 0\n    else if (-1 < x & x < 1) x^2\n    else 1\n}",
-        `8` = "fun <- function(a, b, x, y) {\n    if (a == 1 & b == 1) x\n    else if (a == 1 & b == 0) y\n    else 0\n}",
-        `9` = "removerows <- function(x, k) x[-seq(1, nrow(x), by = k), ]",
-        `10` = "ordercols <- function(x) x[,order(colnames(x))]",
-        `11` = "sumsq <- function(x) sum(x^2)"
+        `1` = "kelvin <- function(celsius) {\n    return(celsius + 273.15)\n}",
+        `2` = "bmi <- function(weight, height) {\n    return(weight / height^2)\n}",
+        `3` = "fun <- function(x, a, b) {\n    return(a * x^2 + b)\n}",
+        `4` = "fun <- function(celsius = 20) {\n    return(celsius + 273.15)\n}",
+        `5` = "fun <- function(x) {\n    if (x <= 0) {\n        return(0)\n    } else {\n        return(1)\n    }\n}",
+        `6` = "fun <- function(x, y) {\n    if (x^2 + y^2 <= 1) {\n        return(1)\n    } else {\n        return(0)\n    }\n}",
+        `7` = "fun <- function(x) {\n    if (x <= -1) {\n        return(0)\n    } else if (-1 < x & x < 1) {\n        return(x^2)\n    } else {\n        return(1)\n    }\n}",
+        `8` = "fun <- function(a, b, x, y) {\n    if (a == 1 & b == 1) {\n        return(x)\n    } else if (a == 1 & b == 0) {\n        return(y)\n    } else {\n        return(0)\n    }\n}",
+        `9` = "removerows <- function(x, k) {\n    return(x[-seq(1, nrow(x), by = k), ])\n}",
+        `10` = "ordercols <- function(x) {\n    return(x[,order(colnames(x))])\n}",
+        `11` = "sumsq <- function(x) {\n    return(sum(x^2))\n}"
     )
     params <- lapply(1:length(solutions), function(i) {
         list(is_function = TRUE, test_input = test_input[[i]])

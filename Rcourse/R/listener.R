@@ -248,7 +248,6 @@ listen.default <- function(e) {
                 return(TRUE)
             }
         } else {
-            translate_message("You have completed all exercises of this section!")
             cleanup(e)
             return(FALSE)
         }

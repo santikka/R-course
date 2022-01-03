@@ -32,7 +32,7 @@ exercise <- function(question = NULL, solution = NULL, alts = list(),
 }
 
 # Verifies if 'x' is the correct answer for the exercise object 'obj'
-evaluate_submission <- function(x, obj) {
+evaluate_submission <- function(obj, x) {
     if (is.null(x)) {
         return(FALSE)
     }
@@ -49,9 +49,7 @@ evaluate_submission <- function(x, obj) {
                 res <- TRUE
                 formals(x) <- tests[[i]]
                 formals(obj$solution) <- tests[[i]]
-                if (!isTRUE(all.equal(obj$solution(), x(), tolerance = 0.01, check.attributes = TRUE))) {
-                    res <- FALSE
-                }
+                res <- compare(x(), obj$solution())
                 formals(x) <- x_oldform
                 formals(obj$solution) <- obj_oldform
                 res
@@ -66,11 +64,7 @@ evaluate_submission <- function(x, obj) {
             return(FALSE)
         }
         all_solutions <- c(list(obj$solution), obj$alts)
-        correct <- sapply(all_solutions, function(y) {
-            try_true({
-                isTRUE(all.equal(x, y, tolerance = 0.01, check.attributes = TRUE))
-            })
-        })
+        correct <- sapply(all_solutions, function(y) compare(x, y))
         if (any(correct)) {
             return(TRUE)
         }

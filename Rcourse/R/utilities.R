@@ -246,8 +246,14 @@ cleanup <- function(e) {
     } else {
         custom_message(l() %a% "You have quit section", " ", e$part, ".")
         if (e$check_answers) {
-            custom_message(l() %a% "You completed", " ", sum(e$completed), " ", 
-                           l() %a% "out of", " ", e$n_ex, " ", l() %a% "exercises", ".")
+            comp <- sum(e$completed)
+            total <- e$n_ex
+            if (comp < total) {
+                custom_message(l() %a% "You completed", " ", sum(e$completed), " ", 
+                               l() %a% "out of", " ", e$n_ex, " ", l() %a% "exercises", ".")
+            } else {
+                translate_message("You have completed all exercises of this section!")
+            }
         }
     }
     options(prompt = "> ")
@@ -271,4 +277,22 @@ try_true <- function(x) {
         return(FALSE)
     }
     return(y)
+}
+
+# Compare objects for non-strict equality
+compare <- function(a, b) {
+    if (is.atomic(b)) {
+        names(a) <- NULL
+        names(b) <- NULL
+    }
+    same <- try_true(isTRUE(all.equal(a, b, tolerance = 0.01, check.attributes = TRUE)))
+    if (!same) {
+        a_coerce <- try({
+            do.call(what = paste0("as.", class(b)[1]), args = list(a))
+        }, silent = TRUE)
+        if (!"try_error" %in% class(a_coerce)) {
+            same <- try_true(isTRUE(all.equal(a_coerce, b, tolerance = 0.01, check.attributes = TRUE)))
+        }
+    }
+    return(same)
 }
