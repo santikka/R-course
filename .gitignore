@@ -13,3 +13,4 @@ data/automobile.txt
 data/heightweight.data
 data/verification_*
 Rcourse.Rcheck
+Rcourse/tests/testthat/_snaps/

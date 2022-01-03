@@ -47,11 +47,16 @@ evaluate_submission <- function(obj, x) {
         for (i in 1:length(tests)) {
             if (!try_true({
                 res <- TRUE
-                formals(x) <- tests[[i]]
-                formals(obj$solution) <- tests[[i]]
-                res <- compare(x(), obj$solution())
-                formals(x) <- x_oldform
-                formals(obj$solution) <- obj_oldform
+                test_default <- length(tests[[i]]) == 0
+                if (test_default) {
+                    res <- compare(x(), obj$solution())
+                } else {
+                    formals(x) <- tests[[i]]
+                    formals(obj$solution) <- tests[[i]]
+                    res <- compare(x(), obj$solution())
+                    formals(x) <- x_oldform
+                    formals(obj$solution) <- obj_oldform
+                }
                 res
             })) {
                 result <- FALSE

@@ -157,8 +157,8 @@ Exam 1 JYU:
     - "Selvitä, mitä hist-funktion argumentti probability tekee. Säätääkö se a) jakovälien lukumäärää b) otsikkoa c) pystyakselin skaalausta vai d) vaaka-akselin skaalausta. Anna vastauksesi merkkitietona, esim. \"a\"."
     - "Selvitä, mitä seuraavista komponenteista lm-objekti EI sisällä: a) residuals, b) rank, c) errors vai d) coefficients. Anna vastauksesi merkkitietona, esim. \"a\"."
   6:
-    - "Ohjelma on generoinut kokonaislukuvektorin ind2. Valitse ne PISA-aineiston muuttujan mathscore arvot, joiden indeksit eivät ole vektorissa ind2."
-    - "Määritä vektoriin vast PISA-aineiston muuttujien natlang ja math arvojen erotukset."
+    - "Ohjelma on generoinut kokonaislukuvektorin ind2. Muodosta vektori, joka sisältää ne PISA-aineiston muuttujan mathscore arvot, joiden indeksit eivät ole vektorissa ind2."
+    - "Muodosta vektori PISA-aineiston muuttujien natlang ja math arvojen erotuksista."
     - "Määritä PISA-aineiston dimensiot muodossa c(rivien lukumäärä, sarakkeiden lukumäärä)."
   "7,8,9":
     - "Laske PISA-aineiston muuttujan readscore keskiarvo."
@@ -178,26 +178,26 @@ Exam 1 JYU:
   12:
     - "Muokkaa PISA-aineistoa siten, että luot sen viimeisiksi sarakkeiksi kolme uutta muuttujaa seuraavassa järjestyksessä: fgender, furban ja fregion, jotka vastaavat aineiston muuttujia ST04Q01, urban ja region, mutta ovat faktoreita. Nimeä faktoreiden tasot kurssin sivuilta löytyvän dokumentin PISA_variables.pdf mukaisesti (Muuttujalla ST04Q01 eli sukupuolella on kaksi tasoa, muuttujalla urban on kaksi tasoa ja muuttujalla region on viisi tasoa. Huomioi myös isot ja pienet kirjaimet tasojen nimissä). Huomaa myös, että Ahvenanmaalta ei ole havaintoja, joten fregion-faktorin tasojen määrä on itse määritettävä. Sijoita muokattu aineisto muuttujaan pisa."
   13:
-    - "Määritä ne tyttöjen matematiikan pistemäärät (mathscore), jotka ovat suurempia kuin 600."
-    - "Määritä ne poikien luonnontieteiden pistemäärät (sciescore), jotka ovat pienempiä kuin 500."
-    - "Määritä ne kaupungissa koulua käyvien lukutaidon pistemäärät, jotka ovat suurempia kuin 400, mutta alle 500 (furban, readscore)."
-    - "Määritä Länsi-Suomen kaikkien oppilaiden matematiikan (viimeisimmät) kouluarvosanat (fregion, math)."
+    - "Muodosta vektori, joka sisältää ne tyttöjen matematiikan pistemäärät (mathscore), jotka ovat suurempia kuin 600."
+    - "Muodosta vektori, joka sisältää ne poikien luonnontieteiden pistemäärät (sciescore), jotka ovat pienempiä kuin 500."
+    - "Muodosta vektori, joka sisältää ne kaupungissa koulua käyvien lukutaidon pistemäärät, jotka ovat suurempia kuin 400, mutta alle 500 (furban, readscore)."
+    - "Muodosta vektori, joka sisältää Länsi-Suomen kaikkien oppilaiden matematiikan (viimeisimmät) kouluarvosanat (fregion, math)."
   14:
-    - "Määritä aluekohtaiset matematiikan pistemäärien keskiarvot (mathscore, fregion). Järjestä keskiarvot kurssin sivuilta löytyvän dokumentin PISA_muuttujat.pdf mukaiseen aluejärjestykseen. Huomaa, että Ahvenanmaalta ei ole havaintoja, joten keskiarvoja on vain neljä kappaletta."
-    - "Määritä aluekohtaiset lukutaidon pistemäärien keskihajonnat (readscore, fregion). Järjestä keskihajonnat kurssin sivuilta löytyvän dokumentin PISA_muuttujat.pdf mukaiseen aluejärjestykseen. Huomaa, että Ahvenanmaalta ei ole havaintoja, joten keskihajontoja on vain neljä kappaletta."
-    - "Määritä aluekohtaiset luonnontieteiden pistemäärien varianssit (sciescore, fregion). Järjestä varianssit kurssin sivuilta löytyvän dokumentin PISA_muuttujat.pdf mukaiseen aluejärjestykseen. Huomaa, että Ahvenanmaalta ei ole havaintoja, joten variansseja on vain neljä kappaletta."
+    - "Muodosta vektori, joka sisältää aluekohtaiset matematiikan pistemäärien keskiarvot (mathscore, fregion). Järjestä keskiarvot kurssin sivuilta löytyvän dokumentin PISA_muuttujat.pdf mukaiseen aluejärjestykseen. Huomaa, että Ahvenanmaalta ei ole havaintoja, joten keskiarvoja on vain neljä kappaletta."
+    - "Muodosta vektori, joka sisältää aluekohtaiset lukutaidon pistemäärien keskihajonnat (readscore, fregion). Järjestä keskihajonnat kurssin sivuilta löytyvän dokumentin PISA_muuttujat.pdf mukaiseen aluejärjestykseen. Huomaa, että Ahvenanmaalta ei ole havaintoja, joten keskihajontoja on vain neljä kappaletta."
+    - "Muodosta vektori, joka sisältää aluekohtaiset luonnontieteiden pistemäärien varianssit (sciescore, fregion). Järjestä varianssit kurssin sivuilta löytyvän dokumentin PISA_muuttujat.pdf mukaiseen aluejärjestykseen. Huomaa, että Ahvenanmaalta ei ole havaintoja, joten variansseja on vain neljä kappaletta."
   15:
-    - "Järjestä matematiikan pistemäärät (mathscore) nousevaan suuruusjärjestykseen."
-    - "Järjestä lukutaidon pistemäärät (readscore) laskevaan suuruusjärjestykseen."
-    - "Järjestä äidinkielen viimeisimmät kouluarvosanat (natlang) nousevaan suuruusjärjestykseen."
-    - "Järjestä matematiikan viimeisimmät kouluarvosanat (math) laskevaan suuruusjärjestykseen."
+    - "Muodosta vektori, joka sisältää matematiikan pistemäärät (mathscore) nousevassa suuruusjärjestyksessä."
+    - "Muodosta vektori, joka sisältää lukutaidon pistemäärät (readscore) laskevassa suuruusjärjestyksessä."
+    - "Muodosta vektori, joka sisältää äidinkielen viimeisimmät kouluarvosanat (natlang) nousevassa suuruusjärjestyksessä."
+    - "Muodosta vektori, joka sisältää matematiikan viimeisimmät kouluarvosanat (math) laskevassa suuruusjärjestyksessä."
   16:
     - "Muodosta vektori, jonka pituus on 1000 ja jossa luvut 0 ja 1 toistuvat vuoron perään, ts. 0, 1, 0, 1, 0, 1, ... ."
     - "Muodosta vektori, jonka pituus on 1000 ja jossa luvut 0 ja 1 toistuvat aina kaksi kertaa peräkkäin vuoron perään, ts. 0, 0, 1, 1, 0, 0, ... ."
     - "Muodosta vektori, jonka pituus on 20, ensimmäinen alkio on 1 ja seuraava alkio on aina kaksi kertaa niin suuri kuin edellinen, ts. 1, 2, 4, 8, ... ."
   17:
-    - "Muodosta datakehikko, joka sisältää PISA-aineiston 10 ensimmäistä ja 10 viimeistä riviä vastaavassa järjestyksessä."
-    - "Poimi PISA-aineiston muuttujien nimet ja järjestä ne aakkosjärjestykseen."
+    - "Muodosta datakehikko, joka koostuu PISA-aineiston 10:stä ensimmäisestä ja 10:stä viimeisestä rivistä vastaavassa järjestyksessä kuin PISA-aineistossa."
+    - "Muodosta vektori, joka sisältää PISA-aineiston muuttujien nimet aakkosjärjestyksessä."
   18:
     - "Testaa poikien matematiikan pistemäärän jakauman normaalisuutta Shapiro-Wilk -testillä (fgender, mathscore). Jos jakauma on testin mukaan normaali, niin anna vastauksena testisuureen arvo. Muussa tapauksessa anna vastauksena testin p-arvo."
     - "Testaa tyttöjen matematiikan pistemäärän jakauman normaalisuutta Shapiro-Wilk -testillä (fgender, mathscore). Jos jakauma on testin mukaan normaali, niin anna vastauksena testisuureen arvo. Muussa tapauksessa anna vastauksena testin p-arvo."

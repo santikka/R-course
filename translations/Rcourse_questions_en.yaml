@@ -158,7 +158,7 @@ Exam 1 JYU:
     - "Which of the following components is NOT included in an lm object: a) residuals, b) rank, c) errors, or d) coefficients? Answer as a character, e.g. \"a\"."
   6:
     - "The program has generated a vector of integers 'ind2'. Using the PISA data, select those elements of the variable mathscore whose indices are not included in the vector ind2."
-    - "Using the PISA data, calculate the differences of the values stored in the variables natlang and math."
+    - "Using the PISA data, create a vector of the differences of the values stored in the variables natlang and math."
     - "Find out the dimensions of the PISA data. Answer as follows: c(the number of the rows, the number of the columns)."
   "7,8,9":
     - "Using the PISA data, calculate the mean of the variable readscore."
@@ -178,26 +178,26 @@ Exam 1 JYU:
   12:
     - "Modify the PISA data by adding three new variables with the following names and order: fgender, furban and fregion. The variables should be added as the last columns of the data table. They should correspond to the existing variables ST04Q01, urban and region, as well as be in a factor form. Name the levels of the factors according the file PISA_variables.pdf found from the course page (The variable ST04Q01 has two levels, as well as the variable urban, but the variable region has five levels. Also, pay attention to the lower case and upper case letters in the level names). Keep in mind that there are no observations from Åland (Ahvenanmaa), so the number of the fregion factor levels has to be adjusted manually. Assign the modified data into the variable pisa."
   13:
-    - "Find out the girls' scores in mathematics (mathscore) that are higher than 600."
-    - "Find out the boys' scores in natural sciences (sciescore) that are lower than 500."
-    - "Find out the scores of reading skills of those students who attend school in cities and whose scores are higher than 400 and lower than 500 (readscore, furban)."
-    - "Find out the latest grades in mathematics of all the students attending school in Western Finland (Länsi-Suomi) (math, fregion)."
+    - "Create a vector of those girls' scores in mathematics (mathscore) that are higher than 600."
+    - "Create a vector of those boys' scores in natural sciences (sciescore) that are lower than 500."
+    - "Create a vector of reading skill scores of those students who attend school in cities and whose scores are higher than 400 and lower than 500 (readscore, furban)."
+    - "Create a vector of those latest grades in mathematics of all the students attending school in Western Finland (Länsi-Suomi) (math, fregion)."
   14:
     - "Calculate the average scores in mathematics by region (mathscore, fregion). Sort the average scores according the order of regions presented in the file PISA_variables.pdf (found on the course page). Please keep in mind that there are no observations from Åland (Ahvenanmaa). Thus, only four average scores can be calculated."
     - "Calculate the standard deviations of the scores in reading skills by region (readscore, fregion). Sort the standard deviations according the order of regions presented in the file PISA_muuttujat.pdf (found on the course page). Please keep in mind that there are no observations from Åland (Ahvenanmaa). Thus, only four standard deviations can be calculated."
     - "Calculate the variances of the scores in natural sciences by region (sciescore, fregion). Sort the variances according the order of regions presented in the file PISA_variables.pdf (found on the course page). Please keep in mind that there are no observations from Åland (Ahvenanmaa). Thus, only four variances can be calculated."
   15:
-    - "Sort the scores in mathematics (mathscore) so that they are in the ascending order of magnitude."
-    - "Sort the scores in reading skills (readscore) so that they are in the descending order of magnitude."
-    - "Sort the latest grades in native language (natlang) so that they are in the ascending order of magnitude."
-    - "Sort the latest grades in mathematics (math) so that they are in the descending order of magnitude."
+    - "Create a vector of sorted scores in mathematics (mathscore) so that they are in the ascending order of magnitude."
+    - "Create a vector of sorted scores in reading skills (readscore) so that they are in the descending order of magnitude."
+    - "Create a vector of sorted latest grades in native language (natlang) so that they are in the ascending order of magnitude."
+    - "Create a vector of sorted latest grades in mathematics (math) so that they are in the descending order of magnitude."
   16:
     - "Create a vector with the length of 1000. The vector should alternate between the numbers 0 and 1 (0, 1, 0, 1, 0, 1, ...)."
     - "Create a vector with the length of 1000. The vector should alternate between repeating the number 0 twice and then repeating the number 1 twice (0, 0, 1, 1, 0, 0, ...)."
     - "Create a vector with the length of 20. Each element should contain a value double its precedent. Start with the value 1 (1, 2, 4, 8, ...)."
   17:
-    - "Create a data frame including the 10 first and the 10 last rows of the PISA data. The rows should occur in the order they were presented in the PISA data."
-    - "Find out the names of the variables in the PISA data, and sort the names in the alphabetical order."
+    - "Create a data frame that consists of the 10 first and the 10 last rows of the PISA data. The rows should occur in the order they were presented in the PISA data."
+    - "Create a vector that contains the names of the variables in the PISA data in the alphabetical order."
   18:
     - "Apply the Shapiro-Wilk test to the boys' scores in mathematics (fgender, mathscore). Based on the test, evaluate the normality of the score distribution. If the distribution is normal, answer with the value of the test statistic. Otherwise, answer with the p-value of the test."
     - "Apply the Shapiro-Wilk test to the girls' scores in mathematics (fgender, mathscore). Based on the test, evaluate the normality of the score distribution. If the distribution is normal, answer with the value of the test statistic. Otherwise, answer with the p-value of the test."
