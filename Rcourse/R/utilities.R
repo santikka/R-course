@@ -288,7 +288,7 @@ compare <- function(a, b) {
     same <- try_true(isTRUE(all.equal(a, b, tolerance = 0.01, check.attributes = TRUE)))
     if (!same) {
         a_coerce <- try({
-            do.call(what = paste0("as.", class(b)[1]), args = list(a))
+            suppressWarnings(do.call(what = paste0("as.", class(b)[1]), args = list(a)))
         }, silent = TRUE)
         if (!"try_error" %in% class(a_coerce)) {
             same <- try_true(isTRUE(all.equal(a_coerce, b, tolerance = 0.01, check.attributes = TRUE)))
