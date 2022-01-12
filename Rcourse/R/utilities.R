@@ -281,9 +281,20 @@ try_true <- function(x) {
 
 # Compare objects for non-strict equality
 compare <- function(a, b) {
+    base_attrs <- c("class", "dim", "names")
     if (is.atomic(b)) {
         names(a) <- NULL
         names(b) <- NULL
+    }
+    for (att in names(attributes(a))) {
+        if (!att %in% base_attrs) {
+            attr(a, att) <- NULL
+        }
+    }
+    for (att in names(attributes(b))) {
+        if (!att %in% base_attrs) {
+            attr(b, att) <- NULL
+        }
     }
     same <- try_true(isTRUE(all.equal(a, b, tolerance = 0.01, check.attributes = TRUE)))
     if (!same) {

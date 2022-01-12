@@ -262,7 +262,7 @@ exercises_[[5]] <- function(e) {
         `3` = "quantile(children$Weight, c(0.25, 0.75))",
         `4` = "tt <- t.test(Height ~ Gender2, data = children, var.equal = TRUE)\ntt\ntt$statistic",
         `5` = "tapply(children$Height, children$Gender2, var)",
-        `6` = "lev <- leveneTest(Height ~ Gender2, data = children)\nlev\nlt$`F value`[1]",
+        `6` = "lev <- leveneTest(Height ~ Gender2, data = children)\nlev\nlev$`F value`[1]",
         `7` = "shap <- tapply(children$Height, children$Gender2, shapiro.test)\nshap\nc(shap[[1]]$p, shap[[2]]$p)",
         `8` = "children2 <- children[-1,]\nshap2 <- shapiro.test(children2$Height[children2$Gender2 == \"Girl\"])\nshap2\nshap2$statistic",
         `9` = "head(children2, 10)",

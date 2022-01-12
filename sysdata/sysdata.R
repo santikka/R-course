@@ -114,17 +114,25 @@ make_sysdata <- function(check_english = FALSE) {
     carbon$Plant <- as.character(carbon$Plant)
     carbon$Type <- as.character(carbon$Type)
     carbon$Treatment <- as.character(carbon$Treatment)
+    carbon$conc <- as.integer(carbon$conc)
     class(carbon) <- "data.frame"
     attr(carbon, "formula") <- NULL
     attr(carbon, "outer") <- NULL
     attr(carbon, "labels") <- NULL
     attr(carbon, "units") <- NULL
+    attr(carbon, "row.names") <- as.character(row.names(carbon))
 
     data("women", package = "datasets", envir = environment())
     heightweight <- women
+    heightweight$height <- as.integer(heightweight$height)
+    heightweight$weight <- as.integer(heightweight$weight)
+    attr(heightweight, "row.names") <- as.character(row.names(heightweight))
 
     data("mtcars", package = "datasets", envir = environment())
     auto <- subset(mtcars, select = c("hp", "wt", "am"))
+    auto$hp <- as.integer(auto$hp)
+    auto$am <- as.integer(auto$am)
+    attr(auto, "row.names") <- as.character(row.names(auto))
 
     children <- read.table("./../data/Children2007.dat", header = TRUE, fileEncoding = "UTF-8")
     children$Gender2 <- factor(children$Gender, labels = c("Boy", "Girl"))
