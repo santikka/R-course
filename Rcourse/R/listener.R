@@ -122,14 +122,20 @@ listen.default <- function(e) {
         }
     }
     # Check the user's submitted answer and react accordingly
+    # Note that e$val in this case is the result of deparse(substitute(.))
     if (detect("submit", e$expr)) {
+        if (e$check_answers && (is.null(e$val) || !exists(e$val, envir = globalenv()))) {
+            translate_message("A submitted answer must be an R object in the global environment.")
+            return(TRUE)
+        }
         result <- NULL
+        answer <- get(e$val, envir = globalenv())
         if (e$is_exam) {
             e$times[e$ix] <- as.integer(difftime(Sys.time(), e$current_start, units = "secs"))
             e$visited[e$ix] <- TRUE
             e$submitted[e$ix] <- TRUE
             if (!is.null(e$val)) {
-                e$answers[[e$ix]] <- e$val
+                e$answers[[e$ix]] <- answer
             }
             e$ix <- e$ix + 1
             e$ask <- TRUE
@@ -138,7 +144,7 @@ listen.default <- function(e) {
             }
         } else {
             if (e$check_answers) {
-                result <- try(evaluate_submission(e$ex[[e$ix]], e$val), silent = TRUE)
+                result <- try(evaluate_submission(e$ex[[e$ix]], answer), silent = TRUE)
                 if (!isTRUE(result)) {
                     translate_message("Try again! If you want to skip this exercise, type skip().")
                     return(TRUE)

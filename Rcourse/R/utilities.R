@@ -23,7 +23,13 @@ skip <- function() invisible()
 #' @usage submit(x)
 #' @param x an R object to be submitted as the answer
 #' @export
-submit <- function(x) if (missing(x)) invisible(NULL) else invisible(x)
+submit <- function(x) {
+    if (missing(x)) {
+        invisible(NULL) 
+    } else {
+        invisible(deparse(substitute(x)))
+    }
+}
 
 #' Show the solution to the current problem
 #' @name solution
