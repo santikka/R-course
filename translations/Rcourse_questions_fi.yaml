@@ -123,9 +123,9 @@ Section 9:
   8:  "Ohjelma on generoinut matriisin A. Määritä A:n rivien lukumäärä."
   9:  "Määritä matriisin A sarakkeiden lukumäärä."
   10: "Ohjelma on generoinut merkkitietovektorin words. Poimi vektorista vain sellaiset merkkijonot, jotka alkavat jollakin numerolla välillä 4-8 ja joissa on vähintään 4 merkkiä. Järjestä valitut alkiot aakkosjärjestykseen. Käytä funktiota grep ja kuviota ^[4-8]{1}.{3,}$."
-  11: "Ohjelma on generoinut merkkitietovektorin words. Poimi vektorista vain sellaiset merkkijonot, jotka sisältävät vähintään yhden kirjaimen ja numeron. Järjestä valitut alkiot aakkosjärjestykseen. Käytä funktiota grep ja kuviota ^.*(?=.*\\d)(?=.*[a-z]).*$."
+  11: "Ohjelma on generoinut merkkitietovektorin words. Poimi vektorista vain sellaiset merkkijonot, jotka sisältävät vähintään yhden kirjaimen ja numeron. Järjestä valitut alkiot aakkosjärjestykseen. Käytä funktiota grep ja kuviota ^.*(?=.*\\\\d)(?=.*[a-z]).*$."
   12: "Ohjelma on generoinut merkkitietomuuttujan rk1. Korvaa merkkijonon kaikki i-kirjaimet e-kirjaimella. Käytä funktiota gsub."
-  13: "Ohjelma on generoinut merkkitietomuuttujan rk2. Poista merkkijonosta kaikki välilyönnit. Käytä funktiota gsub ja välilyönnille symbolia \\s."
+  13: "Ohjelma on generoinut merkkitietomuuttujan rk2. Poista merkkijonosta kaikki välilyönnit. Käytä funktiota gsub ja välilyönnille symbolia \\\\s."
 Section 10:
   1: "Lue sisään R:n sisäinen aineisto DNase komennolla data, ja anna aineisto vastauksena."
   2: "Lue aineisto Children2007edit.dat datakehikkoon children. Sovita aineistoon lineaarinen regressiomalli, jossa painoa selitetään sekä pituudella että sukupuolella (vain päävaikutukset). Tallenna sovitettu malli muuttujaan m1. Anna vastauksena mallin korjattu R^2-luku."

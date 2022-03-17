@@ -28,7 +28,6 @@ Some questions will ask you to modify the PISA data. Make sure to always use the
 Some questions of the exam are dependent on one another, for example those that deal with the PISA-data.: "Jotkin loppukokeen tehtävistä ovat toisistaan riippuvia, esimerkiksi PISA-aineistoa käsittelevät tehtävät."
 In such instances, the correct answer of a previous question is required to answer the followup questions.: "Tällaisissa tapauksissa tehtävään vastaamiseksi tarvitaan edellisen tehtävän oikea ratkaisu."
 The correct data from the previous question is always created for you in your working environment, so you can attempt to answer the followup question even if you did not manage to answer the previous question.: "Työympäristöösi luodaan aina valmiiksi käsitelty aineisto, jotta voit yrittää vastata jatkotehtäviin, vaikka et olisikaan itse onnistunut tekemään edellistä tehtävää, jossa aineistoa mahdollisesti käsiteltiin."
-
 # JYU
 The exam consists of two parts.: "Loppukoe koostuu kahdesta osasta."
 To obtain one credit, it is sufficient to complete only the first part.: "Yhden opintopisteen suoritukseen riittää tehdä vain ensimmäinen osa."
@@ -112,6 +111,7 @@ You have quit section: "Lopetit osion"
 You completed: "Suoritit"
 out of: "tehtävää"
 exercises: "tehtävästä"
+Please complete the current section or exam before changing the language.: "Suorita tämänhetkinen osio tai loppukoe ennen kielen vaihtamista."
 "Invalid language selected: switching language.": "Virheellinen kielivalinta: vaihdetaan kieltä"
 "Language selected:": "Kielivalinta:"
 finnish: "suomi"

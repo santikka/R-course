@@ -82,32 +82,6 @@ make_sysdata <- function(check_english = FALSE) {
     english <- english[unique(names(english))]
     finnish <- finnish[unique(names(finnish))]
 
-    # Function alias map
-    function_names <- list(
-        ask  =      c(english = "ask",       finnish = "kysy"),
-        exit =      c(english = "exit",      finnish = "lopeta"),
-        skip =      c(english = "skip",      finnish = "ohita"),
-        submit =    c(english = "submit",    finnish = "vastaa"),
-        solution =  c(english = "solution",  finnish = "ratkaisu"),
-        code =      c(english = "code",      finnish = "koodi"),
-        go =        c(english = "go",        finnish = "mene"),
-        info =      c(english = "info",      finnish = "ohje"),
-        exam =      c(english = "exam",      finnish = "loppukoe"),
-        section1  = c(english = "section1",  finnish = "osio1"),
-        section2  = c(english = "section2",  finnish = "osio2"),
-        section3  = c(english = "section3",  finnish = "osio3"),
-        section4  = c(english = "section4",  finnish = "osio4"),
-        section5  = c(english = "section5",  finnish = "osio5"),
-        section6  = c(english = "section6",  finnish = "osio6"),
-        section7  = c(english = "section7",  finnish = "osio7"),
-        section8  = c(english = "section8",  finnish = "osio8"),
-        section9  = c(english = "section9",  finnish = "osio9"),
-        section10 = c(english = "section10", finnish = "osio10"),
-        section11 = c(english = "section11", finnish = "osio11"),
-        select_language = c(english = "select_language",
-                            finnish = "valitse_kieli")
-    )
-
     # Internal data for the package
     data("CO2", package = "datasets", envir = environment())
     carbon <- CO2
@@ -144,8 +118,7 @@ make_sysdata <- function(check_english = FALSE) {
     pigs <- read.csv2("./../data/pigs.csv", fileEncoding = "UTF-8")
     pisa <- read.table("./../data/PISA_value.txt", header = TRUE, fileEncoding = "UTF-8")
     save(english, finnish,
-         section_questions, exam_questions_jyu, exam_questions_uef, 
-         function_names,
+         section_questions, exam_questions_jyu, exam_questions_uef,
          carbon, heightweight, auto,
          children, children2, tomato, ftomato,
          pigs, pisa, file = "./../Rcourse/R/sysdata.rda")

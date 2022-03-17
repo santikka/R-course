@@ -53,7 +53,8 @@ evaluate_submission <- function(obj, x) {
                 } else {
                     formals(x) <- tests[[i]]
                     formals(obj$solution) <- tests[[i]]
-                    res <- compare(x(), obj$solution())
+                    invisible(capture.output(x_eval <- x()))
+                    res <- compare(x_eval, obj$solution())
                     formals(x) <- x_oldform
                     formals(obj$solution) <- obj_oldform
                 }

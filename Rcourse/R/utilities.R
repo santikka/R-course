@@ -95,6 +95,10 @@ info_ <- function() {
 
 # Internal language selection function
 select_language_ <- function(language = c("english", "finnish"), save_selection = FALSE) {
+    if (length(getTaskCallbackNames())) {
+        translate_message("Please complete the current section or exam before changing the language.")
+        return(invisible(NULL))
+    }
     lang_opt <- getOption("Rcourse_language")
     language <- try(match.arg(language), silent = TRUE)
     if ("try-error" %in% class(language)) {
@@ -147,7 +151,8 @@ detect <- function(what, expr) {
         return(FALSE)
     }
     flat_expr <- flatten(expr)
-    function_names[[what]][[use_language()]] %in% flat_expr[1]
+    whats <- sapply(what, function(x) l() %a% x)
+    whats %in% flat_expr[1]
 }
 
 # Flatten potentially complicated expression 'expr' for checking
@@ -185,6 +190,11 @@ translate_message <- function(...) {
     do.call(custom_message, args = m_translate)
 }
 
+# Translate 'submit' in code() output
+translate_code <- function(x) {
+    gsub(pattern = "submit", replacement = l() %a% "submit", x)
+}
+
 # Saves the exam results as .RData for external verification
 verification <- function(e) {
     translate_message("Compiling the verification file, please wait...")
@@ -203,8 +213,7 @@ verification <- function(e) {
         "seed",
         "id"
     )
-    # Note, e is an environment, so
-    # we cannot subset with e[keep_fields] directly
+    # Note, e is an environment, so we cannot subset with e[keep_fields] directly
     for (field in keep_fields) {
         out[[field]] <- e[[field]]
     }
