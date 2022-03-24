@@ -114,24 +114,36 @@ select_language_ <- function(language = c("english", "finnish"), save_selection 
             }
         }
     }
+    options(Rcourse_language = language)
+    custom_message(l() %a% "Language selected:", " ", l() %a% language)
     if (save_selection) {
+        writable <- TRUE
         if (!file.exists(file.path("~", ".Rprofile"))) {
-            file.create(file.path("~", ".Rprofile"))
+            if (file.access(file.path("~"), mode = 2)) {
+                file.create(file.path("~", ".Rprofile"))
+            } else {
+                translate_message("Unable to save language selection due to insufficient access priviledges.")
+                writable <- FALSE
+            }
             rprofile <- character(0)
         } else {
             rprofile <- readLines(file.path("~", ".Rprofile"))
+            if (!file.access(file.path("~"), mode = 2)) {
+                translate_message("Unable to save language selection due to insufficient access priviledges.")
+                writable <- FALSE
+            }
         }
-        opt_rcourse <- grepl("options\\(Rcourse_language = .*", rprofile)
-        opts <- paste0("options(Rcourse_language = '", language, "')")
-        if (any(opt_rcourse)) {
-            rprofile[which(opt_rcourse)[1]] <- opts
-        } else {
-            rprofile <- c(rprofile, opts)
+        if (writable) {
+            opt_rcourse <- grepl("options\\(Rcourse_language = .*", rprofile)
+            opts <- paste0("options(Rcourse_language = '", language, "')")
+            if (any(opt_rcourse)) {
+                rprofile[which(opt_rcourse)[1]] <- opts
+            } else {
+                rprofile <- c(rprofile, opts)
+            }
+            writeLines(rprofile, con = file.path("~", ".Rprofile"))
         }
-        writeLines(rprofile, con = file.path("~", ".Rprofile"))
     }
-    options(Rcourse_language = language)
-    custom_message(l() %a% "Language selected:", " ", l() %a% language)
     translate_message("Type info() to begin.")
 }
 

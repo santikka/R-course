@@ -114,6 +114,7 @@ exercises: "exercises"
 Please complete the current section or exam before changing the language.: "Please complete the current section or exam before changing the language."
 "Invalid language selected: switching language.": "Invalid language selected: switching language."
 "Language selected:": "Language selected:"
+Unable to save language selection due to insufficient access priviledges.: "Unable to save language selection due to insufficient access priviledges."
 finnish: "finnish"
 english: "english"
 # zzz.R

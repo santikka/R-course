@@ -18,6 +18,7 @@ Collate:
     'exercise_class.R'
     'exercises.R'
     'globals.R'
+    'internal_data.R'
     'utilities.R'
     'language.R'
     'leveneTest.R'

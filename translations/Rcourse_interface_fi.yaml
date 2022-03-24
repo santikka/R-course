@@ -114,6 +114,7 @@ exercises: "tehtävästä"
 Please complete the current section or exam before changing the language.: "Suorita tämänhetkinen osio tai loppukoe ennen kielen vaihtamista."
 "Invalid language selected: switching language.": "Virheellinen kielivalinta: vaihdetaan kieltä"
 "Language selected:": "Kielivalinta:"
+Unable to save language selection due to insufficient access priviledges.: "Kielivalintaa ei voitu tallentaa, koska käyttäjäoikeutesi eivät ole riittävät."
 finnish: "suomi"
 english: "englanti"
 # zzz.R
