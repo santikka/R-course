@@ -661,7 +661,7 @@ exercises_[[11]] <- function(e) {
         `5` = "fibonacci <- function(n) {\n    fib <- numeric(n + 2)\n    fib[1] <- 1\n    fib[2] <- 1\n    if (n > 2) {\n        for (i in 3:n) {\n            fib[i] <- fib[i-1] + fib[i-2]\n        }\n    }\n    fib[1:n]\n}\nsubmit(fibonacci)",
         `6` = "connections <- function(A) {\n    B <- which(A == 1, arr.ind = TRUE)\n    B[order(B[,1]),]\n}\nsubmit(connections)"
     )
-    e$data <- list(fun1 = fun1, fun2 = fun2, fun3 = fun3, d = d, B = B, i = i, g = g)
+    e$data <- list(fun1 = fun1, fun2 = fun2, fun3 = fun3, fun4 = fun4, d = d, B = B, i = i, g = g)
     data <- vector(mode = "list", length = length(code))
     data[[1]] <- list(fun1 = "fun1")
     data[[2]] <- list(fun2 = "fun2", d = "d")
