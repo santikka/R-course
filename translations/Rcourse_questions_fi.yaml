@@ -29,7 +29,7 @@ Section 2:
   4:  "Valitse matriisin E kolmas rivi vektorina."
   5:  "Ohjelma on generoinut vektorit g1, g2 ja g3. Muodosta näistä matriisi siten, että g1 on ensimmäinen sarake, g2 on toinen sarake ja on g3 kolmas sarake."
   6:  "Muodosta matriisi, jonka ensimmäinen rivi on g1, toinen g2 ja kolmas g3.,"
-  7:  "Muodosta datakehikko (data.frame) vektoreista g1, g2 ja matriisista H siten, että ensimmäinen sarake on g1, viimeinen sarake on g2 ja väliin jäävät sarakkeet ovat matriisin H sarakkeet."
+  7:  "Muodosta matriisi vektoreista g1, g2 ja matriisista H siten, että ensimmäinen sarake on g1, viimeinen sarake on g2 ja väliin jäävät sarakkeet ovat matriisin H sarakkeet."
   8:  "Muodosta datakehikko kolmesta muuttujasta, joiden arvot ovat height = c(175, 180, 190, 174), weight = c(60, 72, 90, 95) ja category = c(2, 2, 1, 1). Datakehikkoa käytetään seuraavissa tehtävissä."
   9:  "Tarkastellaan datakehikkoa dk. Kokeile tapply-funktiota ja laske muuttujan weight keskiarvo muuttujan category jokaisella tasolla."
   10: "Tarkastellaan datakehikkoa dk. Poimi datakehikon sarake nimeltä height."

@@ -16,6 +16,8 @@ listen.default <- function(e) {
         if (!update_time(e)) {
             return(FALSE)
         }
+        e$code[e$ix] <- paste0(e$code[e$ix], "\n",
+                               deparse1(e$expr, width.cutoff = 100))
     }
     detected <- e$funs[detect(e$funs, e$expr)]
     if (length(detected)) {
@@ -73,6 +75,7 @@ initialize_listener <- function(e) {
             e$questions <- sapply(e$ex, "[[", "question")
             e$answers <- rep(list("This question was skipped by the student"), e$n_ex)
             e$submitted <- logical(e$n_ex)
+            e$code <- character(e$n_ex)
             e$mutable <- sapply(e$ex, function(x) x$params$mutable)
             e$times <- integer(e$n_ex)
             e$current_start <- Sys.time()
@@ -90,8 +93,7 @@ initialize_listener <- function(e) {
             "solution",
             "code",
             "go",
-            "info",
-            "exam"
+            "info"
         )
     }
     return(FALSE)
@@ -237,7 +239,7 @@ process_submit <- function(e) {
         }
     } else {
         if (e$check_answers) {
-            result <- try(evaluate_submission(e$ex[[e$ix]], answer), silent = TRUE)
+            result <- try(evaluate_submission(answer, e$ex[[e$ix]]), silent = TRUE)
             if (!isTRUE(result)) {
                 translate_message("Try again! If you want to skip this exercise, type skip().")
                 return(TRUE)
@@ -256,7 +258,7 @@ process_submit <- function(e) {
 show_next <- function(e) {
     if (e$is_exam) {
         e$current_start <- Sys.time()
-        custom_message(l() %a% "Time remaining", ": ", e$hours, " ", 
+        custom_message(l() %a% "Time remaining", ": ", e$hours, " ",
                        l() %a% "hours and", " ", e$minutes, " ", l() %a% "minutes", "\n")
         custom_message(l() %a% "QUESTION", " ", e$ix, " / ", e$n_ex)
         if (!e$mutable[e$ix]) {
@@ -302,4 +304,54 @@ process_completion <- function(e) {
     }
     cleanup(e)
     return(FALSE)
+}
+
+# A cleanup procedure when listener is destroyed
+cleanup <- function(e) {
+    if (e$is_exam) {
+        rm(list = ls(envir = globalenv()), envir = globalenv())
+    } else {
+        custom_message(l() %a% "You have quit section", " ", e$part, ".")
+        if (e$check_answers) {
+            comp <- sum(e$completed)
+            total <- e$n_ex
+            if (comp < total) {
+                custom_message(l() %a% "You completed", " ", sum(e$completed), " ",
+                               l() %a% "out of", " ", e$n_ex, " ", l() %a% "exercises", ".")
+            } else {
+                translate_message("You have completed all exercises of this section!")
+            }
+        }
+    }
+    options(prompt = "> ")
+}
+
+# Saves the exam results as .RData for external verification
+verification <- function(e) {
+    translate_message("Compiling the verification file, please wait...")
+    flush.console()
+    out <- list()
+    keep_fields <- c(
+        "num",
+        "time_start",
+        "answers",
+        "times",
+        "ex",
+        "data",
+        "code",
+        "select",
+        "inst",
+        "part",
+        "seed",
+        "id"
+    )
+    # Note, e is an environment, so we cannot subset with e[keep_fields] directly
+    for (field in keep_fields) {
+        out[[field]] <- e[[field]]
+    }
+    out_file <- paste0(getwd(), "/verification_", out$part, "_", out$num, "_",
+                       out$seed, ".RData", collapse = "")
+    save(out, file = out_file)
+    translate_message("Verification file was successfully saved in the working directory!")
+    message("*** ", out_file, " ***")
 }

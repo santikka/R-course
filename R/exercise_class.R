@@ -9,8 +9,8 @@
 #  -- test_input Test input to check that the a function submitted by the student produces the same output as solution
 #  -- graphical Does the problem require producing a plot?
 #  -- mutable Can the student return to this problem after submitting an answer (exams only)?
-exercise <- function(question = NULL, solution = NULL, alts = list(), 
-                     data = NULL, code = NULL, params = list()) 
+exercise <- function(question = NULL, solution = NULL,
+                     data = NULL, code = NULL, params = list())
 {
     if (is.null(params$is_function)) {
         params$is_function <- FALSE
@@ -23,7 +23,6 @@ exercise <- function(question = NULL, solution = NULL, alts = list(),
     }
     ex <- list(question = question,
                solution = solution,
-               alts = alts,
                data = data,
                code = code,
                params = params)
@@ -32,7 +31,7 @@ exercise <- function(question = NULL, solution = NULL, alts = list(),
 }
 
 # Verifies if 'x' is the correct answer for the exercise object 'obj'
-evaluate_submission <- function(obj, x) {
+evaluate_submission <- function(x, obj) {
     if (is.null(x)) {
         return(FALSE)
     }
@@ -69,11 +68,51 @@ evaluate_submission <- function(obj, x) {
         if (is.function(x)) {
             return(FALSE)
         }
-        all_solutions <- c(list(obj$solution), obj$alts)
-        correct <- sapply(all_solutions, function(y) compare(x, y))
-        if (any(correct)) {
+        if (compare(x, obj$solution)) {
             return(TRUE)
         }
         return(FALSE)
     }
+}
+
+# Compare objects for non-strict equality
+compare <- function(a, b) {
+    base_attrs <- c("class", "dim", "names")
+    if (is.atomic(b)) {
+        names(a) <- NULL
+        names(b) <- NULL
+    }
+    if (is.data.frame(a) && is.data.frame(b)) {
+        ia <- sapply(a, is.factor)
+        if (any(ia)) {
+            a[, ia] <- lapply(a[, ia], as.character)
+        }
+        ib <- sapply(b, is.factor)
+        if (any(ib)) {
+            b[, ib] <- lapply(b[, ib], as.character)
+        }
+    }
+    for (att in names(attributes(a))) {
+        if (!att %in% base_attrs) {
+            attr(a, att) <- NULL
+        }
+    }
+    for (att in names(attributes(b))) {
+        if (!att %in% base_attrs) {
+            attr(b, att) <- NULL
+        }
+    }
+    same <- try_true(isTRUE(all.equal(a, b, tolerance = 0.01, check.attributes = TRUE)))
+    if (!same) {
+        if (identical(class(a), class(b))) {
+            return(FALSE)
+        }
+        a_coerced <- try({
+            suppressWarnings(do.call(what = paste0("as.", class(b)[1]), args = list(a)))
+        }, silent = TRUE)
+        if (!"try_error" %in% class(a_coerced)) {
+            return(compare(a_coerced, b))
+        }
+    }
+    TRUE
 }

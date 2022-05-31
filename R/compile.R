@@ -1,10 +1,7 @@
 # Creates exercise objects from argument lists, replicating arguments of length one when applicable
-compile <- function(questions, solutions, alts, data, code, params) {
+compile <- function(questions, solutions, data, code, params) {
     q <- length(questions)
     exercises <- vector(mode = "list", length = q)
-    if (missing(alts)) {
-        alts <- replicate(q, list())
-    }
     if (missing(data)) {
         data <- replicate(q, NULL)
     } else if (length(data) == 1) {
@@ -19,12 +16,11 @@ compile <- function(questions, solutions, alts, data, code, params) {
         params <- replicate(q, list(params))
     }
     for (i in 1:q) {
-        exercises[[i]] <- exercise(questions[[i]],
-                                   solutions[[i]],
-                                   alts[[i]],
-                                   data[[i]],
-                                   code[[i]],
-                                   params[[i]])
+        exercises[[i]] <- exercise(question = questions[[i]],
+                                   solution = solutions[[i]],
+                                   data = data[[i]],
+                                   code = code[[i]],
+                                   params = params[[i]])
     }
-    return(exercises)
+    exercises
 }

@@ -25,7 +25,7 @@ skip <- function() invisible()
 #' @export
 submit <- function(x) {
     if (missing(x)) {
-        invisible(NULL) 
+        invisible(NULL)
     } else {
         invisible(deparse(substitute(x)))
     }
@@ -88,7 +88,7 @@ info_ <- function() {
     for (i in 1:(nr - 1)) {
         custom_message(" -- ", info_rows$text[i],  repchar("-", info_rows$len[nr] - info_rows$len[i]  - 3), " : ", l() %a% instr[i])
     }
-    custom_message(" -- ", info_rows$text[nr], l() %a% "change the language of the package to 'x'", ",") 
+    custom_message(" -- ", info_rows$text[nr], l() %a% "change the language of the package to 'x'", ",")
     custom_message(l() %a% "currently supports 'english' and 'finnish'.", indent = info_rows$len[nr] + 3)
     invisible()
 }
@@ -207,35 +207,6 @@ translate_code <- function(x) {
     gsub(pattern = "submit", replacement = l() %a% "submit", x)
 }
 
-# Saves the exam results as .RData for external verification
-verification <- function(e) {
-    translate_message("Compiling the verification file, please wait...")
-    flush.console()
-    out <- list()
-    keep_fields <- c(
-        "num",
-        "time_start",
-        "answers",
-        "times",
-        "ex",
-        "data",
-        "select",
-        "inst",
-        "part",
-        "seed",
-        "id"
-    )
-    # Note, e is an environment, so we cannot subset with e[keep_fields] directly
-    for (field in keep_fields) {
-        out[[field]] <- e[[field]]
-    }
-    out_file <- paste0(getwd(), "/verification_", out$part, "_", out$num, "_", 
-                       out$seed, ".RData", collapse = "")
-    save(out, file = out_file)
-    translate_message("Verification file was successfully saved in the working directory!")
-    message("*** ", out_file, " ***")
-}
-
 # RNG initialization for the final exam
 # Set all PRNG kinds manually to for backward (pre R-3.6.0) and forward compatibility
 initialize <- function(seed) {
@@ -266,26 +237,6 @@ repchar <- function(x, nrep) {
     paste0(rep(x, nrep), collapse = "")
 }
 
-# A cleanup procedure when listener is destroyed
-cleanup <- function(e) {
-    if (e$is_exam) {
-        rm(list = ls(envir = globalenv()), envir = globalenv())
-    } else {
-        custom_message(l() %a% "You have quit section", " ", e$part, ".")
-        if (e$check_answers) {
-            comp <- sum(e$completed)
-            total <- e$n_ex
-            if (comp < total) {
-                custom_message(l() %a% "You completed", " ", sum(e$completed), " ", 
-                               l() %a% "out of", " ", e$n_ex, " ", l() %a% "exercises", ".")
-            } else {
-                translate_message("You have completed all exercises of this section!")
-            }
-        }
-    }
-    options(prompt = "> ")
-}
-
 # Convert a list to string element-wise (keeps function formatting)
 list_to_string <- function(x) {
     sapply(x, function(y) {
@@ -303,34 +254,5 @@ try_true <- function(x) {
     if ("try-error" %in% class(y)) {
         return(FALSE)
     }
-    return(y)
-}
-
-# Compare objects for non-strict equality
-compare <- function(a, b) {
-    base_attrs <- c("class", "dim", "names")
-    if (is.atomic(b)) {
-        names(a) <- NULL
-        names(b) <- NULL
-    }
-    for (att in names(attributes(a))) {
-        if (!att %in% base_attrs) {
-            attr(a, att) <- NULL
-        }
-    }
-    for (att in names(attributes(b))) {
-        if (!att %in% base_attrs) {
-            attr(b, att) <- NULL
-        }
-    }
-    same <- try_true(isTRUE(all.equal(a, b, tolerance = 0.01, check.attributes = TRUE)))
-    if (!same) {
-        a_coerce <- try({
-            suppressWarnings(do.call(what = paste0("as.", class(b)[1]), args = list(a)))
-        }, silent = TRUE)
-        if (!"try_error" %in% class(a_coerce)) {
-            same <- try_true(isTRUE(all.equal(a_coerce, b, tolerance = 0.01, check.attributes = TRUE)))
-        }
-    }
-    return(same)
+    y
 }

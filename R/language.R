@@ -12,10 +12,6 @@ l_internal <- function(x) {
     if (identical(x, " ")) return(x)
     lang_obj <- get(use_language())
     lang_obj[[x]]
-    #cmd <- paste0(use_language(), "$`", x, "`")
-    #tryCatch(eval(parse(text = cmd)),
-    #    warning = function(c) NULL
-    #)
 }
 
 # Determines the current language, defaults to English if not set

@@ -21,7 +21,7 @@ testthat::test_that("example solutions are correct", {
             exercises_[[i]](envs[[i]])
         }
         for (j in seq_along(envs[[i]]$ex)) {
-            testthat::expect_true(evaluate_submission(envs[[!!i]]$ex[[!!j]], envs[[!!i]]$ex[[!!j]]$solution))
+            testthat::expect_true(evaluate_submission(envs[[!!i]]$ex[[!!j]]$solution, envs[[!!i]]$ex[[!!j]]))
         }
     }
 })

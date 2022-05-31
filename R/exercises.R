@@ -76,8 +76,8 @@ exercises_[[2]] <- function(e) {
     g2 <- sample(-10:10, 3)
     g3 <- sample(-10:10, 3)
     H <- matrix(sample(-10:10, 9, replace = TRUE), 3, 3)
-    dk <- data.frame(height = c(175, 180, 190, 174), 
-                     weight = c(60, 72, 90, 95), 
+    dk <- data.frame(height = c(175, 180, 190, 174),
+                     weight = c(60, 72, 90, 95),
                      category = c(2, 2, 1, 1))
     solutions <- list(
         `1`  = array(d, c(6, 10)),
@@ -86,14 +86,14 @@ exercises_[[2]] <- function(e) {
         `4`  = E[3, ],
         `5`  = cbind(g1, g2, g3),
         `6`  = rbind(g1, g2, g3),
-        `7`  = data.frame(g1, H, g2),
+        `7`  = cbind(g1, H, g2),
         `8`  = dk,
         `9`  = tapply(dk$weight, dk$category, mean),
         `10` = dk$height,
         `11` = dk[2,2],
         `12` = dk[-2, ],
-        `13` = dk[ ,-2],
-        `14` = dk[ ,c("height", "weight")],
+        `13` = dk[, -2],
+        `14` = dk[, c("height", "weight")],
         `15` = rbind(dk, c(178, 80, 2))
     )
     code <- list(
@@ -103,14 +103,14 @@ exercises_[[2]] <- function(e) {
         `4`  = "x <- E[3, ]\nsubmit(x)",
         `5`  = "x <- cbind(g1, g2, g3)\nsubmit(x)",
         `6`  = "x <- rbind(g1, g2, g3)\nsubmit(x)",
-        `7`  = "x <- data.frame(g1, H, g2)\nsubmit(x)",
+        `7`  = "x <- cbind(g1, H, g2)\nsubmit(x)",
         `8`  = "dk <- data.frame(height = c(175, 180, 190, 174), weight = c(60, 72, 90, 95), category = c(2, 2, 1, 1))\nsubmit(dk)",
         `9`  = "x <- tapply(dk$weight, dk$category, mean)\nsubmit(x)",
         `10` = "x <- dk$height\nsubmit(x)",
-        `11` = "x <- dk[2,2]\nsubmit(x)",
+        `11` = "x <- dk[2, 2]\nsubmit(x)",
         `12` = "x <- dk[-2, ]\nsubmit(x)",
-        `13` = "x <- dk[ ,-2]\nsubmit(x)",
-        `14` = "x <- dk[ ,c(\"height\", \"weight\")]\nsubmit(x)",
+        `13` = "x <- dk[, -2]\nsubmit(x)",
+        `14` = "x <- dk[, c(\"height\", \"weight\")]\nsubmit(x)",
         `15` = "x <- rbind(dk, c(178, 80, 2))\nsubmit(x)"
     )
     e$data <- list(d = d, E = E, g1 = g1, g2 = g2, g3 = g3, H = H, dk = dk)
@@ -219,7 +219,7 @@ exercises_[[4]] <- function(e) {
     data[[5]] <- list(a = "a", b = "b")
     data[[10]] <- list(x = "x", y = "y", z = "z")
     data[11:13] <- list(list(xx = "xx", yy = "yy", zz = "zz"))
-    e$ex <- compile(questions = section_questions[[4]], 
+    e$ex <- compile(questions = section_questions[[4]],
                     solutions = solutions,
                     data = data,
                     code = code,
@@ -269,7 +269,7 @@ exercises_[[5]] <- function(e) {
         `10` = "x <- names(children2)\nsubmit(x)",
         `11` = "x <- summary(children2)\nsubmit(x)",
         `12` = "tt2 <- t.test(Height ~ Gender2, data = children2, var.equal = TRUE)\ntt2\nx <- tt2$stat\nsubmit(x)",
-        `13` = "x <- \"pos\"\nsubmit(x)",
+        `13` = "plot(Weight ~ Height, data = children2)\nx <- \"pos\"\nsubmit(x)",
         `14` = "x <- cor(children2$Height, children2$Weight)\nsubmit(x)",
         `15` = "m <- lm(Weight ~ Height, data = children2)\nqqnorm(m$residuals)\nshapiro.test(m$residuals)\nx <- TRUE\nsubmit(x)",
         `16` = "# Read the value from column Std. Error and row Height.\nsummary_table <- summary(m)\nx <- summary_table$coefficients[\"Height\",\"Std. Error\"]\nsubmit(x)",
@@ -317,18 +317,18 @@ exercises_[[6]] <- function(e) {
         `9`  = "x <- rowSums(tilp) %*% t(colSums(tilp)) / sum(tilp)\nx <- TRUE\nsubmit(x)",
         `10` = "chi <- chisq.test(tilp, correct = FALSE)\nchi\nx <- chi$p.value\nsubmit(x)"
     )
-    e$data <- list(mandatory = mandatory, 
-                   firstyear = firstyear, 
-                   tomato = tomato, 
-                   ftomato = ftomato, 
+    e$data <- list(mandatory = mandatory,
+                   firstyear = firstyear,
+                   tomato = tomato,
+                   ftomato = ftomato,
                    tab = tab)
     data <- vector(mode = "list", length = length(code))
     data[[2]] <- list(tomato = "tomato")
     data[3:7] <- list(list(tomato = "ftomato"))
     data[[8]] <- list(mandatory = "mandatory", firstyear = "firstyear")
     data[9:10] <- list(list(tilp = "tab"))
-    e$ex <- compile(questions = section_questions[[6]], 
-                    solutions = solutions, 
+    e$ex <- compile(questions = section_questions[[6]],
+                    solutions = solutions,
                     data = data,
                     code = code)
 }
@@ -367,21 +367,21 @@ exercises_[[7]] <- function(e) {
         `11` = list(p1 = list(x = x2), p2 = list(x = x3))
     )
     solutions <- list(
-        `1` = function(celsius) { 
-            return(celsius + 273.15) 
+        `1` = function(celsius) {
+            return(celsius + 273.15)
         },
         `2` = function(weight, height) {
             return(weight / height^2)
         },
-        `3` = function(x, a, b) { 
+        `3` = function(x, a, b) {
             return(a * x^2 + b)
         },
-        `4` = function(celsius = 20) { 
+        `4` = function(celsius = 20) {
             return(celsius + 273.15)
         },
-        `5` = function(x) { 
+        `5` = function(x) {
             if (x <= 0) {
-                return(0)   
+                return(0)
             } else {
                 return(1)
             }
@@ -671,8 +671,8 @@ exercises_[[11]] <- function(e) {
         list(is_function = TRUE,
              test_input = test_input[[i]])
     })
-    e$ex <- compile(questions = section_questions[[11]], 
-                    solutions = solutions, 
+    e$ex <- compile(questions = section_questions[[11]],
+                    solutions = solutions,
                     data = data,
                     code = code,
                     params = params)
