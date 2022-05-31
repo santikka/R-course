@@ -1,12 +1,12 @@
 # Compiles all internal data for the Rcourse package
 
 # Construct the interface elements
-english <- yaml::read_yaml("./../translations/Rcourse_interface_en.yaml", fileEncoding = "UTF-8")
-finnish <- yaml::read_yaml("./../translations/Rcourse_interface_fi.yaml", fileEncoding = "UTF-8")
+english <- yaml::read_yaml("./translations/Rcourse_interface_en.yaml", fileEncoding = "UTF-8")
+finnish <- yaml::read_yaml("./translations/Rcourse_interface_fi.yaml", fileEncoding = "UTF-8")
 
 # Questions for exercise sections and exams
-english_questions <- yaml::read_yaml("./../translations/Rcourse_questions_en.yaml", fileEncoding = "UTF-8")
-finnish_questions <- yaml::read_yaml("./../translations/Rcourse_questions_fi.yaml", fileEncoding = "UTF-8")
+english_questions <- yaml::read_yaml("./translations/Rcourse_questions_en.yaml", fileEncoding = "UTF-8")
+finnish_questions <- yaml::read_yaml("./translations/Rcourse_questions_fi.yaml", fileEncoding = "UTF-8")
 
 # Exercise questions
 n_section <- 11L
@@ -99,15 +99,15 @@ auto$hp <- as.integer(auto$hp)
 auto$am <- as.integer(auto$am)
 attr(auto, "row.names") <- as.character(row.names(auto))
 
-children <- read.table("./../data/Children2007.dat", header = TRUE, fileEncoding = "UTF-8")
+children <- read.table("./data/Children2007.dat", header = TRUE, fileEncoding = "UTF-8")
 children$Gender2 <- factor(children$Gender, labels = c("Boy", "Girl"))
 children2 <- children[-1,]
-tomato <- read.table("./../data/tomato.dat", header = TRUE, fileEncoding = "UTF-8")
+tomato <- read.table("./data/tomato.dat", header = TRUE, fileEncoding = "UTF-8")
 ftomato <- tomato
 ftomato$fSTRAIN <- factor(ftomato$STRAIN,
                           labels = c("STRAIN1", "STRAIN2", "STRAIN3"))
-pigs <- read.csv2("./../data/pigs.csv", fileEncoding = "UTF-8")
-pisa <- read.table("./../data/PISA_value.txt", header = TRUE, fileEncoding = "UTF-8")
+pigs <- read.csv2("./data/pigs.csv", fileEncoding = "UTF-8")
+pisa <- read.table("./data/PISA_value.txt", header = TRUE, fileEncoding = "UTF-8")
 
 rm(CO2, english_temp, finnish_temp, mtcars, women, temp_english,
    en_names, fi_names, i, lang_errors, n_parts, n_section, exam, mis)
