@@ -16,8 +16,10 @@ listen.default <- function(e) {
         if (!update_time(e)) {
             return(FALSE)
         }
-        e$code[e$ix] <- paste0(e$code[e$ix], "\n",
-                               deparse1(e$expr, width.cutoff = 100))
+        if (e$ix > 0) {
+            e$code[e$ix] <- paste0(e$code[e$ix], "\n",
+                                   deparse1(e$expr, width.cutoff = 100))
+        }
     }
     detected <- e$funs[detect(e$funs, e$expr)]
     if (length(detected)) {
@@ -85,6 +87,7 @@ initialize_listener <- function(e) {
         e$con_width <- floor(0.9 * getOption("width"))
         e$init <- FALSE
         e$ask <- TRUE
+        e$ix <- 1L
         e$funs <- c(
             "ask",
             "exit",

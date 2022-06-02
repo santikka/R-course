@@ -77,7 +77,7 @@ evaluate_submission <- function(x, obj) {
 
 # Compare objects for non-strict equality
 compare <- function(a, b) {
-    base_attrs <- c("class", "dim", "names")
+    base_attrs <- c("class", "dim", "names", "row.names")
     if (is.atomic(b)) {
         names(a) <- NULL
         names(b) <- NULL
@@ -85,11 +85,11 @@ compare <- function(a, b) {
     if (is.data.frame(a) && is.data.frame(b)) {
         ia <- sapply(a, is.factor)
         if (any(ia)) {
-            a[, ia] <- lapply(a[, ia], as.character)
+            a[, ia] <- lapply(a[, ia, drop = FALSE], as.character)
         }
         ib <- sapply(b, is.factor)
         if (any(ib)) {
-            b[, ib] <- lapply(b[, ib], as.character)
+            b[, ib] <- lapply(b[, ib, drop = FALSE], as.character)
         }
     }
     for (att in names(attributes(a))) {

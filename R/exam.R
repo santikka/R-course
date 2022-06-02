@@ -25,7 +25,7 @@ exam_ <- function(dob, ...) {
     part <- NULL
     inst <- NULL
     id <- ""
-    e$ix <- 1
+    e$ix <- 0
     e$max_ix <- 1
     e$init <- TRUE
     e$ask <- FALSE
