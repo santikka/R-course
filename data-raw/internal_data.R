@@ -113,6 +113,7 @@ rm(CO2, english_temp, finnish_temp, mtcars, women, temp_english,
    en_names, fi_names, i, lang_errors, n_parts, n_section, exam, mis)
 
 usethis::use_data(english, finnish, english_questions, finnish_questions,
+                  section_questions, exam_questions_jyu, exam_questions_uef,
                   carbon, heightweight, auto, children, children2,
                   tomato, ftomato, pigs, pisa,
-                  internal = TRUE)
+                  internal = TRUE, overwrite = TRUE)
