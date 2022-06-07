@@ -52,9 +52,10 @@ Many questions of the exam are related to the PISA data, so make sure you have d
 Do you want to start the exam? (y/n): "Do you want to start the exam? (y/n)"
 Please type either y or n.: "Please type either y or n."
 # listener.R
-Please input the question number to go to.: "Please input the question number to go to."
-Please input the exercise number to go to.: "Please input the exercise number to go to."
-Please input a number between: "Please input a number between"
+Invalid argument.: "Invalid argument."
+"Error: no question number given.": "Error: no question number given."
+"Error: no exercise number given.": "Error: no exercise number given."
+"Error: the number must be between" : "Error: the number must be between"
 and: "and"
 section: "section"
 exam: "exam"

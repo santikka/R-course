@@ -152,10 +152,15 @@ process_exit <- function(e) {
 process_go <- function(e) {
     if (is.null(e$val)) {
         if (e$is_exam) {
-            translate_message("Please input the question number to go to.")
+            translate_message("Error: no question number given.")
         } else {
-            translate_message("Please input the exercise number to go to.")
+            translate_message("Error: no exercise number given.")
         }
+        return(TRUE)
+    }
+    e$val <- suppressWarnings(try(as.integer(e$val), silent = TRUE))
+    if ("try-error" %in% class(e$val) || is.na(e$val) || is.nan(e$val)) {
+        translate_message("Invalid argument.")
         return(TRUE)
     }
     if (identical(e$val, e$ix)) {
@@ -180,7 +185,7 @@ process_go <- function(e) {
         e$ask <- TRUE
         return(NULL)
     } else {
-        custom_message(l() %a% "Please input a number between", " ", 1, " ", l() %a% "and", " ", e$n_ex)
+        custom_message(l() %a% "Error: the number must be between", " ", 1, " ", l() %a% "and", " ", e$n_ex, ".")
         return(TRUE)
     }
 }

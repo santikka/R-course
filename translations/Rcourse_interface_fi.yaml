@@ -52,9 +52,10 @@ Many questions of the exam are related to the PISA data, so make sure you have d
 Do you want to start the exam? (y/n): "Haluatko aloittaa loppukokeen? (y/n)"
 Please type either y or n.: "Kirjoita joko y tai n."
 # listener.R
-Please input the question number to go to.: "Syötä kysymyksen numero, johon haluat siirtyä."
-Please input the exercise number to go to.: "Syötä harjoitustehtävän numero, johon haluat siirtyä."
-Please input a number between: "Syötä numero väliltä"
+Invalid argument.: "Virheellinen argumentti."
+"Error: no question number given.": "Virhe: kysymyksen numero puuttuu."
+"Error: no exercise number given.": "Virhe: tehtävän numero puuttuu."
+"Error: the number must be between" : "Virhe: numeron on oltava väliltä"
 and: "ja"
 section: "osio"
 exam: "loppukoe"
