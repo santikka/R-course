@@ -24,11 +24,6 @@ via `PISA_variables.pdf`. Also contains documentation for the Rcourse package.
 The Rcourse package directory. Contains the source code of the package and 
 various tests.
 
-### sysdata
-Contains the script `sysdata.R` which implements the function `make_sysdata()`.
-This function creates the file `Rcourse/R/sysdata.rda` based on the files in the 
-translations directory.
-
 ### translations
 Provides the character strings for the interactive package UI in both 
 English and Finnish as the files `Rcourse_interface_en.yaml` and

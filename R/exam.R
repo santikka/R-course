@@ -25,7 +25,7 @@ exam_ <- function(dob, ...) {
     part <- NULL
     inst <- NULL
     id <- ""
-    e$ix <- 1
+    e$ix <- 0
     e$max_ix <- 1
     e$init <- TRUE
     e$ask <- FALSE
@@ -63,8 +63,8 @@ exam_ <- function(dob, ...) {
         translate_message("Unlike in the exercises, the program will not tell you whether your answer was correct or not after each question.", " ",
                           "The program may sometimes add objects to your working environment that are needed to answer some of the questions.")
         custom_message("")
-        translate_message("Some questions of the exam are dependent on one another, for example those that deal with the PISA-data.", " ", 
-                          "In such instances, the correct answer of a previous question is required to answer the followup questions.", " ", 
+        translate_message("Some questions of the exam are dependent on one another, for example those that deal with the PISA-data.", " ",
+                          "In such instances, the correct answer of a previous question is required to answer the followup questions.", " ",
                           "The correct data from the previous question is always created for you in your working environment, so you can attempt to answer the followup question even if you did not manage to answer the previous question.")
         custom_message("")
         translate_message("You can return to previous questions using go(), but this is possible only for some questions.", " ",
@@ -94,7 +94,7 @@ exam_ <- function(dob, ...) {
         if (is.null(dots$test_id)) {
             translate_message("Please input your Peppi student number.")
             id <- readline(promp = "> ")
-            while (!grepl("^[0-9]{6}[a-zA-Z]{0,1}$|^[0-9]{8}$|q$", id)) {
+            while (!grepl("^[0-9]{7,8}$|q$", id)) {
                 translate_message("Invalid student number.", " ", "Please input your Peppi student number.")
                 translate_message("To quit, type q.")
                 id <- readline(promp = "> ")
@@ -117,8 +117,8 @@ exam_ <- function(dob, ...) {
         translate_message("Unlike in the exercises, the program will not tell you whether your answer was correct or not after each question.", " ",
                           "The program may sometimes add objects to your working environment that are needed to answer some of the questions.")
         custom_message("")
-        translate_message("Some questions of the exam are dependent on one another, for example those that deal with the PISA-data.", " ", 
-                          "In such instances, the correct answer of a previous question is required to answer the followup questions.", " ", 
+        translate_message("Some questions of the exam are dependent on one another, for example those that deal with the PISA-data.", " ",
+                          "In such instances, the correct answer of a previous question is required to answer the followup questions.", " ",
                           "The correct data from the previous question is always created for you in your working environment, so you can attempt to answer the followup question even if you did not manage to answer the previous question.")
         custom_message("")
         translate_message("You can return to previous questions using go(), but this is possible only for some questions.", " ",
@@ -274,8 +274,8 @@ exams_$JYU[[1]] <- function(e) {
         `4` = replist(pisa = "pisa_3"),
         `5` = NULL,
         `6` = list(
-            list(ind2 = "ind2", pisa = "pisa_4"), 
-            list(pisa = "pisa_4"), 
+            list(ind2 = "ind2", pisa = "pisa_4"),
+            list(pisa = "pisa_4"),
             list(pisa = "pisa_4")
         ),
         `7,8,9` = replist(pisa = "pisa_4", nrep = 6),
@@ -331,10 +331,10 @@ exams_$JYU[[1]] <- function(e) {
     e$ex <- vector(mode = "list", length = 24L)
     e$select <- list()
     randomize_selection(
-        e = e, 
-        eq = exam_questions_jyu[[1]], 
-        continue = c("22", "23"), 
-        data = data, 
+        e = e,
+        eq = exam_questions_jyu[[1]],
+        continue = c("22", "23"),
+        data = data,
         params = params
     )
 }
@@ -366,14 +366,14 @@ exams_$JYU[[2]] <- function(e) {
             `1` = list(
                 is_function = TRUE,
                 test_input = list(
-                    p1 = list(x = df_remove1, k = 3), 
+                    p1 = list(x = df_remove1, k = 3),
                     p2 = list(x = df_remove2, k = 7)
                 )
             ),
             `2` = list(
                 is_function = TRUE,
-                test_input = list(     
-                    p1 = list(x = df_1), 
+                test_input = list(
+                    p1 = list(x = df_1),
                     p2 = list(x = df_2),
                     p3 = list(x = df_3)
                 )
@@ -383,15 +383,15 @@ exams_$JYU[[2]] <- function(e) {
             `1` = list(
                 is_function = TRUE,
                 test_input = list(
-                    p1 = list(a = 1, b = -3), 
-                    p2 = list(a = 0, b = 0), 
+                    p1 = list(a = 1, b = -3),
+                    p2 = list(a = 0, b = 0),
                     p3 = list(a = -2, b = 1000)
                 )
             ),
             `2` = list(
                 is_function = TRUE,
                 test_input = list(
-                    p1 = list(x = x_2), 
+                    p1 = list(x = x_2),
                     p2 = list(x = x_3)
                 )
             ),
@@ -439,7 +439,7 @@ exams_$JYU[[2]] <- function(e) {
         )
     )
     randomize_selection(
-        e = e, 
+        e = e,
         eq = exam_questions_jyu[[2]],
         params = params
     )
@@ -499,8 +499,8 @@ exams_$UEF <- function(e) {
         `4` = replist(pisa = "pisa_3"),
         `5` = NULL,
         `6` = list(
-            list(ind2 = "ind2", pisa = "pisa_4"), 
-            list(pisa = "pisa_4"), 
+            list(ind2 = "ind2", pisa = "pisa_4"),
+            list(pisa = "pisa_4"),
             list(pisa = "pisa_4")
         ),
         `7,8,9` = replist(pisa = "pisa_4", nrep = 6),
@@ -571,7 +571,7 @@ exams_$UEF <- function(e) {
             `2` = list(
                 is_function = TRUE,
                 test_input = list(
-                    p1 = list(x = df_1), 
+                    p1 = list(x = df_1),
                     p2 = list(x = df_2),
                     p3 = list(x = df_3)
                 )
@@ -581,7 +581,7 @@ exams_$UEF <- function(e) {
             `1` = list(
                 is_function = TRUE,
                 test_input = list(
-                    p1 = list(x = x_2), 
+                    p1 = list(x = x_2),
                     p2 = list(x = x_3)
                 )
             ),
@@ -629,10 +629,10 @@ exams_$UEF <- function(e) {
         )
     )
     randomize_selection(
-        e = e, 
-        eq = exam_questions_uef, 
-        continue = c("22", "23"), 
-        data = data, 
+        e = e,
+        eq = exam_questions_uef,
+        continue = c("22", "23"),
+        data = data,
         params = params
     )
 }

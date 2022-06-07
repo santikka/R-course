@@ -11,6 +11,6 @@ data/carbon2.txt
 data/carbon3.txt
 data/automobile.txt
 data/heightweight.data
-data/verification_*
+verification_*
 Rcourse.Rcheck
-Rcourse/tests/testthat/_snaps/
+tests/testthat/_snaps/

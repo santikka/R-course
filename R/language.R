@@ -10,10 +10,8 @@ l <- function() {
 # A function that translates strings in package messages
 l_internal <- function(x) {
     if (identical(x, " ")) return(x)
-    cmd <- paste0(use_language(), "$`", x, "`")
-    tryCatch(eval(parse(text = cmd)),
-        warning = function(c) NULL
-    )
+    lang_obj <- get(use_language())
+    lang_obj[[x]]
 }
 
 # Determines the current language, defaults to English if not set
