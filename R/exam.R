@@ -144,6 +144,7 @@ exam_ <- function(dob, ...) {
     }
     # Initialize the exam environment
     e$is_exam <- TRUE
+    e$record <- FALSE
     e$check_answers <- TRUE
     e$require_wd <- if (is.null(dots$test_wd)) TRUE else dots$test_wd
     e$test_mode <- if (is.null(dots$test_mode)) FALSE else dots$test_mode

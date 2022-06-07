@@ -16,7 +16,7 @@ listen.default <- function(e) {
         if (!update_time(e)) {
             return(FALSE)
         }
-        if (e$ix > 0) {
+        if (e$record) {
             e$code[e$ix] <- paste0(e$code[e$ix], "\n",
                                    deparse1(e$expr, width.cutoff = 100))
         }
@@ -265,6 +265,7 @@ process_submit <- function(e) {
 
 show_next <- function(e) {
     if (e$is_exam) {
+        e$record <- TRUE
         e$current_start <- Sys.time()
         custom_message(l() %a% "Time remaining", ": ", e$hours, " ",
                        l() %a% "hours and", " ", e$minutes, " ", l() %a% "minutes", "\n")
