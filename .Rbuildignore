@@ -1,8 +1,9 @@
-^Rcourse.\.Rproj$
+^Rcourse\.Rproj$
 ^\.Rproj\.user$
 ^.*\.Rhistory$
 ^docs$
 ^translations$
 ^LICENSE\.md$
 ^README\.md$
+^data$
 ^data-raw$

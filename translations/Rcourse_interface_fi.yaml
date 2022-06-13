@@ -18,7 +18,7 @@ Compare your plots with the ones shown by solution() instead.: "Vertaa omia kuva
 # exam.R
 Please input your date of birth as a string of the form 'dd/mm/yyyy'.: "Anna syntymäaikasi merkkijonona muodossa 'pp/kk/vvvv'."
 Please select your institution.: "Valitse yliopistosi."
-If you're attending University of Jyväskylä (JYU), type 1.: "Jos suoritat kurssin Jyväskylän yliopiston (JYU) opiskelijana, kirjoita 1."
+If you're attending University of Jyvaskyla (JYU), type 1.: "Jos suoritat kurssin Jyväskylän yliopiston (JYU) opiskelijana, kirjoita 1."
 If you're attending University of Eastern Finland (UEF), type 2.: "Jos suoritat kurssin Itä-Suomen yliopiston (UEF) opiskelijana, kirjoita 2."
 Please type either 1, 2, or q.: "Kirjoita joko 1, 2 tai q."
 To quit, type q.: "Kirjoita q lopettaaksesi."

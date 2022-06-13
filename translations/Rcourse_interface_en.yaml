@@ -18,7 +18,7 @@ Compare your plots with the ones shown by solution() instead.: "Compare your plo
 # exam.R
 Please input your date of birth as a string of the form 'dd/mm/yyyy'.: "Please input your date of birth as a string of the form 'dd/mm/yyyy'."
 Please select your institution.: "Please select your institution."
-If you're attending University of Jyväskylä (JYU), type 1.: "If you're attending University of Jyväskylä (JYU), type 1."
+If you're attending University of Jyvaskyla (JYU), type 1.: "If you're attending University of Jyväskylä (JYU), type 1."
 If you're attending University of Eastern Finland (UEF), type 2.: "If you're attending University of Eastern Finland (UEF), type 2."
 Please type either 1, 2, or q.: "Please type either 1, 2, or q."
 To quit, type q.: "To quit, type q."

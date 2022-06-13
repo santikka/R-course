@@ -31,7 +31,7 @@ exam_ <- function(dob, ...) {
     e$ask <- FALSE
     if (is.null(dots$test_inst)) {
         translate_message("Please select your institution.")
-        translate_message("If you're attending University of Jyväskylä (JYU), type 1.")
+        translate_message("If you're attending University of Jyvaskyla (JYU), type 1.")
         translate_message("If you're attending University of Eastern Finland (UEF), type 2.")
         translate_message("To quit, type q.")
         inst <- readline(prompt = "> ")
@@ -93,11 +93,11 @@ exam_ <- function(dob, ...) {
         # UEF
         if (is.null(dots$test_id)) {
             translate_message("Please input your Peppi student number.")
-            id <- readline(promp = "> ")
+            id <- readline(prompt = "> ")
             while (!grepl("^[0-9]{7,8}$|q$", id)) {
                 translate_message("Invalid student number.", " ", "Please input your Peppi student number.")
                 translate_message("To quit, type q.")
-                id <- readline(promp = "> ")
+                id <- readline(prompt = "> ")
             }
             if (identical(id, "q")) {
                 translate_message("The exam was cancelled.")
@@ -208,7 +208,7 @@ randomize_selection <- function(e, eq, continue = character(0), data, params) {
         data <- replicate(n_eq, NULL)
     }
     if (missing(params)) {
-        params <- replicate(n_neq, NULL)
+        params <- replicate(n_eq, NULL)
     }
     for (i in seq_along(eq)) {
         j <- as.numeric(strsplit(en[i], ",")[[1]])
