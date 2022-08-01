@@ -107,11 +107,17 @@ compare <- function(a, b) {
         if (identical(class(a), class(b))) {
             return(FALSE)
         }
-        a_coerced <- try({
-            suppressWarnings(do.call(what = paste0("as.", class(b)[1]), args = list(a)))
-        }, silent = TRUE)
-        if (!"try_error" %in% class(a_coerced)) {
-            return(compare(a_coerced, b))
+        if (is.atomic(b) && is.vector(b)) {
+            a_coerced <- try({
+                suppressWarnings(do.call(what = paste0("as.", class(b)[1]), args = list(a)))
+            }, silent = TRUE)
+            if (!"try_error" %in% class(a_coerced)) {
+                return(compare(a_coerced, b))
+            } else {
+                return(FALSE)
+            }
+        } else {
+            return(FALSE)
         }
     }
     TRUE
