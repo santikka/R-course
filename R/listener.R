@@ -95,8 +95,7 @@ initialize_listener <- function(e) {
             "submit",
             "solution",
             "code",
-            "go",
-            "info"
+            "go"
         )
     }
     return(FALSE)
