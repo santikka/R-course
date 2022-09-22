@@ -136,10 +136,12 @@ exercises_[[3]] <- function(e, write = TRUE) {
     }
     heightweight2 <- heightweight
     heightweight2$BMI <- 703 * heightweight$weight / heightweight$height^2
+    carbon_numeric_row_names <- carbon
+    attr(carbon_numeric_row_names, "row.names") <- as.integer(rownames(carbon))
     solutions <- list(
         `1` = carbon,
         `2` = carbon,
-        `3` = carbon,
+        `3` = carbon_numeric_row_names,
         `4` = heightweight2,
         `5` = round(mean(pigs$day6), 2),
         `6` = auto[order(auto$hp, auto$wt),],
