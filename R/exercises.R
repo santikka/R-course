@@ -266,7 +266,7 @@ exercises_[[5]] <- function(e) {
         `5`  = "x <- tapply(children$Height, children$Gender2, var)\nsubmit(x)",
         `6`  = "lev <- leveneTest(Height ~ Gender2, data = children)\nlev\nx <- lev$`F value`[1]\nsubmit(x)",
         `7`  = "shap <- tapply(children$Height, children$Gender2, shapiro.test)\nshap\nx <- c(shap[[1]]$p, shap[[2]]$p)\nsubmit(x)",
-        `8`  = "children2 <- children[-1,]\nshap2 <- shapiro.test(children2$Height[children2$Gender2 == \"Girl\"])\nx <- shap2\nshap2$statistic\nsubmit(x)",
+        `8`  = "children2 <- children[-1,]\nshap2 <- shapiro.test(children2$Height[children2$Gender2 == \"Girl\"])\nshap2\nx <- shap2$statistic\nsubmit(x)",
         `9`  = "x <- head(children2, 10)\nsubmit(x)",
         `10` = "x <- names(children2)\nsubmit(x)",
         `11` = "x <- summary(children2)\nsubmit(x)",
