@@ -4,26 +4,28 @@
 
 # An alias for the internal translation function
 l <- function() {
-    l_internal
+  l_internal
 }
 
 # A function that translates strings in package messages
 l_internal <- function(x) {
-    if (identical(x, " ")) return(x)
-    lang_obj <- get(use_language())
-    lang_obj[[x]]
+  if (identical(x, " ")) {
+    return(x)
+  }
+  lang_obj <- get(use_language())
+  lang_obj[[x]]
 }
 
 # Determines the current language, defaults to English if not set
 use_language <- function() {
-    lang <- getOption("Rcourse_language")
-    langs <- c("english", "finnish")
-    if (is.null(lang) || !(lang %in% langs)) {
-        options(Rcourse_language = "english")
-        "english"
-    } else {
-        lang
-    }
+  lang <- getOption("Rcourse_language")
+  langs <- c("english", "finnish")
+  if (is.null(lang) || !(lang %in% langs)) {
+    options(Rcourse_language = "english")
+    "english"
+  } else {
+    lang
+  }
 }
 
 ## Function aliases (listener pseudo-functions)
@@ -63,15 +65,21 @@ mene <- go
 #' @usage info()
 #' @export
 info <- function() {
-    if (!identical(use_language(), "english")) return(invisible())
-    else info_()
+  if (!identical(use_language(), "english")) {
+    return(invisible())
+  } else {
+    info_()
+  }
 }
 
 #' @rdname info
 #' @export
 ohje <- function() {
-    if (!identical(use_language(), "finnish")) invisible()
-    else info_()
+  if (!identical(use_language(), "finnish")) {
+    invisible()
+  } else {
+    info_()
+  }
 }
 
 #' Set the language used in the section and exam functions.
@@ -82,15 +90,21 @@ ohje <- function() {
 #' @param save_selection a logical value that indicates whether the selection should be saved to .Rprofile
 #' @export
 select_language <- function(language = c("english", "finnish"), save_selection = FALSE) {
-    if (!identical(use_language(), "english")) invisible()
-    else select_language_(language, save_selection)
+  if (!identical(use_language(), "english")) {
+    invisible()
+  } else {
+    select_language_(language, save_selection)
+  }
 }
 
 #' @rdname select_language
 #' @export
 valitse_kieli <- function(language = c("english", "finnish"), save_selection = FALSE) {
-    if (!identical(use_language(), "finnish")) invisible()
-    else select_language_(language, save_selection)
+  if (!identical(use_language(), "finnish")) {
+    invisible()
+  } else {
+    select_language_(language, save_selection)
+  }
 }
 
 #' The final exam for the R-course
@@ -100,15 +114,21 @@ valitse_kieli <- function(language = c("english", "finnish"), save_selection = F
 #' @param ... additional parameters for debugging.
 #' @export
 exam <- function(dob, ...) {
-    if (!identical(use_language(), "english")) invisible()
-    else exam_(dob, ...)
+  if (!identical(use_language(), "english")) {
+    invisible()
+  } else {
+    exam_(dob, ...)
+  }
 }
 
 #' @rdname exam
 #' @export
 loppukoe <- function(dob, ...) {
-    if (!identical(use_language(), "finnish")) invisible()
-    else exam_(dob, ...)
+  if (!identical(use_language(), "finnish")) {
+    invisible()
+  } else {
+    exam_(dob, ...)
+  }
 }
 
 #' Select an exercise section
@@ -117,13 +137,19 @@ loppukoe <- function(dob, ...) {
 #' @param x an integer value between 1 and 11 to select the section to start.
 #' @export
 section <- function(x) {
-    if (!identical(use_language(), "english")) invisible()
-    else section_(x)
+  if (!identical(use_language(), "english")) {
+    invisible()
+  } else {
+    section_(x)
+  }
 }
 
 #' @rdname section
 #' @export
 osio <- function(x) {
-    if (!identical(use_language(), "finnish")) invisible()
-    else section_(x)
+  if (!identical(use_language(), "finnish")) {
+    invisible()
+  } else {
+    section_(x)
+  }
 }

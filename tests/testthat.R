@@ -1,3 +1,3 @@
 if (requireNamespace("testthat")) {
-    testthat::test_check("Rcourse")
+  testthat::test_check("Rcourse")
 }
