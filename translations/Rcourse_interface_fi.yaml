@@ -18,7 +18,7 @@ Compare your plots with the ones shown by solution() instead.: "Vertaa omia kuva
 # exam.R
 Please input your date of birth as a string of the form 'dd/mm/yyyy'.: "Anna syntymäaikasi merkkijonona muodossa 'pp/kk/vvvv'."
 Please select your institution.: "Valitse yliopistosi."
-If you're attending University of Jyvaskyla (JYU), type 1.: "Jos suoritat kurssin Jyväskylän yliopiston (JYU) opiskelijana, kirjoita 1."
+If you're attending University of Jyväskylä (JYU), type 1.: "Jos suoritat kurssin Jyväskylän yliopiston (JYU) opiskelijana, kirjoita 1."
 If you're attending University of Eastern Finland (UEF), type 2.: "Jos suoritat kurssin Itä-Suomen yliopiston (UEF) opiskelijana, kirjoita 2."
 Please type either 1, 2, or q.: "Kirjoita joko 1, 2 tai q."
 To quit, type q.: "Kirjoita q lopettaaksesi."
@@ -89,7 +89,7 @@ Your previous answer has been restored to: "Edellinen vastauksesi on palautettu 
 Please input a valid object name.: "Syötä sallittu muuttujan nimi."
 Invalid object name.: "Virheellinen muuttujan nimi."
 Previous answers are not recorded for the exercise problems.: "Vastauksiasi harjoitustehtäviin ei tallenneta."
-"NOTE: You cannot return to this question after submitting your answer.": "HUOM: Et voi enää palata tähän tehtävään annettuasi vastauksen."
+"NOTE: You cannot return to this question after submitting your answer or skipping it.": "HUOM: Et voi enää palata tähän tehtävään annettuasi vastauksen tai ohitettuasi sen."
 # utilities.R
 To start the exercises, type section(x), where 'x' is a number between 1 and 11 e.g., section(1) starts the first exercise section.: "Harjoitustehtäviä pääset tekemään kirjoittamalla osio(x), missä 'x' on numero 1 ja 11 väliltä, esim. osio(1) aloittaa ensimmäisen harjoitustehtäväosion."
 To start the final exam, type exam(x), where 'x' is your date of birth in the format 'dd/mm/yyyy'.: "Loppukokeen voit aloittaa kirjoittamalla loppukoe(x), missä 'x' on syntymäaikasi muodossa 'pp/kk/vvvv'."

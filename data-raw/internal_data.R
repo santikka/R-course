@@ -11,7 +11,7 @@ finnish_questions <- yaml::read_yaml("./translations/Rcourse_questions_fi.yaml",
 # Exercise questions
 n_section <- 11L
 section_questions <- vector(mode = "list", length = n_section)
-for (i in 1:n_section) {
+for (i in seq_len(n_section)) {
   finnish_temp <- finnish_questions[[i]]
   english_temp <- english_questions[[i]]
   section_questions[[i]] <- unlist(english_temp)
@@ -23,7 +23,7 @@ for (i in 1:n_section) {
 # Exam questions (JYU)
 n_parts <- 2L
 exam_questions_jyu <- vector(mode = "list", length = n_parts)
-for (i in 1:n_parts) {
+for (i in seq_len(n_parts)) {
   exam <- paste0("Exam ", i, " JYU")
   finnish_temp <- as.list(unique(unlist(finnish_questions[[exam]])))
   english_temp <- as.list(unique(unlist(english_questions[[exam]])))

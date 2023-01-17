@@ -180,7 +180,7 @@ process_go <- function(e) {
   }
   if (e$val > 0 && e$val <= e$n_ex) {
     if (e$is_exam) {
-      if (!e$mutable[e$val]) {
+      if (!e$mutable[e$val] && e$max_ix > e$val) {
         custom_message(l() %a% "You cannot return to question number", " ", e$val, ".")
         return(TRUE)
       }
@@ -278,7 +278,7 @@ show_next <- function(e) {
     )
     custom_message(l() %a% "QUESTION", " ", e$ix, " / ", e$n_ex)
     if (!e$mutable[e$ix]) {
-      translate_message("NOTE: You cannot return to this question after submitting your answer.")
+      translate_message("NOTE: You cannot return to this question after submitting your answer or skipping it.")
     }
     if (e$ix > e$max_ix) {
       e$max_ix <- e$ix

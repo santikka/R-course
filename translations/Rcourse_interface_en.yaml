@@ -18,7 +18,7 @@ Compare your plots with the ones shown by solution() instead.: "Compare your plo
 # exam.R
 Please input your date of birth as a string of the form 'dd/mm/yyyy'.: "Please input your date of birth as a string of the form 'dd/mm/yyyy'."
 Please select your institution.: "Please select your institution."
-If you're attending University of Jyvaskyla (JYU), type 1.: "If you're attending University of Jyväskylä (JYU), type 1."
+If you're attending University of Jyväskylä (JYU), type 1.: "If you're attending University of Jyväskylä (JYU), type 1."
 If you're attending University of Eastern Finland (UEF), type 2.: "If you're attending University of Eastern Finland (UEF), type 2."
 Please type either 1, 2, or q.: "Please type either 1, 2, or q."
 To quit, type q.: "To quit, type q."
@@ -89,7 +89,7 @@ Your previous answer has been restored to: "Your previous answer has been restor
 Please input a valid object name.: "Please input a valid object name."
 Invalid object name.: "Invalid object name."
 Previous answers are not recorded for the exercise problems.: "Previous answers are not recorded for the exercise problems."
-"NOTE: You cannot return to this question after submitting your answer.": "NOTE: You cannot return to this question after submitting your answer."
+"NOTE: You cannot return to this question after submitting your answer or skipping it.": "NOTE: You cannot return to this question after submitting your answer or skipping it."
 # utilities.R
 To start the exercises, type section(x), where 'x' is a number between 1 and 11 e.g., section(1) starts the first exercise section.: "To start the exercises, type section(x), where 'x' is a number between 1 and 11 e.g., section(1) starts the first exercise section."
 To start the final exam, type exam(x), where 'x' is your date of birth in the format 'dd/mm/yyyy'.: "To start the final exam, type exam(x), where 'x' is your date of birth in the format 'dd/mm/yyyy'."

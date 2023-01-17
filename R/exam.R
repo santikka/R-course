@@ -31,7 +31,7 @@ exam_ <- function(dob, ...) {
   e$ask <- FALSE
   if (is.null(dots$test_inst)) {
     translate_message("Please select your institution.")
-    translate_message("If you're attending University of Jyvaskyla (JYU), type 1.")
+    translate_message("If you're attending University of Jyväskylä (JYU), type 1.")
     translate_message("If you're attending University of Eastern Finland (UEF), type 2.")
     translate_message("To quit, type q.")
     inst <- readline(prompt = "> ")
