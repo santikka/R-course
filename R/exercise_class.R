@@ -47,7 +47,7 @@ evaluate_submission <- function(x, obj) {
     for (i in 1:length(tests)) {
       if (!try_true({
         res <- TRUE
-        test_default <- length(tests[[i]]) == 0
+        test_default <- length(tests[[i]]) == 0L
         if (test_default) {
           res <- compare(x(), obj$solution())
         } else {
@@ -111,7 +111,7 @@ compare <- function(a, b) {
     if (is.atomic(b) && is.vector(b)) {
       a_coerced <- try(
         {
-          suppressWarnings(do.call(what = paste0("as.", class(b)[1]), args = list(a)))
+          suppressWarnings(do.call(what = paste0("as.", class(b)[1L]), args = list(a)))
         },
         silent = TRUE
       )

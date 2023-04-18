@@ -25,8 +25,8 @@ exam_ <- function(dob, ...) {
   part <- NULL
   inst <- NULL
   id <- ""
-  e$ix <- 0
-  e$max_ix <- 1
+  e$ix <- 0L
+  e$max_ix <- 1L
   e$init <- TRUE
   e$ask <- FALSE
   if (is.null(dots$test_inst)) {
@@ -185,7 +185,7 @@ exam_ <- function(dob, ...) {
     initialize(dots$override)
   }
   if (identical(part, "1") || identical(inst, "2")) {
-    e$part <- 1
+    e$part <- 1L
     if (e$require_wd) {
       e$file <- "/PISA_value.txt"
       file_path <- paste0(getwd(), e$file)
@@ -202,7 +202,7 @@ exam_ <- function(dob, ...) {
     }
   } else if (identical(part, "2")) {
     e$require_wd <- FALSE
-    e$part <- 2
+    e$part <- 2L
   } else {
     translate_message("The exam was cancelled.")
     return(invisible())
@@ -224,7 +224,7 @@ randomize_selection <- function(e, eq, continue = character(0), data, params) {
   e$select <- list()
   en <- names(eq)
   n_eq <- length(eq)
-  ix <- 0
+  ix <- 0L
   sel <- c()
   sel_prev <- c()
   if (missing(data)) {
@@ -234,7 +234,7 @@ randomize_selection <- function(e, eq, continue = character(0), data, params) {
     params <- replicate(n_eq, NULL)
   }
   for (i in seq_along(eq)) {
-    j <- as.numeric(strsplit(en[i], ",")[[1]])
+    j <- as.numeric(strsplit(en[i], ",")[[1L]])
     if (en[i] %in% continue) {
       sel <- sel_prev
     } else {
@@ -242,7 +242,7 @@ randomize_selection <- function(e, eq, continue = character(0), data, params) {
     }
     sel_prev <- sel
     for (k in sel) {
-      ix <- ix + 1
+      ix <- ix + 1L
       e$ex[[ix]] <- exercise(
         question = eq[[i]][[k]],
         data = if (is.null(data[[i]])) NULL else data[[i]][[k]],
@@ -256,7 +256,7 @@ randomize_selection <- function(e, eq, continue = character(0), data, params) {
 exams_ <- list()
 exams_$JYU <- list()
 
-exams_$JYU[[1]] <- function(e) {
+exams_$JYU[[1L]] <- function(e) {
   define_data <- function() {
     ind <- sample.int(nrow(pisa), 4300, replace = FALSE)
     ST <- paste("ST27Q", sprintf("%02d", sample.int(12, 2)), sep = "")
@@ -278,7 +278,7 @@ exams_$JYU[[1]] <- function(e) {
       "Northern Finland", "\u00C5land"
     )
     pisa_5$fregion <- fregion
-    tab_1 <- table(pisa_5[, ST[1]], pisa_5[, ST[2]])
+    tab_1 <- table(pisa_5[, ST[1L]], pisa_5[, ST[2L]])
     tab_2 <- table(pisa_5$ST04Q01, pisa_5$urban)
     list(
       ind = ind,
@@ -367,7 +367,7 @@ exams_$JYU[[1]] <- function(e) {
   )
 }
 
-exams_$JYU[[2]] <- function(e) {
+exams_$JYU[[2L]] <- function(e) {
   df_remove1 <- data.frame(c1 = runif(1000, -5, 5), c2 = runif(1000, 0, 2))
   df_remove2 <- data.frame(c1 = runif(1000, -5, 5), c2 = runif(1000, 0, 2))
   df_1 <- data.frame(abc = 1, yt = 1, vac = 1)

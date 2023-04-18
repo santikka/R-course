@@ -29,7 +29,10 @@ listen.default <- function(e) {
   detected <- e$funs[detect(e$funs, e$expr)]
   if (length(detected)) {
     # Process navigation commands
-    process <- do.call(what = paste0("process_", detected[1]), args = list(e = e))
+    process <- do.call(
+      what = paste0("process_", detected[1L]),
+      args = list(e = e)
+    )
     if (!is.null(process)) {
       return(process)
     }
@@ -86,6 +89,9 @@ initialize_listener <- function(e) {
       e$mutable <- sapply(e$ex, function(x) x$params$mutable)
       e$times <- integer(e$n_ex)
       e$current_start <- Sys.time()
+      if (!e$test_mode) {
+        verification(e)
+      }
     } else {
       e$completed <- logical(e$n_ex)
     }
@@ -110,7 +116,7 @@ update_time <- function(e) {
   time_remaining <- as.integer(difftime(e$time_start, Sys.time(), units = "mins")) + e$time_max
   if (time_remaining <= 0) {
     translate_message("The exam time has expired!")
-    verification(e)
+    verification(e, verbose = TRUE)
     cleanup(e)
     return(FALSE)
   }
@@ -146,7 +152,7 @@ process_exit <- function(e) {
       return(TRUE)
     }
     if (!e$test_mode) {
-      verification(e)
+      verification(e, verbose = TRUE)
     }
   }
   cleanup(e)
@@ -204,13 +210,13 @@ process_skip <- function(e) {
     }
     e$times[e$ix] <- as.integer(difftime(Sys.time(), e$current_start, units = "secs"))
     e$visited[e$ix] <- TRUE
-    e$ix <- e$ix + 1
+    e$ix <- e$ix + 1L
     e$ask <- TRUE
     while (!e$mutable[e$ix] && e$ix <= e$n_ex && e$visited[e$ix]) {
-      e$ix <- e$ix + 1
+      e$ix <- e$ix + 1L
     }
   } else {
-    e$ix <- e$ix + 1
+    e$ix <- e$ix + 1L
     e$ask <- TRUE
   }
   return(NULL)
@@ -245,10 +251,10 @@ process_submit <- function(e) {
     if (!is.null(e$val) && !is.null(answer)) {
       e$answers[[e$ix]] <- answer
     }
-    e$ix <- e$ix + 1
+    e$ix <- e$ix + 1L
     e$ask <- TRUE
     while (!e$mutable[e$ix] && e$ix <= e$n_ex && e$visited[e$ix]) {
-      e$ix <- e$ix + 1
+      e$ix <- e$ix + 1L
     }
   } else {
     if (e$check_answers) {
@@ -262,7 +268,7 @@ process_submit <- function(e) {
         custom_message("")
       }
     }
-    e$ix <- e$ix + 1
+    e$ix <- e$ix + 1L
     e$ask <- TRUE
   }
   return(NULL)
@@ -295,7 +301,7 @@ show_next <- function(e) {
   dat <- e$ex[[e$ix]]$data
   if (!is.null(dat)) {
     dat_names <- names(dat)
-    sapply(1:length(dat_names), function(x) {
+    sapply(seq_along(dat_names), function(x) {
       assign(dat_names[x], e$data[[dat[[x]]]], envir = globalenv())
     })
   }
@@ -345,9 +351,11 @@ cleanup <- function(e) {
 }
 
 # Saves the exam results as .RData for external verification
-verification <- function(e) {
-  translate_message("Compiling the verification file, please wait...")
-  flush.console()
+verification <- function(e, verbose = FALSE) {
+  if (verbose) {
+    translate_message("Compiling the verification file, please wait...")
+    flush.console()
+  }
   out <- list()
   keep_fields <- c(
     "num",
@@ -367,11 +375,14 @@ verification <- function(e) {
   for (field in keep_fields) {
     out[[field]] <- e[[field]]
   }
-  out_file <- paste0(getwd(), "/verification_", out$part, "_", out$num, "_",
-    out$seed, ".RData",
+  out$version <- packageVersion("Rcourse")
+  out_file <- paste0(
+    getwd(), "/verification_", out$part, "_", out$num, "_", out$seed, ".RData",
     collapse = ""
   )
   save(out, file = out_file)
-  translate_message("Verification file was successfully saved in the working directory!")
-  message("*** ", out_file, " ***")
+  if (verbose) {
+    translate_message("Verification file was successfully saved in the working directory!")
+    message("*** ", out_file, " ***")
+  }
 }

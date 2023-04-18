@@ -18,7 +18,7 @@ create_section <- function(part, require_wd = FALSE, check_answers = TRUE, extra
     e$check_answers <- check_answers
     e$require_wd <- require_wd
     e$test_mode <- FALSE
-    e$ix <- 1
+    e$ix <- 1L
     e$init <- TRUE
     e$ask <- FALSE
     e$data <- list()

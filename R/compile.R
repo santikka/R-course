@@ -16,7 +16,7 @@ compile <- function(questions, solutions, data, code, params) {
   } else if (length(params) == 1L) {
     params <- replicate(q, list(params))
   }
-  for (i in 1:q) {
+  for (i in seq_len(q)) {
     exercises[[i]] <- exercise(
       question = questions[[i]],
       solution = solutions[[i]],

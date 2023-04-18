@@ -1,7 +1,7 @@
 # Define the exercises
 exercises_ <- vector(mode = "list", length = 11L)
 
-exercises_[[1]] <- function(e) {
+exercises_[[1L]] <- function(e) {
   len <- sample(501:1000, 1)
   mind <- sample(1:20, 1)
   maxd <- sample(100:120, 1)
@@ -62,17 +62,17 @@ exercises_[[1]] <- function(e) {
   data[16:17] <- list(list(d = "d", g = "g"))
   data[[22]] <- list(h = "h")
   e$ex <- compile(
-    questions = section_questions[[1]],
+    questions = section_questions[[1L]],
     solutions = solutions,
     data = data,
     code = code
   )
 }
 
-exercises_[[2]] <- function(e) {
+exercises_[[2L]] <- function(e) {
   d <- sample(-10:10, 60, replace = TRUE)
   dimE <- sample(5:10, 2)
-  f <- sample(-10:10, dimE[1] * dimE[2], replace = TRUE)
+  f <- sample(-10:10, dimE[1L] * dimE[2L], replace = TRUE)
   E <- array(f, dimE)
   g1 <- sample(-10:10, 3)
   g2 <- sample(-10:10, 3)
@@ -125,14 +125,14 @@ exercises_[[2]] <- function(e) {
   data[[7]] <- list(g1 = "g1", H = "H", g2 = "g2")
   data[9:15] <- list(list(dk = "dk"))
   e$ex <- compile(
-    questions = section_questions[[2]],
+    questions = section_questions[[2L]],
     solutions = solutions,
     data = data,
     code = code
   )
 }
 
-exercises_[[3]] <- function(e, write = TRUE) {
+exercises_[[3L]] <- function(e, write = TRUE) {
   if (write) {
     write.table(carbon, file = "carbon.txt", quote = FALSE)
     write.table(carbon, file = "carbon2.txt", quote = FALSE, sep = ",")
@@ -172,14 +172,14 @@ exercises_[[3]] <- function(e, write = TRUE) {
   data <- vector(mode = "list", length = length(code))
   data[8:10] <- list(list(tomato = "tomato"))
   e$ex <- compile(
-    questions = section_questions[[3]],
+    questions = section_questions[[3L]],
     solutions = solutions,
     data = data,
     code = code
   )
 }
 
-exercises_[[4]] <- function(e) {
+exercises_[[4L]] <- function(e) {
   x <- seq(-3, 3, by = 0.1)
   y <- x^2
   z <- x^3
@@ -232,7 +232,7 @@ exercises_[[4]] <- function(e) {
   data[[10]] <- list(x = "x", y = "y", z = "z")
   data[11:13] <- list(list(xx = "xx", yy = "yy", zz = "zz"))
   e$ex <- compile(
-    questions = section_questions[[4]],
+    questions = section_questions[[4L]],
     solutions = solutions,
     data = data,
     code = code,
@@ -240,7 +240,7 @@ exercises_[[4]] <- function(e) {
   )
 }
 
-exercises_[[5]] <- function(e) {
+exercises_[[5L]] <- function(e) {
   t1 <- t.test(Height ~ Gender2, data = children, var.equal = TRUE)
   t2 <- leveneTest(Height ~ Gender2, data = children)
   boys <- subset(children, children$Gender2 == "Boy")
@@ -295,14 +295,14 @@ exercises_[[5]] <- function(e) {
   data[9:15] <- list(list(children2 = "children2"))
   data[16:17] <- list(list(children2 = "children2", m = "m"))
   e$ex <- compile(
-    questions = section_questions[[5]],
+    questions = section_questions[[5L]],
     solutions = solutions,
     data = data,
     code = code
   )
 }
 
-exercises_[[6]] <- function(e) {
+exercises_[[6L]] <- function(e) {
   lev <- leveneTest(YIELD ~ fSTRAIN, data = ftomato)
   fit <- anova(lm(YIELD ~ fSTRAIN, data = ftomato))
   mandatory <- c(rep(FALSE, 50), rep(TRUE, 62), rep(FALSE, 34), rep(TRUE, 64))
@@ -346,14 +346,14 @@ exercises_[[6]] <- function(e) {
   data[[8]] <- list(mandatory = "mandatory", firstyear = "firstyear")
   data[9:10] <- list(list(tilp = "tab"))
   e$ex <- compile(
-    questions = section_questions[[6]],
+    questions = section_questions[[6L]],
     solutions = solutions,
     data = data,
     code = code
   )
 }
 
-exercises_[[7]] <- function(e) {
+exercises_[[7L]] <- function(e) {
   x <- c(runif(100, -5, 5), 1, 1, -1, -1)
   y <- c(runif(100, -5, 5), 1, -1, 1, -1)
   a <- rbinom(100, 1, 0.5)
@@ -458,14 +458,14 @@ exercises_[[7]] <- function(e) {
     list(is_function = TRUE, test_input = test_input[[i]])
   })
   e$ex <- compile(
-    questions = section_questions[[7]],
+    questions = section_questions[[7L]],
     solutions = solutions,
     code = code,
     params = params
   )
 }
 
-exercises_[[8]] <- function(e) {
+exercises_[[8L]] <- function(e) {
   fct1 <- function(x) exp(x + 4) + 3 * x
   fct2 <- function(x) x * log(x)
   fct3 <- function(x) -x[1]^2 * exp(-0.5 * (x[1]^2 + x[2]^2))
@@ -493,13 +493,13 @@ exercises_[[8]] <- function(e) {
     `7` = "fun <- function(x) x^3 - 5*x^2 + x + sqrt(2)\n x <- round(c(uniroot(fun, c(-1, 0))$root, uniroot(fun, c(0, 1))$root), 2)\nsubmit(x)"
   )
   e$ex <- compile(
-    questions = section_questions[[8]],
+    questions = section_questions[[8L]],
     solutions = solutions,
     code = code
   )
 }
 
-exercises_[[9]] <- function(e) {
+exercises_[[9L]] <- function(e) {
   dimE <- sample(5:10, 2)
   ee <- sample(-10:10, dimE[1] * dimE[2], replace = TRUE)
   f <- sample(-10:10, dimE[1] * dimE[2], replace = TRUE)
@@ -565,14 +565,14 @@ exercises_[[9]] <- function(e) {
   data[[12]] <- list(rk1 = "rk1")
   data[[13]] <- list(rk2 = "rk2")
   e$ex <- compile(
-    questions = section_questions[[9]],
+    questions = section_questions[[9L]],
     solutions = solutions,
     data = data,
     code = code
   )
 }
 
-exercises_[[10]] <- function(e, write = TRUE) {
+exercises_[[10L]] <- function(e, write = TRUE) {
   if (write) {
     write.table(auto, file = "automobile.txt", quote = TRUE)
   }
@@ -612,14 +612,14 @@ exercises_[[10]] <- function(e, write = TRUE) {
   data[[8]] <- list(auto = "auto")
   data[[9]] <- list(auto = "auto", logreg2 = "logreg2")
   e$ex <- compile(
-    questions = section_questions[[10]],
+    questions = section_questions[[10L]],
     solutions = solutions,
     data = data,
     code = code
   )
 }
 
-exercises_[[11]] <- function(e) {
+exercises_[[11L]] <- function(e) {
   fun1 <- "fn1 <- function(x) { x + 3 "
   fun2 <- "fn2 <- function(x) { \n 2 x^2 + exp x \n}"
   fun3 <- "fn3 <- function(A, i) { \n ord <- order(A[ ,i]) \n A[ ,ord] \n}"
@@ -702,7 +702,7 @@ exercises_[[11]] <- function(e) {
     )
   })
   e$ex <- compile(
-    questions = section_questions[[11]],
+    questions = section_questions[[11L]],
     solutions = solutions,
     data = data,
     code = code,
