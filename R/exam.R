@@ -88,9 +88,13 @@ exam_ <- function(dob, ...) {
       translate_message("If you want to complete part two, type 2.")
       translate_message("To quit, type q.")
       part <- readline(prompt = "> ")
-      while (!(part %in% c("1", "2", "q"))) {
+      while (!part %in% c("1", "2", "q")) {
         translate_message("Please type either 1, 2, or q.")
         part <- readline(prompt = "> ")
+      }
+      if (identical(part, "q")) {
+        translate_message("The exam was cancelled.")
+        return(invisible())
       }
     } else {
       if (dots$test_part %in% c("1", "2")) {
@@ -103,6 +107,7 @@ exam_ <- function(dob, ...) {
     # UEF
     if (is.null(dots$test_id)) {
       translate_message("Please input your Peppi student number.")
+      translate_message("To quit, type q.")
       id <- readline(prompt = "> ")
       while (!grepl("^[0-9]{7,8}$|q$", id)) {
         translate_message("Invalid student number.", " ", "Please input your Peppi student number.")
@@ -157,6 +162,7 @@ exam_ <- function(dob, ...) {
         translate_message("The exam was cancelled.")
         return(invisible())
       }
+      part <- "1"
     }
   } else {
     translate_message("The exam was cancelled.")
@@ -167,8 +173,9 @@ exam_ <- function(dob, ...) {
   e$record <- FALSE
   e$incoming <- FALSE
   e$check_answers <- TRUE
-  e$require_wd <- if (is.null(dots$test_wd)) TRUE else dots$test_wd
+  e$require_wd <- FALSE
   e$test_mode <- if (is.null(dots$test_mode)) FALSE else dots$test_mode
+  e$part <- as.integer(part)
   e$inst <- inst
   e$id <- id
   e$num <- num
@@ -184,29 +191,6 @@ exam_ <- function(dob, ...) {
   } else {
     initialize(dots$override)
   }
-  if (identical(part, "1") || identical(inst, "2")) {
-    e$part <- 1L
-    if (e$require_wd) {
-      e$file <- "/PISA_value.txt"
-      file_path <- paste0(getwd(), e$file)
-      if (!file.exists(file_path)) {
-        e$init_warn <- TRUE
-        translate_message(
-          "Please change your working directory to where you unzipped the required data files (datasets.zip).", " ",
-          "You can view the location of the current working directory with the command getwd()."
-        )
-        custom_message(l() %a% "You can change the working directory with the command setwd(path), where path is the location of the data files, e.g.,", " setwd('U:/My Documents/')")
-      } else {
-        e$require_wd <- FALSE
-      }
-    }
-  } else if (identical(part, "2")) {
-    e$require_wd <- FALSE
-    e$part <- 2L
-  } else {
-    translate_message("The exam was cancelled.")
-    return(invisible())
-  }
   cb <- function(expr, val, ok, vis, data = e) {
     e$expr <- expr
     e$val <- val
@@ -219,7 +203,7 @@ exam_ <- function(dob, ...) {
 }
 
 # A function that performs the random selection of exam problems from the candidates
-randomize_selection <- function(e, eq, continue = character(0), data, params) {
+randomize_selection <- function(e, eq, continue = character(0L), data, params) {
   e$ex <- list()
   e$select <- list()
   en <- names(eq)
