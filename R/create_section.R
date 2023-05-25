@@ -22,6 +22,7 @@ create_section <- function(part, require_wd = FALSE, check_answers = TRUE, extra
     e$init <- TRUE
     e$ask <- FALSE
     e$data <- list()
+    options(prompt = paste0(l() %a% "section", e$part, "> "))
     custom_message(l() %a% "Welcome to section", " ", part, l() %a% " of the R-course!")
     if (check_answers) {
       translate_message("The program will automatically check your answers to each problem. If your answer is not correct, the program will ask whether you want to try again or continue to the next problem.")
@@ -46,7 +47,6 @@ create_section <- function(part, require_wd = FALSE, check_answers = TRUE, extra
         e$require_wd <- FALSE
       }
     }
-    custom_message("\n")
     cb <- function(expr, val, ok, vis, data = e) {
       e$expr <- expr
       e$val <- val

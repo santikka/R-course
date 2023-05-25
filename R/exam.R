@@ -34,10 +34,10 @@ exam_ <- function(dob, ...) {
     translate_message("If you're attending University of Jyväskylä (JYU), type 1.")
     translate_message("If you're attending University of Eastern Finland (UEF), type 2.")
     translate_message("To quit, type q.")
-    inst <- readline(prompt = "> ")
+    inst <- readline(prompt = "exam> ")
     while (!inst %in% c("1", "2", "q")) {
       translate_message("Please type either 1, 2, or q.")
-      inst <- readline(prompt = "> ")
+      inst <- readline(prompt = "exam> ")
     }
   } else {
     if (dots$test_inst %in% c("1", "2")) {
@@ -87,10 +87,10 @@ exam_ <- function(dob, ...) {
       translate_message("If you want to complete part one, type 1.")
       translate_message("If you want to complete part two, type 2.")
       translate_message("To quit, type q.")
-      part <- readline(prompt = "> ")
+      part <- readline(prompt = "exam> ")
       while (!part %in% c("1", "2", "q")) {
         translate_message("Please type either 1, 2, or q.")
-        part <- readline(prompt = "> ")
+        part <- readline(prompt = "exam> ")
       }
       if (identical(part, "q")) {
         translate_message("The exam was cancelled.")
@@ -108,11 +108,11 @@ exam_ <- function(dob, ...) {
     if (is.null(dots$test_id)) {
       translate_message("Please input your Peppi student number.")
       translate_message("To quit, type q.")
-      id <- readline(prompt = "> ")
+      id <- readline(prompt = "exam> ")
       while (!grepl("^[0-9]{7,8}$|q$", id)) {
         translate_message("Invalid student number.", " ", "Please input your Peppi student number.")
         translate_message("To quit, type q.")
-        id <- readline(prompt = "> ")
+        id <- readline(prompt = "exam> ")
       }
       if (identical(id, "q")) {
         translate_message("The exam was cancelled.")
@@ -153,10 +153,10 @@ exam_ <- function(dob, ...) {
     custom_message(repchar("-", con_width))
     if (is.null(dots$test_part)) {
       translate_message("Do you want to start the exam? (y/n)")
-      part <- readline(prompt = "> ")
+      part <- readline(prompt = "exam> ")
       while (!part %in% c("y", "n")) {
         translate_message("Please type either y or n.")
-        part <- readline(prompt = "> ")
+        part <- readline(prompt = "exam> ")
       }
       if (identical(part, "n")) {
         translate_message("The exam was cancelled.")
@@ -166,6 +166,7 @@ exam_ <- function(dob, ...) {
     }
   } else {
     translate_message("The exam was cancelled.")
+    options(prompt = "> ")
     return(invisible())
   }
   # Initialize the exam environment

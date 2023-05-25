@@ -1,7 +1,7 @@
 Package: Rcourse
 Type: Package
 Title: Interactive course for R programming
-Version: 4.2.0
+Version: 4.2.1
 Author: Santtu Tikka
 Maintainer: Santtu Tikka <santtu.tikka@jyu.fi>
 Depends: R (>= 4.0.0)

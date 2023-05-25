@@ -5,6 +5,7 @@ listen.default <- function(e) {
   # Initialize the current section, verify the working directory and construct the exercises
   if (e$init) {
     if (detect("exit", e$expr)) {
+      cleanup(e)
       return(FALSE)
     }
     if (initialize_listener(e)) {
@@ -76,7 +77,6 @@ initialize_listener <- function(e) {
         exams_$UEF(e)
       }
     } else {
-      options(prompt = paste0(l() %a% "section", e$part, "> "))
       exercises_[[e$part]](e)
     }
     e$n_ex <- length(e$ex)
@@ -334,7 +334,7 @@ cleanup <- function(e) {
     rm(list = ls(envir = globalenv()), envir = globalenv())
   } else {
     custom_message(l() %a% "You have quit section", " ", e$part, ".")
-    if (e$check_answers) {
+    if (!e$init && e$check_answers) {
       comp <- sum(e$completed)
       total <- e$n_ex
       if (comp < total) {

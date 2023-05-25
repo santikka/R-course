@@ -307,7 +307,9 @@ exercises_[[6L]] <- function(e) {
   fit <- anova(lm(YIELD ~ fSTRAIN, data = ftomato))
   mandatory <- c(rep(FALSE, 50), rep(TRUE, 62), rep(FALSE, 34), rep(TRUE, 64))
   firstyear <- c(rep(FALSE, 112), rep(TRUE, 210 - 112))
-  tab <- table(1 - firstyear, 1 - mandatory)
+  fmandatory <- factor(mandatory, levels = c(TRUE, FALSE))
+  ffirstyear <- factor(firstyear, levels = c(TRUE, FALSE))
+  tab <- table(ffirstyear, fmandatory, dnn = c("firstyear", "mandatory"))
   chi <- chisq.test(tab, correct = FALSE)
   solutions <- list(
     `1`  = c(3, 2, 1),
@@ -329,8 +331,8 @@ exercises_[[6L]] <- function(e) {
     `5`  = "x <- c(an$Df[1], round(an$`F value`[1], 1)\nsubmit(x)",
     `6`  = "x <- an$`Sum Sq`[1]\nsubmit(x)",
     `7`  = "TukeyHSD(aov(YIELD ~ fSTRAIN, data = tomato))\nx <- 2\nsubmit(x)",
-    `8`  = "tilp <- table(1 - firstyear, 1 - mandatory)\nsubmit(tilp)",
-    `9`  = "x <- rowSums(tilp) %*% t(colSums(tilp)) / sum(tilp)\nx <- TRUE\nsubmit(x)",
+    `8`  = "# We reverse the order of the values by converting both variables to factors and setting levels manually\nmandatory <- factor(mandatory, levels = c(TRUE, FALSE))\nfirstyear <- factor(firstyear, levels = c(TRUE, FALSE))\ntilp <- table(firstyear, mandatory)\nsubmit(tilp)",
+    `9`  = "x <- rowSums(tilp) %*% t(colSums(tilp)) / sum(tilp)\nx\n# Expected frequencies satisfy the assumptions\nx <- TRUE\nsubmit(x)",
     `10` = "chi <- chisq.test(tilp, correct = FALSE)\nchi\nx <- chi$p.value\nsubmit(x)"
   )
   e$data <- list(
