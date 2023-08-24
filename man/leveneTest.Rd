@@ -16,7 +16,7 @@ leveneTest(y, ...)
 \method{leveneTest}{lm}(y, ...)
 }
 \arguments{
-\item{y}{response variable for the default method, or a \code{lm} or 
+\item{y}{response variable for the default method, or a \code{lm} or
 \code{formula} object. If \code{y} is a linear-model object or a formula,
 the variables on the right-hand-side of the model must all be factors and
 must be completely crossed.}
@@ -43,8 +43,8 @@ Computes Levene's test for homogeneity of variance across groups.
 \references{
 Fox, J. (2016)
  \emph{Applied Regression Analysis and Generalized Linear Models},
- Third Edition. Sage.  
- 
- Fox, J. and Weisberg, S. (2019) 
+ Third Edition. Sage.
+
+ Fox, J. and Weisberg, S. (2019)
  \emph{An R Companion to Applied Regression}, Third Edition, Sage.
 }

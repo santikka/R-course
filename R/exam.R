@@ -163,6 +163,12 @@ exam_ <- function(dob, ...) {
         return(invisible())
       }
       part <- "1"
+    } else {
+      if (identical(dots$test_part, "1")) {
+        part <- dots$test_part
+      } else {
+        stop("Invalid `test_part` value!")
+      }
     }
   } else {
     translate_message("The exam was cancelled.")

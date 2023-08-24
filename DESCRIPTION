@@ -1,13 +1,13 @@
 Package: Rcourse
 Type: Package
 Title: Interactive course for R programming
-Version: 4.2.1
+Version: 4.3.0
 Author: Santtu Tikka
 Maintainer: Santtu Tikka <santtu.tikka@jyu.fi>
 Depends: R (>= 4.0.0)
 Description: The package contains interactive excercise sections for various topic areas.
 License: GPL-3
-RoxygenNote: 7.2.0
+RoxygenNote: 7.2.3
 Encoding: UTF-8
 Suggests: testthat
 Collate: 

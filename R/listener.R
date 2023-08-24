@@ -377,10 +377,10 @@ verification <- function(e, verbose = FALSE) {
   }
   out$version <- packageVersion("Rcourse")
   out_file <- paste0(
-    getwd(), "/verification_", out$part, "_", out$num, "_", out$seed, ".RData",
+    getwd(), "/verification_", out$part, "_", out$num, "_", out$seed, ".rds",
     collapse = ""
   )
-  save(out, file = out_file)
+  saveRDS(object = out, file = out_file, compress = "xz")
   if (verbose) {
     translate_message("Verification file was successfully saved in the working directory!")
     message("*** ", out_file, " ***")
