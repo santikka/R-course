@@ -238,7 +238,8 @@ process_solution <- function(e) {
 }
 
 process_submit <- function(e) {
-  if (e$check_answers && (is.null(e$val) || !exists(e$val, envir = globalenv()))) {
+  if (e$check_answers &&
+      (is.null(e$val) || length(e$val) > 1L || !exists(e$val, envir = globalenv()))) {
     translate_message("A submitted answer must be an R object in the global environment.")
     return(TRUE)
   }
