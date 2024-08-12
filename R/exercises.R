@@ -328,7 +328,7 @@ exercises_[[6L]] <- function(e) {
     `2`  = "tomato$fSTRAIN <- factor(tomato$STRAIN, labels = paste0(\"STRAIN\", 1:3))\nsubmit(tomato)",
     `3`  = "lev <- leveneTest(YIELD ~ fSTRAIN, data = tomato)\nlev\nx <- lev$`F value`[1]\nsubmit(x)",
     `4`  = "an <- anova(lm(YIELD ~ fSTRAIN, data = tomato))\nan\nx <- TRUE\nsubmit(x)",
-    `5`  = "x <- c(an$Df[1], round(an$`F value`[1], 1)\nsubmit(x)",
+    `5`  = "x <- c(an$Df[1], round(an$`F value`[1], 1))\nsubmit(x)",
     `6`  = "x <- an$`Sum Sq`[1]\nsubmit(x)",
     `7`  = "TukeyHSD(aov(YIELD ~ fSTRAIN, data = tomato))\nx <- 2\nsubmit(x)",
     `8`  = "# We reverse the order of the values by converting both variables to factors and setting levels manually\nmandatory <- factor(mandatory, levels = c(TRUE, FALSE))\nfirstyear <- factor(firstyear, levels = c(TRUE, FALSE))\ntilp <- table(firstyear, mandatory)\nsubmit(tilp)",
