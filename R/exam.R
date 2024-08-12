@@ -61,6 +61,7 @@ exam_ <- function(dob, ...) {
     custom_message("")
     translate_message(
       "The first part of the exam involves the PISA data, so make sure you have downloaded and extracted the required datasets (datasets.zip) from the course webpage before starting.", " ",
+      "Make sure to also read the data documentation (PISA_variables.pdf) available on the course webpage.", " ",
       "Some questions will ask you to modify the PISA data. Make sure to always use the latest version of the data when answering the following questions that involve it."
     )
     custom_message("")
@@ -130,6 +131,7 @@ exam_ <- function(dob, ...) {
     custom_message("")
     translate_message(
       "Many questions of the exam are related to the PISA data, so make sure you have downloaded and exctracted the required datasets (datasets.zip) from the course webpage before starting.", " ",
+      "Make sure to also read the data documentation (PISA_variables.pdf) available on the course webpage.", " ",
       "Some questions will ask you to modify the PISA data. Make sure to always use the latest version of the data when answering the following questions that involve it."
     )
     custom_message("")
