@@ -30,7 +30,8 @@ exercises_[[1L]] <- function(e) {
     `19` = d[500],
     `20` = d[1:50],
     `21` = d[d > 20],
-    `22` = sum(is.na(h))
+    `22` = sum(is.na(h)),
+    `23` = h[!is.na(h)]
   )
   code <- list(
     `1`  = "x <- 1\nsubmit(x)",
@@ -54,13 +55,14 @@ exercises_[[1L]] <- function(e) {
     `19` = "x <- d[500]\nsubmit(x)",
     `20` = "x <- d[1:50]\nsubmit(x)",
     `21` = "x <- d[d > 20]\nsubmit(x)",
-    `22` = "x <- sum(is.na(h)\nsubmit(x))"
+    `22` = "x <- sum(is.na(h))\nsubmit(x)",
+    `23` = "x <- h[!is.na(h)]\nsubmit(x)"
   )
   e$data <- list(d = d, g = g, h = h)
   data <- vector(mode = "list", length = length(solutions))
   data[c(6:15, 18:21)] <- list(list(d = "d"))
   data[16:17] <- list(list(d = "d", g = "g"))
-  data[[22]] <- list(h = "h")
+  data[23:24] <- list(list(h = "h"))
   e$ex <- compile(
     questions = section_questions[[1L]],
     solutions = solutions,
@@ -98,12 +100,14 @@ exercises_[[2L]] <- function(e) {
     `12` = dk[-2, ],
     `13` = dk[, -2],
     `14` = dk[, c("height", "weight")],
-    `15` = rbind(dk, c(178, 80, 2))
+    `15` = head(dk, 2),
+    `16` = tail(dk, 2),
+    `17` = rbind(dk, c(178, 80, 2))
   )
   code <- list(
     `1`  = "x <- array(d, c(6, 10))\nsubmit(x)",
     `2`  = "x <- dim(E)\nsubmit(x)",
-    `3`  = "x <- E[2,3]\nsubmit(x)",
+    `3`  = "x <- E[2, 3]\nsubmit(x)",
     `4`  = "x <- E[3, ]\nsubmit(x)",
     `5`  = "x <- cbind(g1, g2, g3)\nsubmit(x)",
     `6`  = "x <- rbind(g1, g2, g3)\nsubmit(x)",
@@ -115,7 +119,9 @@ exercises_[[2L]] <- function(e) {
     `12` = "x <- dk[-2, ]\nsubmit(x)",
     `13` = "x <- dk[, -2]\nsubmit(x)",
     `14` = "x <- dk[, c(\"height\", \"weight\")]\nsubmit(x)",
-    `15` = "x <- rbind(dk, c(178, 80, 2))\nsubmit(x)"
+    `15` = "x <- head(dk, 2)\nsubmit(x)",
+    `16` = "x <- tail(dk, 2)\nsubmit(x)",
+    `17` = "x <- rbind(dk, c(178, 80, 2))\nsubmit(x)"
   )
   e$data <- list(d = d, E = E, g1 = g1, g2 = g2, g3 = g3, H = H, dk = dk)
   data <- vector(mode = "list", length = length(solutions))
@@ -123,7 +129,7 @@ exercises_[[2L]] <- function(e) {
   data[2:4] <- list(list(E = "E"))
   data[5:6] <- list(list(g1 = "g1", g2 = "g2", g3 = "g3"))
   data[[7]] <- list(g1 = "g1", H = "H", g2 = "g2")
-  data[9:15] <- list(list(dk = "dk"))
+  data[9:17] <- list(list(dk = "dk"))
   e$ex <- compile(
     questions = section_questions[[2L]],
     solutions = solutions,
@@ -145,28 +151,34 @@ exercises_[[3L]] <- function(e, write = TRUE) {
   carbon_numeric_row_names <- carbon
   attr(carbon_numeric_row_names, "row.names") <- as.integer(rownames(carbon))
   solutions <- list(
-    `1` = carbon,
-    `2` = carbon,
-    `3` = carbon_numeric_row_names,
-    `4` = heightweight2,
-    `5` = round(mean(pigs$day6), 2),
-    `6` = auto[order(auto$hp, auto$wt), ],
-    `7` = list(tomato, mean(tomato$YIELD)),
-    `8` = tomato[tomato$YIELD > 10 & tomato$YIELD < 15, ],
-    `9` = tomato[tomato$STRAIN == 1 & tomato$DENSITY > 10, ],
-    `10` = tomato[tomato$YIELD > 15 | tomato$DENSITY == 10, ]
+    `1`  = carbon,
+    `2`  = carbon,
+    `3`  = carbon_numeric_row_names,
+    `4`  = heightweight2,
+    `5`  = mean(pigs$day6),
+    `6`  = auto[order(auto$hp, auto$wt), ],
+    `7`  = sum(auto$hp > 100),
+    `8`  = rownames(auto[order(auto$wt, decreasing = TRUE), ])[1],
+    `9`  = tapply(tomato$YIELD, tomato$STRAIN, mean),
+    `10` = str(tomato),
+    `11` = tomato[tomato$YIELD > 10 & tomato$YIELD < 15, ],
+    `12` = tomato[tomato$STRAIN == 1 & tomato$DENSITY > 10, ],
+    `13` = tomato[tomato$YIELD > 15 | tomato$DENSITY == 10, ]
   )
   code <- list(
     `1`  = "x <- read.table(\"carbon.txt\")\nsubmit(x)",
     `2`  = "x <- read.table(\"carbon2.txt\", sep = \",\")\nsubmit(x)",
     `3`  = "x <- read.table(\"carbon3.txt\", header = TRUE)\nsubmit(x)",
     `4`  = "hw <- read.table(\"heightweight.data\", header = TRUE)\nhw$BMI <- 703 * hw$weight/hw$height^2\nsubmit(hw)",
-    `5`  = "pigs <- read.csv2(\"pigs.csv\", header = TRUE)\nx <- round(mean(pigs$day6), 2)\nsubmit(x)",
+    `5`  = "pigs <- read.csv2(\"pigs.csv\", header = TRUE)\nx <- mean(pigs$day6)\nsubmit(x)",
     `6`  = "auto <- read.table(\"automobile.txt\", header = TRUE)\nauto <- auto[order(auto$hp, auto$wt),]\nsubmit(auto)",
-    `7`  = "tomato <- read.table(\"tomato.dat\", header = TRUE)\nx <- list(tomato, mean(tomato$YIELD))\nsubmit(x)",
-    `8`  = "x <- tomato[tomato$YIELD > 10 & tomato$YIELD < 15, ]\nsubmit(x)",
-    `9`  = "x <- tomato[tomato$STRAIN == 1 & tomato$DENSITY > 10, ]\nsubmit(x)",
-    `10` = "x <- tomato[tomato$YIELD > 15 | tomato$DENSITY == 10, ]\nsubmit(x)"
+    `7`  = "x <- sum(auto$hp > 100)\nsubmit(x)",
+    `8`  = "x <- rownames(auto[order(auto$wt, decreasing = TRUE), ])[1]\nsubmit(x)",
+    `9`  = "tomato <- read.table(\"tomato.dat\", header = TRUE)\nx <- tapply(tomato$YIELD, tomato$STRAIN, mean)\nsubmit(x)",
+    `10` = "x <- str(tomato)\nsubmit(x)",
+    `11` = "x <- tomato[tomato$YIELD > 10 & tomato$YIELD < 15, ]\nsubmit(x)",
+    `12` = "x <- tomato[tomato$STRAIN == 1 & tomato$DENSITY > 10, ]\nsubmit(x)",
+    `13` = "x <- tomato[tomato$YIELD > 15 | tomato$DENSITY == 10, ]\nsubmit(x)"
   )
   e$data <- list(tomato = tomato)
   data <- vector(mode = "list", length = length(code))
@@ -186,9 +198,6 @@ exercises_[[4L]] <- function(e) {
   cars_mod <- lm(dist ~ speed, data = cars)
   a <- cars_mod$coef[1]
   b <- cars_mod$coef[2]
-  xx <- seq(-2, 2, by = 0.1)
-  yy <- seq(-2, 2, by = 0.1)
-  zz <- exp(-outer(xx^2, yy^2, "+"))
   solutions <- list(
     `1` = expression(plot(x, y, main = "Scatterplot")),
     `2` = expression(plot(x, y, las = 1)),
@@ -205,10 +214,7 @@ exercises_[[4L]] <- function(e) {
     `10` = expression({
       plot(x, y, type = "l", ylim = c(-10, 10))
       points(x, z)
-    }),
-    `11` = expression(image(xx, yy, zz)),
-    `12` = expression(contour(xx, yy, zz)),
-    `13` = expression(persp(xx, yy, zz))
+    })
   )
   code <- list(
     `1`  = "plot(x, y, main = \"Scatterplot\")",
@@ -220,17 +226,13 @@ exercises_[[4L]] <- function(e) {
     `7`  = "boxplot(cars$speed)",
     `8`  = "ts.plot(Nile)",
     `9`  = "plot(x, y, type = \"l\")",
-    `10` = "plot(x, y, type = \"l\", ylim = c(-10, 10))\npoints(x, z)",
-    `11` = "image(xx, yy, zz)",
-    `12` = "contour(xx, yy, zz)",
-    `13` = "persp(xx, yy, zz)"
+    `10` = "plot(x, y, type = \"l\", ylim = c(-10, 10))\npoints(x, z)"
   )
-  e$data <- list(a = a, b = b, x = x, y = y, z = z, xx = xx, yy = yy, zz = zz)
+  e$data <- list(a = a, b = b, x = x, y = y, z = z)
   data <- vector(mode = "list", length = length(code))
   data[c(1:3, 9)] <- list(list(x = "x", y = "y"))
   data[[5]] <- list(a = "a", b = "b")
   data[[10]] <- list(x = "x", y = "y", z = "z")
-  data[11:13] <- list(list(xx = "xx", yy = "yy", zz = "zz"))
   e$ex <- compile(
     questions = section_questions[[4L]],
     solutions = solutions,
@@ -241,53 +243,51 @@ exercises_[[4L]] <- function(e) {
 }
 
 exercises_[[5L]] <- function(e) {
-  t1 <- t.test(Height ~ Gender2, data = children, var.equal = TRUE)
-  t2 <- leveneTest(Height ~ Gender2, data = children)
+  t1 <- t.test(Height ~ Gender2, data = children)
   boys <- subset(children, children$Gender2 == "Boy")
   girls <- subset(children, children$Gender2 == "Girl")
-  t3 <- shapiro.test(girls$Height)
-  t4 <- shapiro.test(boys$Height)
   girls2 <- girls[-1, ]
-  t5 <- shapiro.test(girls2$Height)
-  t6 <- t.test(Height ~ Gender2, data = children2, var.equal = TRUE)
+  t2 <- t.test(Height ~ Gender2, data = children2)
   m <- lm(Weight ~ Height, data = children2)
   solutions <- list(
     `1`  = children,
     `2`  = "boys",
     `3`  = quantile(children$Weight, c(0.25, 0.75)),
-    `4`  = t1$stat,
+    `4`  = c(t1$stat, t1$p.value),
     `5`  = c(var(boys$Height), var(girls$Height)),
-    `6`  = t2$F[1],
-    `7`  = c(t4$p, t3$p),
-    `8`  = t5$stat,
-    `9`  = head(children2, 10),
-    `10` = names(children2),
-    `11` = summary(children2),
-    `12` = t6$stat,
-    `13` = "pos",
-    `14` = cor(children2$Height, children2$Weight),
-    `15` = TRUE,
+    `6`  = children2,
+    `7`  = head(children2, 10),
+    `8`  = names(children2),
+    `9`  = summary(children2),
+    `10` = nrow(children2),
+    `11` = c(t2$stat, t2$p.value),
+    `12` = "pos",
+    `13` = cor(children2$Height, children2$Weight),
+    `14` = m,
+    `15` = coef(m),
     `16` = sqrt(vcov(m)[2, 2]),
-    `17` = TRUE
+    `17` = confint(m)[2, ],
+    `18` = summary(m)$adj.r.squared
   )
   code <- list(
     `1`  = "children <- read.table(\"Children2007.dat\", header = TRUE)\nchildren$Gender2 <- factor(children$Gender, labels = c(\"Boy\", \"Girl\"))\nsubmit(children)",
     `2`  = "boxplot(Height ~ Gender2, data = children)\nx <- \"boys\"\nsubmit(x)",
     `3`  = "x <- quantile(children$Weight, c(0.25, 0.75))\nsubmit(x)",
-    `4`  = "tt <- t.test(Height ~ Gender2, data = children, var.equal = TRUE)\ntt\nx <- tt$statistic\nsubmit(x)",
+    `4`  = "tt <- t.test(Height ~ Gender2, data = children)\ntt\nx <- c(tt$statistic, tt$p.value)\nsubmit(x)",
     `5`  = "x <- tapply(children$Height, children$Gender2, var)\nsubmit(x)",
-    `6`  = "lev <- leveneTest(Height ~ Gender2, data = children)\nlev\nx <- lev$`F value`[1]\nsubmit(x)",
-    `7`  = "shap <- tapply(children$Height, children$Gender2, shapiro.test)\nshap\nx <- c(shap[[1]]$p, shap[[2]]$p)\nsubmit(x)",
-    `8`  = "children2 <- children[-1,]\nshap2 <- shapiro.test(children2$Height[children2$Gender2 == \"Girl\"])\nshap2\nx <- shap2$statistic\nsubmit(x)",
-    `9`  = "x <- head(children2, 10)\nsubmit(x)",
-    `10` = "x <- names(children2)\nsubmit(x)",
-    `11` = "x <- summary(children2)\nsubmit(x)",
-    `12` = "tt2 <- t.test(Height ~ Gender2, data = children2, var.equal = TRUE)\ntt2\nx <- tt2$stat\nsubmit(x)",
-    `13` = "plot(Weight ~ Height, data = children2)\nx <- \"pos\"\nsubmit(x)",
-    `14` = "x <- cor(children2$Height, children2$Weight)\nsubmit(x)",
-    `15` = "m <- lm(Weight ~ Height, data = children2)\nqqnorm(m$residuals)\nshapiro.test(m$residuals)\nx <- TRUE\nsubmit(x)",
-    `16` = "# Read the value from column Std. Error and row Height.\nsummary_table <- summary(m)\nx <- summary_table$coefficients[\"Height\",\"Std. Error\"]\nsubmit(x)",
-    `17` = "summary(m)\nx <- TRUE\nsubmit(x)"
+    `6`  = "children2 <- children[-1, ]\nsubmit(children2)",
+    `7`  = "x <- head(children2, 10)\nsubmit(x)",
+    `8`  = "x <- names(children2)\nsubmit(x)",
+    `9`  = "x <- summary(children2)\nsubmit(x)",
+    `10` = "x <- nrow(children2)\nsubmit(x)",
+    `11` = "tt2 <- t.test(Height ~ Gender2, data = children2)\ntt2\nx <- c(tt2$statistic, tt2$p.value)\nsubmit(x)",
+    `12` = "plot(Weight ~ Height, data = children2)\nx <- \"pos\"\nsubmit(x)",
+    `13` = "x <- cor(children2$Height, children2$Weight)\nsubmit(x)",
+    `14` = "m <- lm(Weight ~ Height, data = children2)\nsubmit(m)",
+    `15` = "x <- coef(m)\nsubmit(x)",
+    `16` = "x <- vcov(m)[2, 2]\nsubmit(x)",
+    `17` = "x <- confint(m)[2, ]\nsubmit(x)",
+    `18` = "x <- summary(m)$adj.r.squared\nsubmit(x)"
   )
   e$data <- list(children = children, children2 = children2, m = m)
   data <- vector(mode = "list", length = length(code))
