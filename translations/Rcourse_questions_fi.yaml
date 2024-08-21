@@ -17,7 +17,7 @@ Section 1:
   15: "Lisää jokaiseen vektorin d alkioon luku 2."
   16: "Ohjelma on generoinut muuttujaan g vektorin, joka on samanpituinen kuin d. Vähennä vektorista g vektori d, jonka alkiot on kerrottu luvulla 2."
   17: "Kerro keskenään vektorit g ja d alkioittain niin, että vektoreiden d ja g ensimmäiset alkiot kerrotaan keskenään, toiset alkiot keskenään jne."
-  18: "Määritä vektorin d käänteislukujen neliöt. "
+  18: "Määritä vektorin d käänteislukujen neliöt."
   19: "Valitse vektorin d viidessadas alkio."
   20: "Valitse vektorin d viisikymmentä ensimmäistä alkiota."
   21: "Valitse ne vektorin d alkiot, jotka ovat suurempia kuin 20. Alkioiden tulee olla edelleen samassa järjestyksessä kuin vektorissa d."
@@ -66,6 +66,8 @@ Section 4:
   8: "Tarkastellaan R:n aineistoa Nile, joka on aikasarja Niili-joen vuosittaisista virtaamista. Piirrä aikasarja funktiolla plot (ts.plot)."
   9: "Ohjelma on luonut muuttujat x ja y. Piirrä muuttujien x ja y viivagraafi, eli kuvio, jossa pisteet yhdistetään viivalla. Käytä argumenttia type."
   10: "Piirrä edellisen tehtävän viivagraafi uudelleen, mutta aseta nyt y-akselin rajat argumentilla ylim = c(-10, 10). Lisää viivagraafiin ohjelman generoimien muuttujien x ja z hajontakuvio funktiolla points."
+  11: "Tarkastellaan aineistoa auto, joka sisältää tietoa eri automalleista. Piirrä autojen hevosvoimien (hp) boxplotit kummallekin vaihteiston tyypille (am) vierekkäin samaan kuvaan."
+  12: "Ohjelma on luonut funktion muuttujaan f. Piirrä funktion f kuvaaja välillä (-3, 3) käyttäen funktiota curve."
 Section 5:
   1: "Lue sisään aineisto Children2007.dat muuttujaan children (header = TRUE). Aineisto sisältää vastasyntyneiden pituuksia (senttimetreinä) ja painoja (grammoina). Luo aineistoon uusi sarake nimeltä Gender2, joka sisältää tiedon vauvan sukupuolesta faktorina, ts. jos vauva on tyttö, niin aineiston muuttuja Gender saa arvon 1 jolloin uusi muuttuja saa arvon \"Girl\". vastaavasti jos Gender saa arvon 0, niin uusi muuttuja saa arvon \"Boy\". Anna vastauksena muokattu aineisto"
   2: "Tutkitaan, poikkeavatko tyttöjen ja poikien keskipituudet toisistaan. Piirrä pituuden boxplotit sukupuolten suhteen samaan kuvaan, ja vastaa kuvan perusteella, kummat olivat keskimäärin pitempiä. Anna vastauksesi merkkijonona \"girls\" tai \"boys\" (boxplot)."
@@ -93,97 +95,116 @@ Section 6:
   5: "Jatketaan mallin m parissa, jossa satomäärää selitetään lajikkeella. Laske mallin antamat ennusteet satomäärälle joka lajikkeelle. Anna vastauksesi vektorina lajikkeita vastaavassa järjestyksessä."
   6: "Palataan tomato-aineiston pariin. Muodosta uusi lineaarinen regressiomalli, jossa tomaattisatoa selitetään lajikkeella (faktori fSTRAIN) sekä istutustiheydellä (DENSITY). Tallenna uusi malli muuttujaan m2 ja anna se tehtävän vastauksena."
   7: "Jatketaan mallin m2 parissa, jossa satomäärää selitetään lajikkeella ja istutustiheydellä. Laske mallin antamat ennusteet satomäärälle joka lajikkeelle kun istutustiheys DENSITY saa arvon 20."
-  8: "Tilastotieteen peruskurssille on ilmoittautunut yhteensä 210 henkilöä. Ohjelma on generoinut kaksi vektoria, mandatory ja firstyear, jotka sisältävät vastaavasti tiedon siitä, onko kurssi opiskelijalle pakollinen ja onko opiskelija ensimmäisen vuoden opiskelija (TRUE = on, FALSE = ei ole). Muodosta näiden vektoreiden avulla 2 x 2 -ristiintaulukko, jossa ensimmäisellä rivillä ja sarakkeella on niiden ensimmäisen vuoden opiskelijoiden frekvenssi, joille kurssi on pakollinen. Vastaavasti ensimmäisen rivin toisella sarakkeella tulee olla niiden ensimmäisen vuoden opiskelijoiden frekvenssi, joille kurssi ei ole pakollinen. Toisella rivillä tulee olla vastaavat frekvenssit vanhemmille opiskelijoille. Käytä funktiota table taulukon muodostamiseen. Tallenna saatu ristiintaulukko myös muuttujaan tilp ja anna se tehtävän vastauksena."
-  9: "Jatketaan edellisen tehtävän ristiintaulukon tilp parissa. Tutki, ovatko oletukset khiin neliö -testiä varten voimassa (vähintään 80 % soluissa odotettu frekvenssi >= 5 ja ei soluja, joissa odotettu frekvenssi on < 1). Jos oletukset ovat voimassa, niin anna vastauksena totuusarvo TRUE. Muussa tapauksessa vastaa FALSE."
-  10: "Jatketaan edellisen tehtävän ristiintaulukon tilp parissa. Halutaan selvittää, riippuuko kurssin pakollisuus opiskeluvuosista. Tee khiin neliö -testi ja anna vastauksesi vektorina, jonka ensimmäinen alkio on testin testisuure ja toinen alkio on testin p-arvo muodossa: c(testisuure, p-arvo)."
+  8: "Tilastotieteen peruskurssille on ilmoittautunut yhteensä 210 henkilöä. Ohjelma on generoinut kaksi vektoria, mandatory ja firstyear, jotka sisältävät vastaavasti tiedon siitä, onko kurssi opiskelijalle pakollinen ja onko opiskelija ensimmäisen vuoden opiskelija (TRUE = on, FALSE = ei ole). Muodosta näiden vektoreiden avulla 2 x 2 -ristitaulukko, jossa ensimmäisellä rivillä ja sarakkeella on niiden ensimmäisen vuoden opiskelijoiden frekvenssi, joille kurssi on pakollinen. Vastaavasti ensimmäisen rivin toisella sarakkeella tulee olla niiden ensimmäisen vuoden opiskelijoiden frekvenssi, joille kurssi ei ole pakollinen. Toisella rivillä tulee olla vastaavat frekvenssit vanhemmille opiskelijoille. Käytä funktiota table taulukon muodostamiseen. Tallenna saatu ristitaulukko myös muuttujaan tilp ja anna se tehtävän vastauksena."
+  9: "Jatketaan edellisen tehtävän ristitaulukon tilp parissa. Muodosta suhteellisten osuuksien taulukko kurssin pakollisuudelle opiskeluvuoden suhteen."
+  10: "Jatketaan edellisen tehtävän ristitaulukon tilp parissa. Muodosta suhteellisten osuuksien taulukko opiskeluvuodelle kurssin pakollisuuden suhteen."
+  11: "Jatketaan edellisen tehtävän ristitaulukon tilp parissa. Tutki, ovatko oletukset khiin neliö -testiä varten voimassa (vähintään 80 % soluissa odotettu frekvenssi >= 5 ja ei soluja, joissa odotettu frekvenssi on < 1). Jos oletukset ovat voimassa, niin anna vastauksena totuusarvo TRUE. Muussa tapauksessa vastaa FALSE."
+  12: "Jatketaan edellisen tehtävän ristitaulukon tilp parissa. Halutaan selvittää, riippuuko kurssin pakollisuus opiskeluvuosista. Tee khiin neliö -testi ja anna vastauksesi vektorina, jonka ensimmäinen alkio on testin testisuure ja toinen alkio on testin p-arvo muodossa: c(testisuure, p-arvo)."
 Section 7:
-  1: "Laske todennäköisyys P(-1 < X < 2.5), kun X ~ N(3, 1.5) ts. X noudattaa normaalijakaumaa keskiarvolla 3 ja varianssilla 1.5. Anna vastauksesi kahden desimaalin tarkkuudella."
-  2: "Millä y:n arvolla P(X > y) = 0.6, kun X ~ t(20) ts. X noudattaa t-jakaumaa vapausasteilla 20. Anna vastauksesi kolmen desimaalin tarkkuudella."
-  3: "Etsi funktion exp(x + 4) + 3*x juuri. Anna vastauksesi kahden desimaalin tarkkuudella. Käytä funktiota uniroot."
-  4: "Etsi funktion x * log(x) lokaali minimi välillä 0 < x < 1. Anna vastauksesi kahden desimaalin tarkkuudella muodossa c(x, minimiarvo), missä x on minimipiste. Käytä funktiota optimize."
-  5: "Etsi funktion x^2 * exp(-0.5*(x^2 + y^2)) lokaali maksimi joukossa 0 < x < 2, -1 < y < 1. Anna vastauksesi kahden desimaalin tarkkuudella muodossa c(x,y,maksimiarvo), missä x ja y ovat maksimipisteen koordinaatit. Käytä funktiota optim."
-  6: "Laske funktion 1 / (sin x)^3 integraali välillä 1 < x < 3. Anna vastauksesi kahden desimaalin tarkkuudella. Käytä funktiota integrate."
-  7: "Funktiolla x^3 - 5*x^2 + x + sqrt(2) on kaksi reaalista juurta välillä -1 < x < 1. Etsi nämä juuret käyttäen funktiota uniroot. Anna vastauksesi kahden desimaalin tarkkuudella muodossa c(x1, x2), missä x1 on juurista pienin."
+  1: "Laske normaalijakauman N(1, 2) (odotusarvo on 1 ja varianssi on 2) tiheysfunktion arvot pisteissä -1, 0, ja 2. Anna vastauksena vektori, joka sisältää tiheysfunktion arvot vastaavassa järjestyksessä."
+  2: "Laske t-jakauman t(15) (vapausasteet 15) tiheysfunktion arvot pisteissä -1, 0, ja 2. Anna vastauksena vektori, joka sisältää tiheysfunktion arvot vastaavassa järjestyksessä."
+  3: "Laske todennäköisyys P(X <= 3), kun X ~ N(3, 4) ts. X noudattaa normaalijakaumaa odotusarvolla 3 ja varianssilla 4."
+  4: "Laske todennäköisyys P(X > 2), kun X ~ N(1, 5) ts. X noudattaa normaalijakaumaa odotusarvolla 1 ja varianssilla 5."
+  5: "Laske todennäköisyys P(-1 < X < 2.5), kun X ~ N(3, 1.5) ts. X noudattaa normaalijakaumaa odotusarvolla 3 ja varianssilla 1.5."
+  6: "Millä y:n arvolla P(X <= y) = 0.3, kun X ~ t(10) ts. X noudattaa t-jakaumaa vapausasteilla 10."
+  7: "Millä y:n arvolla P(X > y) = 0.6, kun X ~ t(20) ts. X noudattaa t-jakaumaa vapausasteilla 20."
 Exam JYU:
   1:
     - "Lue sisään aineisto tiedostosta PISA_value.txt muuttujaan pisa."
   2:
-    - "Jatketaan edellisen tehtävän PISA-aineiston parissa. Ohjelma on generoinut kokonaislukuvektorin ind. Muokkaa aineistoa siten, että siinä ovat vain ne rivit, joiden rivinumerot ovat vektorissa ind. Sijoita muokattu aineisto muuttujaan pisa."
+    - "Ohjelma on generoinut kokonaislukuvektorin ind. Muokkaa PISA-aineistoa siten, että siinä ovat vain ne rivit, joiden rivinumerot ovat vektorissa ind. Sijoita muokattu aineisto muuttujaan pisa."
   3:
-    - "Jatketaan edellisessä tehtävässä muokkaamasi PISA-aineiston parissa. Ohjelma on generoinut merkkitietovektorin mut. Muokkaa aineistoa siten, että siinä ovat vain ne muuttujat, joiden nimet ovat vektorissa mut. Sijoita muokattu aineisto muuttujaan pisa."
+    - "Ohjelma on generoinut merkkitietovektorin mut. Muokkaa PISA-aineistoa siten, että siinä ovat vain ne muuttujat, joiden nimet ovat vektorissa mut. Sijoita muokattu aineisto muuttujaan pisa."
   4:
-    - "Jatketaan edellisessä tehtävässä muokkaamasi PISA-aineiston parissa. Monet aineiston muuttujista sisältävät puuttuvaa tietoa. Muokkaa aineistoa siten, että se sisältää vain täydelliset havaintorivit, eli sellaiset rivit, joissa ei ole puuttuvaa tietoa (NA) yhdessäkään muuttujassa. Sijoita muokattu aineisto muuttujaan pisa."
-  "5,6,7":
+    - "Monet PISA-aineiston muuttujista sisältävät puuttuvaa tietoa. Muokkaa aineistoa siten, että se sisältää vain täydelliset havaintorivit, eli sellaiset rivit, joilla ei ole puuttuvaa tietoa (NA) yhdessäkään muuttujassa. Sijoita muokattu aineisto muuttujaan pisa."
+  5:
+    - "PISA-aineiston muuttuja SCHOOLID on oppilaan koulun yksilöivä tunnus. Kuinka monesta eri koulusta PISA-aineisto sisältää havaintoja?"
+  "6,7,8":
     - "Laske PISA-aineiston muuttujan readscore keskiarvo."
     - "Laske PISA-aineiston muuttujan sciescore varianssi."
     - "Laske PISA-aineiston muuttujan mathscore keskihajonta."
     - "Laske PISA-aineiston muuttujan natlang mediaani."
     - "Laske PISA-aineiston muuttujan math minimi."
     - "Laske PISA-aineiston muuttujan age maksimi."
-  8:
+  9:
     - "Laske aineiston muuttujien mathscore ja sciescore välinen (Pearsonin) korrelaatiokerroin."
     - "Laske aineiston muuttujien mathscore ja readscore välinen (Pearsonin) korrelaatiokerroin."
     - "Laske aineiston muuttujien readscore ja sciescore välinen (Pearsonin) korrelaatiokerroin."
-  9:
-    - "Piirrä aineiston muuttujien mathscore ja sciescore välinen hajontakuvio. Sijoita plot-komennon tulos muuttujaksi ja anna se tehtävän vastauksena."
-    - "Piirrä aineiston muuttujien mathscore ja readscore välinen hajontakuvio. Sijoita plot-komennon tulos muuttujaksi ja anna se tehtävän vastauksena."
-    - "Piirrä aineiston muuttujien readscore ja sciescore välinen hajontakuvio. Sijoita plot-komennon tulos muuttujaksi ja anna se tehtävän vastauksena."
   10:
-    - "Piirrä boxplot aineiston muuttujasta mathscore. Sijoita boxplot-komennon tulos muuttujaksi ja anna se tehtävän vastauksena."
-    - "Piirrä boxplot aineiston muuttujasta readscore. Sijoita boxplot-komennon tulos muuttujaksi ja anna se tehtävän vastauksena."
-    - "Piirrä boxplot aineiston muuttujasta sciescore. Sijoita boxplot-komennon tulos muuttujaksi ja anna se tehtävän vastauksena."
+    - "Piirrä aineiston muuttujien mathscore ja sciescore välinen hajontakuvio käyttäen funktiota plot. Sijoita plot-komennon tulos muuttujaksi ja anna se tehtävän vastauksena."
+    - "Piirrä aineiston muuttujien mathscore ja readscore välinen hajontakuvio käyttäen funktiota plot. Sijoita plot-komennon tulos muuttujaksi ja anna se tehtävän vastauksena."
+    - "Piirrä aineiston muuttujien readscore ja sciescore välinen hajontakuvio käyttäen funktiota plot. Sijoita plot-komennon tulos muuttujaksi ja anna se tehtävän vastauksena."
   11:
-    - "Muokkaa PISA-aineistoa siten, että luot sen viimeisiksi sarakkeiksi kolme uutta muuttujaa seuraavassa järjestyksessä: fgender, furban ja fregion, jotka vastaavat aineiston muuttujia ST04Q01, urban ja region, mutta ovat faktoreita. Nimeä faktoreiden tasot kurssin sivuilta löytyvän dokumentin PISA_variables.pdf mukaisesti (Muuttujalla ST04Q01 eli sukupuolella on kaksi tasoa, muuttujalla urban on kaksi tasoa ja muuttujalla region on neljä tasoa, sillä Ahvenanmaalta ei ole havaintoja). Huomioi isot ja pienet kirjaimet tasojen nimissä. Sijoita muokattu aineisto muuttujaan pisa."
+    - "Piirrä histogrammi aineiston muuttujasta mathscore käyttäen funktiota hist. Sijoita hist-komennon tulos muuttujaksi ja anna se tehtävän vastauksena."
+    - "Piirrä histogrammi aineiston muuttujasta readscore käyttäen funktiota hist. Sijoita hist-komennon tulos muuttujaksi ja anna se tehtävän vastauksena."
+    - "Piirrä histogrammi aineiston muuttujasta sciescore käyttäen funktiota hist. Sijoita hist-komennon tulos muuttujaksi ja anna se tehtävän vastauksena."
   12:
+    - "Muokkaa PISA-aineistoa siten, että luot sen viimeisiksi sarakkeiksi kolme uutta muuttujaa seuraavassa järjestyksessä: fgender, furban ja fregion, jotka vastaavat aineiston muuttujia ST04Q01, urban ja region, mutta ovat faktoreita. Nimeä faktoreiden tasot kurssin sivuilta löytyvän dokumentin PISA_variables.pdf mukaisesti (Muuttujalla ST04Q01 eli sukupuolella on kaksi tasoa, muuttujalla urban on kaksi tasoa ja muuttujalla region on neljä tasoa, sillä Ahvenanmaalta ei ole havaintoja). Huomioi isot ja pienet kirjaimet tasojen nimissä. Sijoita muokattu aineisto muuttujaan pisa."
+  13:
     - "Muodosta vektori, joka sisältää aluekohtaiset matematiikan pistemäärien keskiarvot (mathscore, fregion). Järjestä keskiarvot kurssin sivuilta löytyvän dokumentin PISA_muuttujat.pdf mukaiseen aluejärjestykseen."
     - "Muodosta vektori, joka sisältää aluekohtaiset lukutaidon pistemäärien keskihajonnat (readscore, fregion). Järjestä keskihajonnat kurssin sivuilta löytyvän dokumentin PISA_muuttujat.pdf mukaiseen aluejärjestykseen."
     - "Muodosta vektori, joka sisältää aluekohtaiset luonnontieteiden pistemäärien varianssit (sciescore, fregion). Järjestä varianssit kurssin sivuilta löytyvän dokumentin PISA_muuttujat.pdf mukaiseen aluejärjestykseen."
-  13:
+  14:
+    - "Piirrä boxplotit matematiikan pistemäärille (mathscore) joka alueelle (fregion) käyttäen funktiota boxplot. Sijoita boxplot-komennon tulos muuttujaksi ja anna se tehtävän vastauksena."
+    - "Piirrä boxplotit lukutaidon pistemäärille (readscore) joka alueelle (fregion) käyttäen funktiota boxplot. Sijoita boxplot-komennon tulos muuttujaksi ja anna se tehtävän vastauksena."
+    - "Piirrä boxplotit luonnontieteiden pistemäärille (sciescore) joka alueelle (fregion) käyttäen funktiota boxplot. Sijoita boxplot-komennon tulos muuttujaksi ja anna se tehtävän vastauksena."
+  15:
     - "Muodosta vektori, joka sisältää ne tyttöjen matematiikan pistemäärät (mathscore), jotka ovat suurempia kuin 600."
     - "Muodosta vektori, joka sisältää ne poikien luonnontieteiden pistemäärät (sciescore), jotka ovat pienempiä kuin 500."
     - "Muodosta vektori, joka sisältää ne kaupungissa koulua käyvien lukutaidon pistemäärät, jotka ovat suurempia kuin 400, mutta alle 500 (furban, readscore)."
     - "Muodosta vektori, joka sisältää Länsi-Suomen kaikkien oppilaiden matematiikan (viimeisimmät) kouluarvosanat (fregion, math)."
-  14:
+  16:
     - "Muodosta vektori, joka sisältää matematiikan pistemäärät (mathscore) nousevassa suuruusjärjestyksessä."
     - "Muodosta vektori, joka sisältää lukutaidon pistemäärät (readscore) laskevassa suuruusjärjestyksessä."
     - "Muodosta vektori, joka sisältää äidinkielen viimeisimmät kouluarvosanat (natlang) nousevassa suuruusjärjestyksessä."
     - "Muodosta vektori, joka sisältää matematiikan viimeisimmät kouluarvosanat (math) laskevassa suuruusjärjestyksessä."
-  15:
+  17:
     - "Muodosta datakehikko, joka koostuu PISA-aineiston 10:stä ensimmäisestä rivistä vastaavassa järjestyksessä kuin PISA-aineistossa."
     - "Muodosta datakehikko, joka koostuu PISA-aineiston 10:stä viimeisestä rivistä vastaavassa järjestyksessä kuin PISA-aineistossa."
     - "Muodosta vektori, joka sisältää PISA-aineiston muuttujien nimet aakkosjärjestyksessä."
     - "Määritä PISA-aineiston havaintojen lukumäärä."
     - "Määritä PISA-aineiston muuttujien lukumäärä."
-  16:
+  18: 
+    - "Kuinka monta sellaista havaintoa PISA-aineistossa on, joilla koulun sijainti (furban) on kaupunki ja alue (fregion) on Etelä-Suomi (Southern Finland)?"
+    - "Kuinka monta sellaista havaintoa PISA-aineistossa on, joilla koulun sijainti (furban) on maaseutu ja alue (fregion) on Länsi-Suomi (Western Finland)?"
+    - "Kuinka monta sellaista havaintoa PISA-aineistossa on, joilla koulun sijainti (furban) on kaupunki ja alue (fregion) on Itä-Suomi (Eastern Finland)?"
+    - "Kuinka monta sellaista havaintoa PISA-aineistossa on, joilla koulun sijainti (furban) on maaseutu ja alue (fregion) on Pohjois-Suomi (Northern Finland)?"
+  19:
     - "Testaa, onko poikien ja tyttöjen matematiikan pistemäärien keskiarvoissa eroa t-testillä (fgender, mathscore). Anna vastauksena vektori, jonka ensimmäinen alkio on testin testisuure ja toinen alkio on testin p-arvo."
     - "Testaa, onko maaseudun ja kaupunkien koulujen oppilaiden luonnontieteiden pistemäärien keskiarvoissa eroa t-testillä (sciescore, furban). Anna vastauksena vektori, jonka ensimmäinen alkio on testin testisuure ja toinen alkio on testin p-arvo."
-  17:
-    - "Ohjelma on valinnut PISA-aineistosta kaksi muuttujaa ja tallentanut niiden nimet vektoriin ST. Muodosta näiden muuttujien välinen ristiintaulukko. Tallenna taulukko muuttujaan tab, sillä tarvitset sitä seuraavissa tehtävissä."
-    - "Muodosta aineistosta sukupuolen (ST04Q01) ja koulun sijaintipaikan (urban) välinen ristiintaulukko. Tallenna taulukko muuttujaan tab, sillä tarvitset sitä seuraavissa tehtävissä."
-  18:
-    - "Jatketaan edellisen tehtävän ristiintaulukon parissa (tab). Tutki ovatko khiin neliö -testin oletukset voimassa (vähintään 80 % soluissa odotettu frekvenssi >= 5 ja ei soluja, joissa odotettu frekvenssi on < 1). Jos ovat, niin anna vastauksena totuusarvo TRUE. Muussa tapauksessa anna vastauksena FALSE."
-    - "Jatketaan edellisen tehtävän ristiintaulukon parissa (tab). Tutki ovatko khiin neliö -testin oletukset voimassa (vähintään 80 % soluissa odotettu frekvenssi >= 5 ja ei soluja, joissa odotettu frekvenssi on < 1). Jos ovat, niin anna vastauksena totuusarvo TRUE. Muussa tapauksessa anna vastauksena FALSE."
-  19:
-    - "Jatketaan edellisen tehtävän ristiintaulukon parissa (tab). Tee nyt khiin neliö -testi ja määritä testisuureen arvo."
-    - "Jatketaan edellisen tehtävän ristiintaulukon parissa (tab). Tee nyt khiin neliö -testi ja määritä testisuureen arvo."
   20:
+    - "Ohjelma on valinnut PISA-aineistosta kaksi muuttujaa ja tallentanut niiden nimet vektoriin ST. Muodosta näiden muuttujien välinen ristitaulukko. Tallenna taulukko muuttujaan tab, sillä tarvitset sitä seuraavissa tehtävissä."
+    - "Muodosta aineistosta sukupuolen (ST04Q01) ja koulun sijaintipaikan (urban) välinen ristitaulukko. Tallenna taulukko muuttujaan tab, sillä tarvitset sitä seuraavissa tehtävissä."
+  21:
+    - "Jaktetaan edellisen tehtävän ristitaulukon parissa (tab). Muodosta vastaava suhteellisten osuuksien taulukko."
+    - "Jaktetaan edellisen tehtävän ristitaulukon parissa (tab). Muodosta vastaava suhteellisten osuuksien taulukko."
+  22:
+    - "Jatketaan edellisen tehtävän ristitaulukon parissa (tab). Tutki ovatko khiin neliö -testin oletukset voimassa (vähintään 80 % soluissa odotettu frekvenssi >= 5 ja ei soluja, joissa odotettu frekvenssi on < 1). Jos ovat, niin anna vastauksena totuusarvo TRUE. Muussa tapauksessa anna vastauksena FALSE."
+    - "Jatketaan edellisen tehtävän ristitaulukon parissa (tab). Tutki ovatko khiin neliö -testin oletukset voimassa (vähintään 80 % soluissa odotettu frekvenssi >= 5 ja ei soluja, joissa odotettu frekvenssi on < 1). Jos ovat, niin anna vastauksena totuusarvo TRUE. Muussa tapauksessa anna vastauksena FALSE."
+  23:
+    - "Jatketaan edellisen tehtävän ristitaulukon parissa (tab). Tee nyt khiin neliö -testi ja määritä testisuureen arvo."
+    - "Jatketaan edellisen tehtävän ristitaulukon parissa (tab). Tee nyt khiin neliö -testi ja määritä testisuureen arvo."
+  24:
     - "Sovita aineistoon lineaarinen regressiomalli, jossa matematiikan pistemäärää (mathscore) selitetään luonnontieteiden pistemäärällä (sciescore). Tallenna regressiomalli muuttujaan m, sillä tarvitset sitä seuraavissa tehtävissä. "
     - "Sovita aineistoon lineaarinen regressiomalli, jossa lukutaidon pistemäärää selitetään (readscore) luonnontieteiden pistemäärällä (sciescore). Tallenna regressiomalli muuttujaan m, sillä tarvitset sitä seuraavissa tehtävissä. "
-  21:
-    - "Jatketaan edellisen tehtävän regressiomallin parissa. Määritä regressiokertoimen estimaatti."
-    - "Jatketaan edellisen tehtävän regressiomallin parissa. Määritä regressiokertoimen estimaatti."
-  22:
-    - "Jatketaan edellisen tehtävän regressiomallin parissa. Määritä mallin vakioitu selitysaste (adjusted R-squared)."
-    - "Jatketaan edellisen tehtävän regressiomallin parissa. Määritä mallin vakioitu selitysaste (adjusted R-squared)."
-  23:
-    - "Jatketaan edellisen tehtävän regressiomallin parissa. Määritä mallin antama ennuste matematiikan pistemäärälle, kun luonnontieteiden pistemäärä on 500."
-    - "Jatketaan edellisen tehtävän regressiomallin parissa. Määritä mallin antama ennuste lukutaidon pistemäärälle, kun luonnontieteiden pistemäärä on 500."
-  24:
-    - "Laske todennäköisyys P(-3 < X < 2), kun X ~ N(0, 4) ts. X noudattaa normaalijakaumaa keskiarvolla 0 ja varianssilla 4."
-    - "Laske todennäköisyys P(X >= 2), kun X ~ N(3, 0.5) ts. X noudattaa normaalijakaumaa keskiarvolla 3 ja varianssilla 0.5."
-    - "Laske todennäköisyys P(X < 0), kun X ~ N(-2, 3) ts. X noudattaa normaalijakaumaa keskiarvolla -2 ja varianssilla 3."
   25:
-    - "Millä y:n arvolla P(X > y) = 0.6, kun X ~ N(0, 2) ts. X noudattaa normaalijakaumaa keskiarvolla 0 ja varianssilla 2."
+    - "Jatketaan edellisen tehtävän regressiomallin m parissa. Määritä regressiokertoimen estimaatti."
+    - "Jatketaan edellisen tehtävän regressiomallin m parissa. Määritä regressiokertoimen estimaatti."
+  26:
+    - "Jatketaan edellisen tehtävän regressiomallin m parissa. Määritä mallin vakioitu selitysaste (adjusted R-squared)."
+    - "Jatketaan edellisen tehtävän regressiomallin m parissa. Määritä mallin vakioitu selitysaste (adjusted R-squared)."
+  27:
+    - "Jatketaan edellisen tehtävän regressiomallin m parissa. Piirrä mallin jäännösten kvantiili-kvantiili-kuvio. Sijoita qqnorm-komennon tulos muuttujaksi ja anna se tehtävän vastauksena."
+    - "Jatketaan edellisen tehtävän regressiomallin m parissa. Piirrä mallin jäännösten kvantiili-kvantiili-kuvio. Sijoita qqnorm-komennon tulos muuttujaksi ja anna se tehtävän vastauksena."
+  28:
+    - "Jatketaan edellisen tehtävän regressiomallin m parissa. Määritä mallin antama ennuste matematiikan pistemäärälle, kun luonnontieteiden pistemäärä on 500."
+    - "Jatketaan edellisen tehtävän regressiomallin m parissa. Määritä mallin antama ennuste lukutaidon pistemäärälle, kun luonnontieteiden pistemäärä on 500."
+  29:
+    - "Laske todennäköisyys P(-3 < X < 2), kun X ~ N(0, 4) ts. X noudattaa normaalijakaumaa odotusarvolla 0 ja varianssilla 4."
+    - "Laske todennäköisyys P(X >= 2), kun X ~ N(3, 0.5) ts. X noudattaa normaalijakaumaa odotusarvolla 3 ja varianssilla 0.5."
+    - "Laske todennäköisyys P(X < 0), kun X ~ N(-2, 3) ts. X noudattaa normaalijakaumaa odotusarvolla -2 ja varianssilla 3."
+  30:
+    - "Millä y:n arvolla P(X > y) = 0.6, kun X ~ N(0, 2) ts. X noudattaa normaalijakaumaa odotusarvolla 0 ja varianssilla 2."
     - "Millä y:n arvolla P(X < y) = 0.2, kun X ~ t(40) ts. X noudattaa t-jakaumaa vapausasteilla 40."
     - "Millä y:n arvolla P(X > y) = 0.35, kun X ~ X^2(10) ts. X noudattaa khiin neliö -jakaumaa vapausasteilla 10."
 Exam UEF:
@@ -250,14 +271,14 @@ Exam UEF:
     - "Testaa maaseudun koulujen ja kaupunkien koulujen oppilaiden luonnontieteiden pistemäärien samavarianssisuutta Levenen testillä (sciescore, furban). Jos varianssit ovat testin mukaan samat, niin anna vastauksena testisuureen arvo. Muussa tapauksessa anna vastauksena testin p-arvo."
     - "Testaa ovatko oppilaiden matematiikan pistemäärien varianssit samat eri alueilla Levenen testillä (mathscore, fregion). Jos varianssit ovat testin mukaan samat, niin anna vastauksena testisuureen arvo. Muussa tapauksessa anna vastauksena testin p-arvo."
   20:
-    - "Ohjelma on valinnut PISA-aineistosta kaksi muuttujaa ja tallentanut niiden nimet vektoriin ST. Muodosta näiden muuttujien välinen ristiintaulukko. Tallenna taulukko myös muuttujaan tab, sillä tarvitset sitä seuraavissa tehtävissä."
-    - "Muodosta aineistosta sukupuolen (ST04Q01) ja koulun sijaintipaikan (urban) välinen ristiintaulukko. Tallenna taulukko myös muuttujaan tab, sillä tarvitset sitä seuraavissa tehtävissä."
+    - "Ohjelma on valinnut PISA-aineistosta kaksi muuttujaa ja tallentanut niiden nimet vektoriin ST. Muodosta näiden muuttujien välinen ristitaulukko. Tallenna taulukko myös muuttujaan tab, sillä tarvitset sitä seuraavissa tehtävissä."
+    - "Muodosta aineistosta sukupuolen (ST04Q01) ja koulun sijaintipaikan (urban) välinen ristitaulukko. Tallenna taulukko myös muuttujaan tab, sillä tarvitset sitä seuraavissa tehtävissä."
   21:
-    - "Jatketaan edellisen tehtävän ristiintaulukon parissa (tab). Tutki ovatko khiin neliö -testin oletukset voimassa (vähintään 80 % soluissa odotettu frekvenssi >= 5 ja ei soluja, joissa odotettu frekvenssi on < 1). Jos ovat, niin anna vastauksena totuusarvo TRUE. Muussa tapauksessa anna vastauksena FALSE."
-    - "Jatketaan edellisen tehtävän ristiintaulukon parissa (tab). Tutki ovatko khiin neliö -testin oletukset voimassa (vähintään 80 % soluissa odotettu frekvenssi >= 5 ja ei soluja, joissa odotettu frekvenssi on < 1). Jos ovat, niin anna vastauksena totuusarvo TRUE. Muussa tapauksessa anna vastauksena FALSE."
+    - "Jatketaan edellisen tehtävän ristitaulukon parissa (tab). Tutki ovatko khiin neliö -testin oletukset voimassa (vähintään 80 % soluissa odotettu frekvenssi >= 5 ja ei soluja, joissa odotettu frekvenssi on < 1). Jos ovat, niin anna vastauksena totuusarvo TRUE. Muussa tapauksessa anna vastauksena FALSE."
+    - "Jatketaan edellisen tehtävän ristitaulukon parissa (tab). Tutki ovatko khiin neliö -testin oletukset voimassa (vähintään 80 % soluissa odotettu frekvenssi >= 5 ja ei soluja, joissa odotettu frekvenssi on < 1). Jos ovat, niin anna vastauksena totuusarvo TRUE. Muussa tapauksessa anna vastauksena FALSE."
   22:
-    - "Jatketaan edellisen tehtävän ristiintaulukon parissa (tab). Tee nyt khiin neliö -testi ja määritä testisuureen arvo. Älä käytä jatkuvuuskorjausta."
-    - "Jatketaan edellisen tehtävän ristiintaulukon parissa (tab). Tee nyt khiin neliö -testi ja määritä testisuureen arvo. Älä käytä jatkuvuuskorjausta."
+    - "Jatketaan edellisen tehtävän ristitaulukon parissa (tab). Tee nyt khiin neliö -testi ja määritä testisuureen arvo. Älä käytä jatkuvuuskorjausta."
+    - "Jatketaan edellisen tehtävän ristitaulukon parissa (tab). Tee nyt khiin neliö -testi ja määritä testisuureen arvo. Älä käytä jatkuvuuskorjausta."
   23:
     - "Testaa, onko poikien ja tyttöjen matematiikan pistemäärien keskiarvoissa eroa t-testillä (fgender, mathscore). Oleta heteroskedastisuus. Jos eroa on, niin anna vastauksena testisuureen arvo. Muussa tapauksessa anna vastauksena testin p-arvo."
     - "Testaa, onko maaseudun ja kaupunkien koulujen oppilaiden luonnontieteiden pistemäärien keskiarvoissa eroa t-testillä (sciescore, furban). Oleta homoskedastisuus. Jos eroa on, niin anna vastauksena testisuureen arvo. Muussa tapauksessa anna vastauksena testin p-arvo."

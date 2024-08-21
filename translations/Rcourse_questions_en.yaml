@@ -66,8 +66,10 @@ Section 4:
   8: "Let's examine the data 'Nile' from R. It is a time series about the annual flows of the river Nile. Draw the time series by applying the function 'plot' (ts.plot)."
   9: "The program has generated the variables x and y. Plot the line graph of the variables. In other words, plot a figure in which the dots are connected with a line. Use the argument 'type'. (plot)"
   10: "Redraw the line graph from the previous assignment. Apply the argument ylim = c(-10, 10) to change the boundaries of the y-axis. Add the scatter plot of the program-generated variables x and z to the line graph figure. Use the function called 'points'."
+  11: "Let's examine the data object 'auto' that contains information on different car models. Create boxplots of the horsepowers (hp) for both transmission types (am) in the same figure side by side."
+  12: "The program has generated a function called 'f'. Plot the graph of the function 'f' on the interval (-3, 3) using the 'curve' function.
 Section 5:
-  1: "Read the data Children2007.dat into a data frame called 'children'. The data contain the lengths (in cm) and weights (in grams) of newborn babies. Create a new column called 'Gender2' which holds the gender as a factor. That means that if the baby is a girl, then the variable Gender has value 1 so the new variable gets the value \"Girl\". Similarly, if Gender has value 0 then new variable has value \"Boy\". Give the modified data set as your answer."
+  1: "Read the data file Children2007.dat into a data frame called 'children'. The data set contains the lengths (in cm) and weights (in grams) of newborn babies. Create a new column called 'Gender2' which holds the gender as a factor. That means that if the baby is a girl, then the variable Gender has value 1 so the new variable gets the value \"Girl\". Similarly, if Gender has value 0 then new variable has value \"Boy\". Give the modified data set as your answer."
   2: "Let's study if the average heights of boys and girls differ from each other. Draw the boxplots for the heights given the gender in the same figure. Answer based on the figure which gender was taller on average. Give your response as as string \"girls\" or \"boys\" (boxplot)."
   3: "Compute the lower and upper quartiles of variable 'Weight'. Give your answer as a vector c(lower, upper)."
   4: "Use the t-test to evaluate whether the average heights of girls and boys are statistically significantly different. Give your answer as a vector with the test statistic as the first element and the p-value as the second element: c(statistic, p-value)."
@@ -94,145 +96,117 @@ Section 6:
   6: "Let's consider the 'tomato' data again. Create a new linear regression model where the yield is explained by the strain (factor 'fSTRAIN') and the planting density (DENSITY). Save the model as the object 'm2'. Give the model object 'm2' as the answer."
   7: "Let's continue with the model 'm2' where the yield is explained by the strain and the planting density. Compute the predicted yield for each strain again when DENSITY has the value 20."
   8: "210 students have enrolled to a basic statistics course. The program has generated two vectors, 'mandatory' and 'firstyear', including information whether a course is mandatory to a student and whether the student is studying their first year (TRUE = yes, FALSE = no). Based on these vectors, create a 2 x 2 cross tabulation with the frequency of the first year students studying the mandatory course in the first column of the first row. The second column of the first row presents the frequency of the first year students studying the elective course. The second row contains corresponding frequencies of the senior students. Apply the function table to create the tabulation. Also, save the table into the object 'tilp' and give it as the answer."
-  9: "Let's continue with the cross tabulation 'tilp' from the previous assignment. Examine whether the assumptions of the chi-squared test apply (at least 80 % of the cells have the expected frequency >= 5 and there are no cells with the expected frequency < 1). If the assumptions hold submit the boolean TRUE. Otherwise, submit the boolean FALSE."
-  10: "Let's continue with the cross tabulation 'tilp' from the previous assignment. We want to find out whether the compulsion of the course depends on the study year. Apply the chi-squared test and give your answer as a vector that contains the test statistic as the first element and the p-value of the test as the second element as: c(statistic, p-value)."
+  9: "Let's continue with the cross tabulation 'tilp' from the previous assignment. Create a table of relative frequencies for the 'mandatory' variable given the 'firstyear' variable."
+  10: "Let's continue with the cross tabulation 'tilp' from the previous assignment. Create a table of relative frequencies for the 'firstyear' variable given the 'mandatory' variable."
+  11: "Let's continue with the cross tabulation 'tilp' from the previous assignment. Examine whether the assumptions of the chi-squared test apply (at least 80 % of the cells have the expected frequency >= 5 and there are no cells with the expected frequency < 1). If the assumptions hold submit the boolean TRUE. Otherwise, submit the boolean FALSE."
+  12: "Let's continue with the cross tabulation 'tilp' from the previous assignment. We want to find out whether the compulsion of the course depends on the study year. Apply the chi-squared test and give your answer as a vector that contains the test statistic as the first element and the p-value of the test as the second element as: c(statistic, p-value)."
 Section 7:
-  1: "Calculate the probability P(-1 < X < 2.5) when X ~ N(3, 1.5), i.e. X is normally distributed with the mean of 3 and the variance of 1.5. Answer with the accuracy of two decimals."
-  2: "Find out y in P(X > y) = 0.6. X ~ t(20), i.e. X follows the t-distribution with 20 degrees of freedom. Answer with the accuracy of three decimals."
-  3: "Find the root of the function exp(x + 4) + 3*x. Answer with the accuracy of two decimals. Use the function 'uniroot'."
-  4: "Find the local minimum of the function x * log(x) within the interval 0 < x < 1 . Answer with the accuracy of two decimals as the vector: c(x, minimum value), x being the location of the minimum in the range. Use the function 'optimize'."
-  5: "Find out the local maximum of the function x^2 * exp(-0.5*(x^2 + y^2)) in the set 0 < x < 2, -1 < y < 1. Answer with the accuracy of two decimals as the vector c(x, y, maximum value), x and y being the coordinates of the maximum. Use the function 'optim'."
-  6: "Calculate the integral of the function 1 / (sin x)^3 over the interval 1 < x < 3. Answer with the accuracy of two decimals. Use the function 'integrate'."
-  7: "The function x^3 - 5*x^2 + x + sqrt(2) has two real roots on the interval -1 < x < 1. Find these two roots with the function 'uniroot'. Answer with accuracy of two decimals as the vector c(x1, x2) where x1 is the smallest of the two roots."
+  1: "Compute the value of the probability density function for the normal distribution N(1, 2) (expected value is 1 and variance 2) at the points -1, 0, and 2. Give your answer as a vector that contains the density function values in the corresponding order."
+  2: "Compute the value of the probability density function for the t-distribution t(15) (15 degrees of freedom) at the points -1, 0, and 2. Give your answer as a vector that contains the density function values in the corresponding order."
+  3: "Calculate the probability P(X <= 3) when X ~ N(3, 4), i.e., X is normally distributed with expected value of 3 and variance of 4.5."
+  4: "Calculate the probability P(X > 2) when X ~ N(1, 5), i.e., X is normally distributed with expected value of 1 and variance of 5."
+  5: "Calculate the probability P(-1 < X < 2.5) when X ~ N(3, 1.5), i.e., X is normally distributed with expected value of 3 and variance of 1.5."
+  6: "Find the value of y in P(X <= y) = 0.3. X ~ t(10), i.e., X follows a t-distribution with 10 degrees of freedom."
+  7: "Find the value of y in P(X > y) = 0.6. X ~ t(20), i.e., X follows a t-distribution with 20 degrees of freedom."
 Exam JYU:
   1:
     - "Read in the data from the file PISA_value.txt into the variable 'pisa'."
   2:
-    - "Let's continue with the PISA data from the previous assignment. The program has generated a vector of integers called 'ind'. Modify the data so that only those rows whose row numbers are included in the vector 'ind' are preserved. Assign the modified data into the variable 'pisa'."
+    - "The program has generated a vector of integers called 'ind'. Modify the data so that only those rows whose row numbers are included in the vector 'ind' are preserved. Assign the modified data into the variable 'pisa'."
   3:
-    - "Let's continue with the PISA data that was modified in the previous assignment. The program has generated a character vector called 'mut'. Modify the data so that only those variables whose names are included in the vector 'mut' are preserved. Assign the modified data into the variable 'pisa'."
+    - "The program has generated a character vector called 'mut'. Modify the data so that only those variables whose names are included in the vector 'mut' are preserved. Assign the modified data into the variable 'pisa'."
   4:
-    - "Let's continue with the PISA data that was modified in the previous assignment. Multiple variables of the data have missing values. Modify the data so that it includes only the complete rows, i.e., the rows with no missing values (NA). Assign the modified data into the variable 'pisa'."
-  "5,6,7":
+    - "Multiple variables of the data have missing values. Modify the data so that it includes only the complete rows, i.e., the rows with no missing values (NA). Assign the modified data into the variable 'pisa'."
+  5:
+   - "The data variable SCHOOLID is a unique identifier of each school in the PISA data. From how many different schools does the PISA data contain observations from?"
+  "6,7,8":
     - "Using the PISA data, calculate the mean of the variable 'readscore'."
     - "Using the PISA data, calculate the variance of the variable 'sciescore'."
     - "Using the PISA data, calculate the standard deviation of the variable 'mathscore'."
     - "Using the PISA data, calculate the median of the variable 'natlang'."
     - "Using the PISA data, calculate the minimum of the variable 'math'."
     - "Using the PISA data, calculate the maximum of the variable 'age'."
-  8:
+  9:
     - "Compte the (Pearson) correlation coefficient of the variables 'mathscore' ja 'sciescore'."
     - "Compte the (Pearson) correlation coefficient of the variables 'mathscore' ja 'readscore'."
     - "Compte the (Pearson) correlation coefficient of the variables 'readscore' ja 'sciescore'."
-  9:
-    - "Plot a scatter plot of the variables 'mathscore' and 'sciescore'. Assign the result of the 'plot' command into a variable and give it as the answer."
-    - "Plot a scatter plot of the variables 'mathscore' and 'readscore'. Assign the result of the 'plot' command into a variable and give it as the answer."
-    - "Plot a scatter plot of the variables readscore and sciescore. Assign the result of the 'plot' command into a variable and give it as the answer."
   10:
-    - "Create a boxplot based on the variable readscore. Assign the result of the 'boxplot' command into a variable and give it as the answer."
-    - "Create a boxplot based on the variable mathscore. Assign the result of the 'boxplot' command into a variable and give it as the answer."
-    - "Create a boxplot based on the variable sciescore. Assign the result of the 'boxplot' command into a variable and give it as the answer."
+    - "Create a scatter plot of the variables 'mathscore' and 'sciescore'. Assign the result of the 'plot' command into a variable and give it as the answer."
+    - "Create a scatter plot of the variables 'mathscore' and 'readscore'. Assign the result of the 'plot' command into a variable and give it as the answer."
+    - "Create a scatter plot of the variables 'readscore' and 'sciescore'. Assign the result of the 'plot' command into a variable and give it as the answer."
   11:
-    - "Modify the PISA data by adding three new variables with the following names and order: fgender, furban and fregion. The variables should be added as the last columns of the data table. They should correspond to the existing variables ST04Q01, urban and region, as well as be in a factor form. Name the levels of the factors according the file PISA_variables.pdf found from the course page (The variable ST04Q01 has two levels, as well as the variable urban, but the variable region has four levels, because there are no observation from Åland (Ahvenanmaa)). Pay attention to the lower case and upper case letters in the level names. Assign the modified data into the variable 'pisa'."
+    - "Create a histogram of the variable 'readscore' such that the number of breaks is 6. Assign the result of the 'hist' command into a variable and give it as the answer."
+    - "Create a histogram of the variable 'mathscore' such that the number of breaks is 6. Assign the result of the 'hist' command into a variable and give it as the answer."
+    - "Create a histogram of the variable 'sciescore' such that the number of breaks is 6. Assign the result of the 'hist' command into a variable and give it as the answer."
   12:
-    - "Calculate the average scores in mathematics by region (mathscore, fregion). Sort the average scores according the order of regions presented in the file PISA_variables.pdf (found on the course page)."
-    - "Calculate the standard deviations of the scores in reading skills by region (readscore, fregion). Sort the standard deviations according the order of regions presented in the file PISA_muuttujat.pdf (found on the course page)."
-    - "Calculate the variances of the scores in natural sciences by region (sciescore, fregion). Sort the variances according the order of regions presented in the file PISA_variables.pdf (found on the course page)."
+    - "Modify the PISA data by adding three new variables with the following names and order: 'fgender', 'furban' and 'fregion'. The variables should be added as the last columns of the data frame. They should correspond to the existing variables 'ST04Q01', 'urban' and 'region', as well as be in a factor form. Name the levels of the factors according the file PISA_variables.pdf found on the course page (The variable 'ST04Q01' has two levels, as well as the 'variable' urban, and the variable 'region' has four levels, because there are no observation from Åland (Ahvenanmaa)). Pay attention to the lower case and upper case letters in the level names. Assign the modified data into the variable 'pisa'."
   13:
+    - "Calculate the average scores in mathematics by region (mathscore, fregion). Sort the average scores according the order of regions presented in the file PISA_variables.pdf (found on the course page)."
+    - "Calculate the standard deviations of the scores in reading skills by region (readscore, fregion). Sort the standard deviations according the order of regions presented in the file PISA_variables.pdf (found on the course page)."
+    - "Calculate the variances of the scores in natural sciences by region (sciescore, fregion). Sort the variances according the order of regions presented in the file PISA_variables.pdf (found on the course page)."
+  14:
+    - "Create boxplots of the scores in mathematics (mathscore) for each region (fregion) in the same figure. Assign the result of the 'boxplot' command into a variable and give it as the answer."
+    - "Create boxplots of the reading scores (readscore) for each region (fregion) in the same figure. Assign the result of the 'boxplot' command into a variable and give it as the answer."
+    - "Create boxplots of the scores in natural sciences (sciescore) for each region (fregion) in the same figure. Assign the result of the 'boxplot' command into a variable and give it as the answer."
+  15:
     - "Create a vector of those girls' scores in mathematics (mathscore) that are higher than 600."
     - "Create a vector of those boys' scores in natural sciences (sciescore) that are lower than 500."
     - "Create a vector of reading skill scores of those students who attend school in cities and whose scores are higher than 400 and lower than 500 (readscore, furban)."
     - "Create a vector of those latest grades in mathematics of all the students attending school in Western Finland (Länsi-Suomi) (math, fregion)."
-  14:
+  16:
     - "Create a vector of sorted scores in mathematics (mathscore) so that they are in the ascending order of magnitude."
     - "Create a vector of sorted scores in reading skills (readscore) so that they are in the descending order of magnitude."
     - "Create a vector of sorted latest grades in native language (natlang) so that they are in the ascending order of magnitude."
     - "Create a vector of sorted latest grades in mathematics (math) so that they are in the descending order of magnitude."
-  15:
+  17:
     - "Create a data frame that consists of the first 10 rows of the PISA data. The rows should occur in the same order as in the PISA data."
     - "Create a data frame that consists of the last 10 rows of the PISA data. The rows should occur in the same order as in the PISA data."
     - "Create a vector that contains the names of the variables in the PISA data in the alphabetical order."
     - "Determine the number of observations in the PISA data."
     - "Determine the number of variables in the PISA data."
-  16:
-    - "Apply the t-test to determine whether the average mathematics scores of boys and girls are different (fgender, mathscore). Give your answer as vector where the first element is the value of the test statistic and the second element is the p-value of the test."
+  18:
+    - "How many observations are there in the PISA-data where the location type of the school (furban) is a city and the region (fregion) is Southern Finland?"
+    - "How many observations are there in the PISA-data where the location type of the school (furban) is the countryside and the region (fregion) is Western Finland?"
+    - "How many observations are there in the PISA-data where the location type of the school (furban) is a city and the region (fregion) is Eastern Finland?"
+    - "How many observations are there in the PISA-data where the location type of the school (furban) is the countryside and the region (fregion) is Northern Finland?"
+  19:
+    - "Apply the t-test to determine whether the average mathematics scores of boys and girls are different (mathscore, fgender). Give your answer as vector where the first element is the value of the test statistic and the second element is the p-value of the test."
     - "Apply the t-test to determine whether the average scores in natural sciences differ between students attending school in cities and in the countryside (sciescore, furban). Give your answer as vector where the first element is the value of the test statistic and the second element is the p-value of the test."
-  17:
+  20:
     - "The program has chosen two variables of the PISA data and saved their names in the vector called 'ST'. Cross tabulate the two variables. Save the tabulation into a variable called 'tab' as it will be used in the following assignments."
     - "Cross tabulate the variables 'ST04Q01' and 'urban' of the PISA data. Save the tabulation into a variable called 'tab' as it will be used in the following assignments."
-  18:
+  21:
+    - "Let's continue with the cross tabulation of the previous assignment (tab). Create the corresponding table of relative frequencies."
+    - "Let's continue with the cross tabulation of the previous assignment (tab). Create the corresponding table of relative frequencies."
+  22:
     - "Let's continue with the cross tabulation of the previous assignment (tab). Find out whether the assumptions of the Chi-squared test apply (i.e., at least 80 % of the cells have the expected frequency of >= 5, and there are no cells with the expected frequency of < 1). If the assumptions apply, answer with the boolean TRUE. Otherwise, answer with the boolean FALSE."
     - "Let's continue with the cross tabulation of the previous assignment (tab). Find out whether the assumptions of the Chi-squared test apply (i.e., at least 80 % of the cells have the expected frequency of >= 5, and there are no cells with the expected frequency of < 1). If the assumptions apply, answer with the boolean TRUE. Otherwise, answer with the boolean FALSE."
-  19:
+  23:
     - "Let's continue with the cross tabulation of the previous assignment (tab). Apply the Chi-squared test and determine the value of the test statistic."
     - "Let's continue with the cross tabulation of the previous assignment (tab). Apply the Chi-squared test and determine the value of the test statistic."
-  20:
+  24:
     - "Fit a linear regression model in which the score in mathematics (mathscore) is explained by the score in natural sciences (sciescore). Save the model object into a variable called 'm' as it will be used in the following assignments."
     - "Fit a linear regression model in which the score in reading skills (readscore) is explained by the score in natural sciences (sciescore). Save the model object into a variable called 'm' as it will be used in the following assignments."
-  21:
+  25:
     - "Let's continue with the linear regression model of the previous assignment (m). Determine the estimate of the regression coefficient."
     - "Let's continue with the linear regression model of the previous assignment (m). Determine the estimate of the regression coefficient."
-  22:
+  26:
     - "Let's continue with the linear regression model of the previous assignment (m). Determine the adjusted coefficient of determination of the model (adjusted R-squared)."
     - "Let's continue with the linear regression model of the previous assignment (m). Determine the adjusted coefficient of determination of the model (adjusted R-squared)."
-  23:
+  27:
+    - "Let's continue with the linear regression model of the previous assignment (m). Create the quantile-quantile plot of the model residuals. Assign the result of the 'qqnorm' command into a variable and give it as the answer."
+    - "Let's continue with the linear regression model of the previous assignment (m). Create the quantile-quantile plot of the model residuals. Assign the result of the 'qqnorm' command into a variable and give it as the answer."
+  28:
     - "Let's continue with the linear regression model of the previous assignment (m). Determine the predicted value of the score in mathematics given by the model when the score in natural sciences is 500."
     - "Let's continue with the linear regression model of the previous assignment (m). Determine the predicted value of the score in reading skills given by the model when the score in natural sciences is 500."
-  24:
-    - "Calculate the probability P(-3 < X < 2) when X ~ N(0, 4), i.e., X is normally distributed with the mean of 0 and the variance of 4."
-    - "Calculate the probability P(X >= 2) when X ~ N(3, 0.5), i.e., X is normally distributed with the mean of 3 and the variance of 0.5."
-    - "Calculate the probability P(X < 0) when X ~ N(-2, 3), i.e., X is normally distributed with the mean of -2 and the variance of 3."
-  25:
-    - "Find y in P(X > y) = 0.6. X ~ N(0, 2), i.e., X is normally distributed with the mean of 0 and the variance of 2."
-    - "Find y in P(X < y) = 0.2. X ~ t(40), i.e., X follows the t-distribution with 40 degrees of freedom."
-    - "Find y in P(X > y) = 0.35. X ~ X^2(10), i.e., X follows the chi-square distribution with 10 degrees of freedom."
-Exam 2 JYU:
-  1:
-    - "Calculate the probability P(-3 < X < 2) when X ~ N(0, 4), i.e., X is normally distributed with the mean of 0 and the variance of 4."
-    - "Calculate the probability P(X >= 2) when X ~ N(3, 0.5), i.e., X is normally distributed with the mean of 3 and the variance of 0.5."
-    - "Calculate the probability P(X < 0) when X ~ N(-2, 3), i.e., X is normally distributed with the mean of -2 and the variance of 3."
-  2:
-    - "Find y in P(X > y) = 0.6. X ~ N(0, 2), i.e., X is normally distributed with the mean of 0 and the variance of 2."
-    - "Find y in P(X < y) = 0.2. X ~ t(40), i.e., X follows the t-distribution with 40 degrees of freedom."
-    - "Find y in P(X > y) = 0.35. X ~ X^2(10), i.e., X follows the chi-square distribution with 10 degrees of freedom."
-  3:
-    - "Find the root of the function exp(2*x + 5) + 3*x. Answer with the accuracy of two decimals."
-    - "Find the roots of the function log(x^2 + 5) - x^2 + 1. Answer with the accuracy of two decimals  as a vector c(x1, x2) in which the element x1 is the smaller root value."
-    - "Find the two smallest real roots x1 and x2 of the function sin(log(x)) for which the condition 20 < x1, x2 < 600 applies. Answer with the accuracy of two decimals as a vector c(x1, x2) where 'x1' is the smaller root."
-  4:
-    - "Find the local minimum of the function x*log(x) on the interval 0 < x < 1. Answer with the accuracy of two decimals as a vector c(x, m) in which 'x' is the x-coordinate of the minimum and  'm' is the function value in this location."
-    - "Find the local minimum of the function exp(x^4 - 3*x^2) on the interval  -2 < x < 0. Answer with the accuracy of two decimals as a vector c(x, m) in which 'x' is the x-coordinate of the minimum and 'm' is the function value in this location."
-    - "Find the local minimum of the function sin(log(x)) on the interval 30 < x < 200. Answer with the accuracy of two decimals as a vector c(x, m) in which 'x' is the x-coordinate of the minimum and  'm' is the function value in this location."
-  5:
-    - "Find the local maximum of the function x*log(x^2) on the interval -1 < x < 0. Answer with the accuracy of two decimals as a vector c(x, m) in which 'x' is the x-coordinate of the maximum and 'm' is the function value in this location."
-    - "Find the local maximum of the function exp(x^4 - 3*x^2) on the interval -1 < x < 1. Answer with the accuracy of two decimals as a vector c(x,m) in which 'x' is the x-coordinate of the maximum and 'm' is the function value in this location."
-    - "Find the local maximum of the function 1/cos(sin(x)) on the interval 0 < x < 2. Answer with the accuracy of two decimals as a vector c(x, m) in which 'x' is the x-coordinate of the maximum and 'm' is the function value in this location."
-  6:
-    - "Find the local minimum of the function x^2 + 3*x + y^2 - 5*y - 2 in the set -2 < x < 1, 1 < y < 3. Answer with the accuracy of two decimals as a vector c(x, y, m) in which 'x' and 'y' are coordinates of the minimum and 'm' is the function value in this location."
-    - "Find the local minimum of the function exp(x^2 - 2*x + 2*y^2 + 4*y + z^3 - z - 3) in the set -2 < x < 2, -2 < y < 2, 0 < z < 1. Answer with the accuracy of two decimals as a vector c(x, y, z, m) in which 'x', 'y' and 'z' are the coordinates of the minimum and 'm' is the function value in this location."
-    - "Find the local minimum of the function 2*x^2 - 6*x + y^2 + 3 in the set 1 < x < 2, -1 < y < 1. Answer with the accuracy of two decimals as a vector c(x, y, m) in which 'x' and 'y' are the coordinates of the minimum and 'm' is the function value in this location."
-  7:
-    - "Find the local maximum of the function x^2 * exp(-(x^2 + y^2)) in the set -2 < x < 0, -1 < y < 1. Answer with the accuracy of two decimals as a vector c(x, y, m) in which 'x' and 'y' are the coordinates of the maximum and 'm' is the function value in this location."
-    - "Find the local maximum of the function exp(-x^2 + 5*x - 6*y^2 + 2*y + z^3 - z - 3) in the set 1 < x < 3, 0 < y < 1, -1 < z < 0. Answer with the accuracy of two decimals as a vector c(x, y, z, m) in which 'x', 'y' and 'z' are the coordinates of the maximum and 'm' is the function value in this location."
-    - "Find the local maximum of the function -3*x^2 + x - y^2 - y + 11 in the set 0 < x < 1, -1 < y < 0. Answer with the accuracy of two decimals and as a vector c(x, y, m) in which 'x' and 'y' are the coordinates of the maximum and 'm' is the function value in this location."
-  8:
-    - "Calculate the integral of the function 1/(sin(x))^2 over the interval 1.5 < x < 3. Answer with the accuracy of two decimals."
-    - "Calculate the integral of the function exp(-x^2) over the interval 0.5 < x < Inf. Answer with the accuracy of two decimals."
-    - "Calculate the integral of the function log(x^2 + 2*x + 1) over the interval  1 < x < 5.5. Answer with the accuracy of two decimals."
-  9:
-    - "Create a function removerows(x, k) which deletes every k:th row of the dataframe x, starting from the first row. For example, with k = 3, the function should delete the rows 1, 4, 7, ... ."
-    - "Create a function ordercols(x) which arranges the columns of the dataframe x into alphabetical order based on their names. For example, if the original dataframe has the column order of C, A, B, the function should return a dataframe with the colum order of A, B, C."
-  10:
-    - "Create a function largest(a, b) which returns the value 1 when a > b, and the value 0 otherwise."
-    - "Create a function sumsq(x) which calculates the sum of squares of the vector x."
-    - "Create a function fun(x, y) which takes two real numbers x and y as its arguments and returns the value 1 when x^2 + y^2 <= 1, and the value 0 otherwise. In other words, create a function which attains the value 1 inside unit circle, and the value 0 otherwise."
-  11:
-    - "Create a function kurtosis(x) which calculates the kurtosis of the sample vector x. The formula to calculate the kurtosis is included in the file formulas.pdf that can be found on the course page."
-    - "Create a function skewness(x) which calculates the skewness of the sample vector x. The formula to calculate the skewness is included in the file formulas.pdf that can be found on the course page."
-    - "Create a function likelihood(x, mu, sigma) which calculates the logarithmic likelihood function value of the normal distribution N(mu, sigma^2) (mean = mu, variance = sigma^2) based on the sample vector x. The formula of the logarithmic likelihood function is included in the file formulas.pdf that can be found on the course page."
-  12:
-    - "Create a function moments(x, k) which calculates the k first sample central moments and returns them as a vector. The parameter x is the sample vector and the parameter k is a positive integer. The formula to calculate the sample central moments is included in the file formulas.pdf that can be found on the course page."
-    - "Create a function statistics(x) which returns the following as a list: the vector x and its statistics obtained with the function summary. I.e., the list includes two items."
+  29:
+    - "Calculate the probability P(-3 < X < 2) when X ~ N(0, 4), i.e., X is normally distributed with expected value of 0 and variance of 4."
+    - "Calculate the probability P(X >= 2) when X ~ N(3, 0.5), i.e., X is normally distributed with expected value of 3 and variance of 0.5."
+    - "Calculate the probability P(X < 0) when X ~ N(-2, 3), i.e., X is normally distributed with expected value of -2 and variance of 3."
+  30:
+    - "Find the value of y in P(X > y) = 0.6. X ~ N(0, 2), i.e., X is normally distributed with expected value of 0 and variance of 2."
+    - "Find the value of y in P(X < y) = 0.2. X ~ t(40), i.e., X follows the t-distribution with 40 degrees of freedom."
+    - "Find the value of y in P(X > y) = 0.35. X ~ X^2(10), i.e., X follows the chi-square distribution with 10 degrees of freedom."
 Exam UEF:
   1:
     - "Read in the data from the file PISA_value.txt into the variable pisa."
@@ -274,7 +248,7 @@ Exam UEF:
     - "Find out the latest grades in mathematics of all the students attending school in Western Finland (Länsi-Suomi) (math, fregion)."
   14:
     - "Calculate the average scores in mathematics by region (mathscore, fregion). Sort the average scores according the order of regions presented in the file PISA_variables.pdf (found on the course page). Please keep in mind that there are no observations from Åland (Ahvenanmaa). Thus, only four average scores can be calculated."
-    - "Calculate the standard deviations of the scores in reading skills by region (readscore, fregion). Sort the standard deviations according the order of regions presented in the file PISA_muuttujat.pdf (found on the course page). Please keep in mind that there are no observations from Åland (Ahvenanmaa). Thus, only four standard deviations can be calculated."
+    - "Calculate the standard deviations of the scores in reading skills by region (readscore, fregion). Sort the standard deviations according the order of regions presented in the file PISA_variables.pdf (found on the course page). Please keep in mind that there are no observations from Åland (Ahvenanmaa). Thus, only four standard deviations can be calculated."
     - "Calculate the variances of the scores in natural sciences by region (sciescore, fregion). Sort the variances according the order of regions presented in the file PISA_variables.pdf (found on the course page). Please keep in mind that there are no observations from Åland (Ahvenanmaa). Thus, only four variances can be calculated."
   15:
     - "Sort the scores in mathematics (mathscore) so that they are in the ascending order of magnitude."

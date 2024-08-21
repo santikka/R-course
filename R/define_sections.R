@@ -1,5 +1,5 @@
 # Define the sections
-sections_ <- vector(mode = "list", length = 11L)
+sections_ <- vector(mode = "list", length = 7L)
 sections_[[1L]] <- create_section(1L)
 sections_[[2L]] <- create_section(2L)
 sections_[[3L]] <- create_section(3L, require_wd = TRUE)
@@ -7,10 +7,6 @@ sections_[[4L]] <- create_section(4L, check_answers = FALSE, extra_info = "Compa
 sections_[[5L]] <- create_section(5L, require_wd = TRUE)
 sections_[[6L]] <- create_section(6L, require_wd = TRUE)
 sections_[[7L]] <- create_section(7L)
-sections_[[8L]] <- create_section(8L)
-sections_[[9L]] <- create_section(9L)
-sections_[[10L]] <- create_section(10L, require_wd = TRUE)
-sections_[[11L]] <- create_section(11L)
 
 # Internal section function (selector)
 section_ <- function(x) {
