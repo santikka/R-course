@@ -354,7 +354,7 @@ exams_$JYU[[1L]] <- function(e) {
   randomize_selection(
     e = e,
     eq = exam_questions_jyu[[1]],
-    continue = c("22", "23"),
+    continue = c("21", "22"),
     data = data,
     params = params
   )
@@ -656,7 +656,7 @@ exams_$UEF <- function(e) {
   randomize_selection(
     e = e,
     eq = exam_questions_uef,
-    continue = c("22", "23"),
+    continue = c("21", "22"),
     data = data,
     params = params
   )
