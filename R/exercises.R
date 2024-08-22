@@ -180,9 +180,10 @@ exercises_[[3L]] <- function(e, write = TRUE) {
     `12` = "x <- tomato[tomato$STRAIN == 1 & tomato$DENSITY > 10, ]\nsubmit(x)",
     `13` = "x <- tomato[tomato$YIELD > 15 | tomato$DENSITY == 10, ]\nsubmit(x)"
   )
-  e$data <- list(tomato = tomato)
+  e$data <- list(tomato = tomato, auto = auto)
   data <- vector(mode = "list", length = length(code))
-  data[8:10] <- list(list(tomato = "tomato"))
+  data[7:8] <- list(list(auto = "auto"))
+  data[10:13] <- list(list(tomato = "tomato"))
   e$ex <- compile(
     questions = section_questions[[3L]],
     solutions = solutions,

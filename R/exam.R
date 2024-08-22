@@ -129,8 +129,8 @@ exam_ <- function(dob, ...) {
   e$time_start <- Sys.time()
   e$time_max <- 4 * 60
   e$seed <- num + as.integer(e$time_start) %% 1e7
-  translate_message("Your exam number is: ", e$seed, ". ", "Please write this number down!")
-  translate_message("If encounter problems with the exam, please include this number in your correspondence with the course teacher.")
+  translate_message("Your exam number is", ": ", e$seed, ". ", "Please write this number down!")
+  translate_message("If you encounter technical problems with the exam, please include this number in your correspondence with the course teacher.")
   # Set PRNG seed
   if (is.null(dots$override)) {
     initialize(e$seed)
@@ -200,7 +200,7 @@ exams_$JYU <- function(e) {
     pisa_5 <- pisa_4
     pisa_5$fgender <- factor(pisa_5$ST04Q01, labels = c("female", "male"))
     pisa_5$furban <- factor(pisa_5$urban, labels = c("city", "countryside"))
-    fregion <- factor(pisa_5$region, levels = 1:5)
+    fregion <- factor(pisa_5$region, levels = 1:4)
     levels(fregion) <- c(
       "Southern Finland", "Western Finland",
       "Eastern Finland", "Northern Finland"
@@ -231,75 +231,91 @@ exams_$JYU <- function(e) {
     `2` = replist(ind = "ind", pisa = "pisa_1"),
     `3` = replist(mut = "mut", pisa = "pisa_2"),
     `4` = replist(pisa = "pisa_3"),
-    `5,6,7` = replist(pisa = "pisa_4", nrep = 6),
-    `8` = replist(pisa = "pisa_4", nrep = 3),
+    `5` = replist(pisa = "pisa_4"),
+    `6,7,8` = replist(pisa = "pisa_4", nrep = 6),
     `9` = replist(pisa = "pisa_4", nrep = 3),
     `10` = replist(pisa = "pisa_4", nrep = 3),
-    `11` = replist(pisa = "pisa_4"),
-    `12` = replist(pisa = "pisa_5", nrep = 3),
+    `11` = replist(pisa = "pisa_4", nrep = 3),
+    `12` = replist(pisa = "pisa_4"),
     `13` = replist(pisa = "pisa_5", nrep = 3),
-    `14` = replist(pisa = "pisa_5", nrep = 4),
-    `15` = replise(pisa = "pisa_5", nrep = 5),
-    `16` = replise(pisa = "pisa_5", nrep = 2),
-    `17` = list(
+    `14` = replist(pisa = "pisa_5", nrep = 3),
+    `15` = replist(pisa = "pisa_5", nrep = 4),
+    `16` = replist(pisa = "pisa_5", nrep = 4),
+    `17` = replist(pisa = "pisa_5", nrep = 5),
+    `18` = replist(pisa = "pisa_5", nrep = 4),
+    `19` = replist(pisa = "pisa_5", nrep = 2),
+    `20` = list(
       list(ST = "ST", pisa = "pisa_5"),
       list(pisa = "pisa_5")
     ),
-    `18` = list(
-      list(tab = "tab_1"),
-      list(tab = "tab_2")
-    ),
-    `19` = list(
-      list(tab = "tab_1"),
-      list(tab = "tab_2")
-    ),
-    `20` = replist(pisa = "pisa_5", nrep = 2),
     `21` = list(
-      list(m = "m_1"),
-      list(m = "m_2"),
+      list(tab = "tab_1"),
+      list(tab = "tab_2")
     ),
     `22` = list(
-      list(m = "m_1"),
-      list(m = "m_2"),
+      list(tab = "tab_1"),
+      list(tab = "tab_2")
     ),
     `23` = list(
-      list(m = "m_1"),
-      list(m = "m_2"),
+      list(tab = "tab_1"),
+      list(tab = "tab_2")
     ),
-    `24` = NULL,
-    `25` = NULL
+    `24` = replist(pisa = "pisa_5", nrep = 2),
+    `25` = list(
+      list(pisa = "pisa_5", m = "m_1"),
+      list(pisa = "pisa_5", m = "m_2"),
+    ),
+    `26` = list(
+      list(pisa = "pisa_5", m = "m_1"),
+      list(pisa = "pisa_5", m = "m_2"),
+    ),
+    `27` = list(
+      list(pisa = "pisa_5", m = "m_1"),
+      list(pisa = "pisa_5", m = "m_2"),
+    ),
+    `28` = list(
+      list(pisa = "pisa_5", m = "m_1"),
+      list(pisa = "pisa_5", m = "m_2"),
+    )
+    `29` = NULL,
+    `30` = NULL
   )
   params <- list(
     `1` = replist(mutable = FALSE),
     `2` = replist(mutable = FALSE),
     `3` = replist(mutable = FALSE),
     `4` = replist(mutable = FALSE),
-    `5,6,7` = NULL,
-    `8` = NULL,
+    `5` = NULL,
+    `6,7,8` = NULL,
     `9` = NULL,
     `10` = NULL,
-    `11` = replist(mutable = FALSE),
+    `11` = NULL,
+    `12` = replist(mutable = FALSE),
     `13` = NULL,
     `14` = NULL,
     `15` = NULL,
     `16` = NULL,
     `17` = NULL,
-    `17` = replist(mutable = FALSE, nrep = 2),
     `18` = NULL,
     `19` = NULL,
     `20` = replist(mutable = FALSE, nrep = 2),
     `21` = NULL,
     `22` = NULL,
     `23` = NULL,
-    `24` = NULL,
-    `25` = NULL
+    `24` = replist(mutable = FALSE, nrep = 2),
+    `25` = NULL,
+    `26` = NULL,
+    `27` = NULL,
+    `28` = NULL,
+    `29` = NULL,
+    `30` = NULL
   )
   e$ex <- vector(mode = "list", length = 24L)
   e$select <- list()
   randomize_selection(
     e = e,
     eq = exam_questions_jyu[[1]],
-    continue = c("18", "19", "21", "22", "23"),
+    continue = c("21", "22", "23", "25", "26", "27", "28"),
     data = data,
     params = params
   )
@@ -601,7 +617,7 @@ exams_$UEF <- function(e) {
   randomize_selection(
     e = e,
     eq = exam_questions_uef,
-    continue = c("22", "23"),
+    continue = c("21", "22"),
     data = data,
     params = params
   )

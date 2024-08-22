@@ -13,7 +13,7 @@ Section 1:
   11: "Calculate the standard deviation of values in the vector d."
   12: "Calculate the variance of values in the vector d."
   13: "Determine the range of values in the vector d. Give your answer as a vector: c(minimum, maximum)."
-  14: "Sort the values in the vector d in ascending order of magnitude."
+  14: "Sort the values in the vector d in an ascending order of magnitude."
   15: "Add the number 2 to each value of the vector d."
   16: "The program has generated a vector g. This vector has the same length as the vector d. Multiply each element in the vector d by 2, and subtract the resulting vector from the vector g."
   17: "Multiply the vector g by the vector d element-wise. That is, the first elements will be multiplied with each other, then the second elements with each other, etc."
@@ -67,7 +67,7 @@ Section 4:
   9: "The program has generated the variables x and y. Plot the line graph of the variables. In other words, plot a figure in which the dots are connected with a line. Use the argument 'type'. (plot)"
   10: "Redraw the line graph from the previous assignment. Apply the argument ylim = c(-10, 10) to change the boundaries of the y-axis. Add the scatter plot of the program-generated variables x and z to the line graph figure. Use the function called 'points'."
   11: "Let's examine the data object 'auto' that contains information on different car models. Create boxplots of the horsepowers (hp) for both transmission types (am) in the same figure side by side."
-  12: "The program has generated a function called 'f'. Plot the graph of the function 'f' on the interval (-3, 3) using the 'curve' function.
+  12: "The program has generated a function called 'f'. Plot the graph of the function 'f' on the interval (-3, 3) using the 'curve' function."
 Section 5:
   1: "Read the data file Children2007.dat into a data frame called 'children'. The data set contains the lengths (in cm) and weights (in grams) of newborn babies. Create a new column called 'Gender2' which holds the gender as a factor. That means that if the baby is a girl, then the variable Gender has value 1 so the new variable gets the value \"Girl\". Similarly, if Gender has value 0 then new variable has value \"Boy\". Give the modified data set as your answer."
   2: "Let's study if the average heights of boys and girls differ from each other. Draw the boxplots for the heights given the gender in the same figure. Answer based on the figure which gender was taller on average. Give your response as as string \"girls\" or \"boys\" (boxplot)."

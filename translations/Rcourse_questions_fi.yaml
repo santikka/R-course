@@ -12,7 +12,7 @@ Section 1:
   10: "Määritä vektorin d alkioiden mediaani."
   11: "Määritä vektorin d alkioiden keskihajonta."
   12: "Määritä vektorin d alkioiden varianssi."
-  13: "Määritä vektorin d alkioiden vaihteluväli vektorina muodossa c(minimi,maksimi)."
+  13: "Määritä vektorin d alkioiden vaihteluväli vektorina muodossa: c(minimi,maksimi)."
   14: "Järjestä vektorin d alkiot kasvavaan suuruusjärjestykseen."
   15: "Lisää jokaiseen vektorin d alkioon luku 2."
   16: "Ohjelma on generoinut muuttujaan g vektorin, joka on samanpituinen kuin d. Vähennä vektorista g vektori d, jonka alkiot on kerrottu luvulla 2."

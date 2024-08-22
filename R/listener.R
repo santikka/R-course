@@ -106,6 +106,7 @@ initialize_listener <- function(e) {
       "submit",
       "solution",
       "code",
+      "code__",
       "go"
     )
   }
@@ -302,9 +303,16 @@ show_next <- function(e) {
   dat <- e$ex[[e$ix]]$data
   if (!is.null(dat)) {
     dat_names <- names(dat)
-    sapply(seq_along(dat_names), function(x) {
-      assign(dat_names[x], e$data[[dat[[x]]]], envir = globalenv())
-    })
+    sapply(
+      seq_along(dat_names),
+      function(x) {
+        assign(
+          x = dat_names[x],
+          value = e$data[[dat[[x]]]],
+          envir = globalenv()
+        )
+      }
+    )
   }
   e$ask <- FALSE
 }

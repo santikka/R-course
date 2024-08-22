@@ -54,7 +54,7 @@ go <- function(x) if (missing(x)) invisible(NULL) else invisible(x)
 
 # Internal info function
 info_ <- function() {
-  translate_message("To start the exercises, type section(x), where 'x' is a number between 1 and 11 e.g., section(1) starts the first exercise section.")
+  translate_message("To start the exercises, type section(x), where 'x' is a number between 1 and 7 e.g., section(1) starts the first exercise section.")
   translate_message("To start the final exam, type exam(x), where 'x' is your date of birth in the format 'dd/mm/yyyy'.")
   info_rows <- list()
   info_rows$text <- c(
@@ -122,14 +122,14 @@ select_language_ <- function(language = c("english", "finnish"), save_selection 
       if (file.access(file.path("~"), mode = 2)) {
         file.create(file.path("~", ".Rprofile"))
       } else {
-        translate_message("Unable to save language selection due to insufficient access priviledges.")
+        translate_message("Unable to save language selection due to insufficient access privileges.")
         writable <- FALSE
       }
       rprofile <- character(0)
     } else {
       rprofile <- readLines(file.path("~", ".Rprofile"))
       if (!file.access(file.path("~"), mode = 2)) {
-        translate_message("Unable to save language selection due to insufficient access priviledges.")
+        translate_message("Unable to save language selection due to insufficient access privileges.")
         writable <- FALSE
       }
     }
