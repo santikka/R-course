@@ -70,8 +70,8 @@ initialize_listener <- function(e) {
   if (!e$require_wd) {
     if (e$is_exam) {
       if (identical(e$inst, "1")) {
-        options(prompt = paste0(l() %a% "exam", e$part, "> "))
-        exams_$JYU[[e$part]](e)
+        options(prompt = paste0(l() %a% "exam", "> "))
+        exams_$JYU(e)
       } else {
         options(prompt = paste0(l() %a% "exam", "> "))
         exams_$UEF(e)
@@ -323,11 +323,7 @@ process_completion <- function(e) {
     if (!e$completed) {
       e$completed <- TRUE
       e$warn_complete <- FALSE
-      if (identical(e$inst, "1")) {
-        custom_message(l() %a% "You have completed part", " ", e$part, " ", l() %a% "of the exam!")
-      } else {
-        translate_message("You have completed the final exam!")
-      }
+      translate_message("You have completed the final exam!")
       translate_message("You can still go back and change your answers by navigating with go().")
       translate_message("Otherwise, you can now finish the exam by typing exit().")
     }
@@ -376,7 +372,6 @@ verification <- function(e, verbose = FALSE) {
     "code",
     "select",
     "inst",
-    "part",
     "seed",
     "id"
   )
@@ -386,7 +381,7 @@ verification <- function(e, verbose = FALSE) {
   }
   out$version <- packageVersion("Rcourse")
   out_file <- paste0(
-    getwd(), "/verification_", out$part, "_", out$num, "_", out$seed, ".rds",
+    getwd(), "/verification_", out$seed, ".rds",
     collapse = ""
   )
   saveRDS(object = out, file = out_file, compress = "xz")

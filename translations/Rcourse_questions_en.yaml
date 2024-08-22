@@ -160,7 +160,7 @@ Exam JYU:
   17:
     - "Create a data frame that consists of the first 10 rows of the PISA data. The rows should occur in the same order as in the PISA data."
     - "Create a data frame that consists of the last 10 rows of the PISA data. The rows should occur in the same order as in the PISA data."
-    - "Create a vector that contains the names of the variables in the PISA data in the alphabetical order."
+    - "Create a vector that contains the names of the variables in the PISA data in alphabetical order."
     - "Determine the number of observations in the PISA data."
     - "Determine the number of variables in the PISA data."
   18:

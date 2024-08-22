@@ -9,11 +9,12 @@ l <- function() {
 
 # A function that translates strings in package messages
 l_internal <- function(x) {
-  if (identical(x, " ")) {
-    return(x)
-  }
   lang_obj <- get(use_language())
-  lang_obj[[x]]
+  if (x %in% names(lang_obj)) {
+    lang_obj[[x]]
+  } else {
+    x
+  }
 }
 
 # Determines the current language, defaults to English if not set

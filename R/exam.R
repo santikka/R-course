@@ -103,7 +103,7 @@ exam_ <- function(dob, ...) {
       translate_message("Please type either y or n.")
       start <- readline(prompt = "exam> ")
     }
-    if (identical(part, "n")) {
+    if (identical(start, "n")) {
       translate_message("The exam was cancelled.")
       return(invisible())
     }
@@ -129,8 +129,11 @@ exam_ <- function(dob, ...) {
   e$time_start <- Sys.time()
   e$time_max <- 4 * 60
   e$seed <- num + as.integer(e$time_start) %% 1e7
+  custom_message(repchar("-", con_width))
   translate_message("Your exam number is", ": ", e$seed, ". ", "Please write this number down!")
   translate_message("If you encounter technical problems with the exam, please include this number in your correspondence with the course teacher.")
+  custom_message(repchar("-", con_width))
+  Sys.sleep(1)
   # Set PRNG seed
   if (is.null(dots$override)) {
     initialize(e$seed)
@@ -190,7 +193,7 @@ exams_$JYU <- function(e) {
     ind <- sample.int(nrow(pisa), 4300, replace = FALSE)
     ST <- paste("ST27Q", sprintf("%02d", sample.int(12, 2)), sep = "")
     mut <- c(
-      "ST04Q01", "age", "urban", "region", "readscore",
+      "SCHOOLID", "ST04Q01", "age", "urban", "region", "readscore",
       "mathscore", "sciescore", "natlang", "math", ST
     )
     pisa_1 <- pisa

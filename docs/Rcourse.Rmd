@@ -36,7 +36,7 @@ The object submitted by the user as an answer to the question is compared to the
 
 The function `compile` defined in `compile.R` is used to combine multiple exercise problems into a coherent section, or an exam question (exam questions often have multiple alternatives, where only one is shown to the user by random). The navigation system described in the **User Interface** section is incorporated using a function factory system defined in `create_section.R`. See `define_sections.R` on how the exercise sections are created using the function factory.
 
-For the actual text shown to the user as questions, see the **Localization System** section. The questions are made available as a global variable of lists of character vectors called `section_questions`. The questions of section number `x` are accessed by `section_questions[[x]]` (a character vector). Similarly, exam questions are available in `exam_questions_jyu` for JYU (with 2 elements for each part of the exam), and `exam_questions_uef`, for the UEF exam.
+For the actual text shown to the user as questions, see the **Localization System** section. The questions are made available as a global variable of lists of character vectors called `section_questions`. The questions of section number `x` are accessed by `section_questions[[x]]` (a character vector). Similarly, exam questions are available in `exam_questions_jyu` for JYU and `exam_questions_uef`, for the UEF exam.
 
 ### Providing Data for Assignments
 
