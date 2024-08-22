@@ -51,10 +51,9 @@ Section 3:
   7: "Let's continue with the auto-data. How many observations are there with a horsepower (hp) greater than 100?"
   8: "Let's continue with the auto-data. Determine which car model has the highest motor weight (wt). You can use the function 'rownames' to extract the model names from the data."
   9: "Read the data called tomato.dat (header = TRUE) into the object 'tomato'. The data set contains crop yields of different tomato strains at specific plot densities. Compute the average yield for each strain using the function 'tapply'."
-  10: "Let's continue with the tomato-data. Determine the structure of the data using the function 'str'."
-  11: "Let's continue with the tomato-data. Select those rows of the data where the value of the variable YIELD is larger than 10 and smaller than 15."
-  12: "Let's continue with the tomato-data. Select those rows of the data where the variable STRAIN has the value 1 and the variable DENSITY has a value larger than 10."
-  13: "Let's continue with the tomato-data. Select those rows of the data where the value of the variable YIELD is larger than 15 or the value of the variable DENSITY is 10."
+  10: "Let's continue with the tomato-data. Select those rows of the data where the value of the variable YIELD is larger than 10 and smaller than 15."
+  11: "Let's continue with the tomato-data. Select those rows of the data where the variable STRAIN has the value 1 and the variable DENSITY has a value larger than 10."
+  12: "Let's continue with the tomato-data. Select those rows of the data where the value of the variable YIELD is larger than 15 or the value of the variable DENSITY is 10."
 Section 4:
   1: "The program has generated the variables x and y. Create a scatter plot of the variables and set the title of the plot to \"Scatter plot\"."
   2: "The program has generated the variables x and y. Again, create a scatter plot of the variables, but this time set the tick marks to be horizontal using the argument 'las'."

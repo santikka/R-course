@@ -51,10 +51,9 @@ Section 3:
   7: "Jatketaan auto-aineiston parissa. Kuinka monta sellaista havaintoa aineistossa on, joiden hevosvoima on suurempi kuin 100 yksikköä?"
   8: "Jatketaan auto-aineiston parissa. Määritä, millä automallilla on suurin moottorin paino (wt). Voit käyttää funktiota 'rownames' mallien nimien poimimiseen datasta."
   9: "Lue sisään aineisto tomato.dat (header = TRUE) muuttujaan tomato. Aineistossa on mitattu tomaattisatoa (YIELD) eri lajikkeilla (STRAIN) ja erilaisin istutustiheyksin (DENSITY). Laske keskimääräinen satomäärä joka lajikkeelle käyttäen funktiota 'tapply'."
-  10: "Jatketaan tomato-aineiston parissa. Määritä aineiston rakenne funktiolla 'str'."
-  11: "Jatketaan tomato-aineiston parissa. Valitse aineistosta ne rivit, joilla YIELD-muuttujan arvo on suurempi kuin 10 ja pienempi kuin 15."
-  12: "Jatketaan tomato-aineiston parissa. Valitse aineistosta ne rivit, joilla STRAIN-muuttuja saa arvon 1 ja DENSITY-muuttujan arvo on suurempi kuin 10."
-  13: "Jatketaan tomato-aineiston parissa. Valitse aineistosta ne rivit, joilla YIELD-muuttujan arvo on suurempi kuin 15 tai DENSITY-muuttujan arvo on 10."
+  10: "Jatketaan tomato-aineiston parissa. Valitse aineistosta ne rivit, joilla YIELD-muuttujan arvo on suurempi kuin 10 ja pienempi kuin 15."
+  11: "Jatketaan tomato-aineiston parissa. Valitse aineistosta ne rivit, joilla STRAIN-muuttuja saa arvon 1 ja DENSITY-muuttujan arvo on suurempi kuin 10."
+  12: "Jatketaan tomato-aineiston parissa. Valitse aineistosta ne rivit, joilla YIELD-muuttujan arvo on suurempi kuin 15 tai DENSITY-muuttujan arvo on 10."
 Section 4:
   1: "Ohjelma on luonut muuttujat x ja y. Piirrä muuttujien hajontakuvio ja aseta kuvan otsikoksi \"Scatterplot\"."
   2: "Ohjelma on luonut muuttujat x ja y. Piirrä jälleen muuttujien hajontakuvio, mutta aseta nyt akselien pistemerkit vaakatasoon käyttäen argumenttia las."

@@ -263,20 +263,20 @@ exams_$JYU <- function(e) {
     `24` = replist(pisa = "pisa_5", nrep = 2),
     `25` = list(
       list(pisa = "pisa_5", m = "m_1"),
-      list(pisa = "pisa_5", m = "m_2"),
+      list(pisa = "pisa_5", m = "m_2")
     ),
     `26` = list(
       list(pisa = "pisa_5", m = "m_1"),
-      list(pisa = "pisa_5", m = "m_2"),
+      list(pisa = "pisa_5", m = "m_2")
     ),
     `27` = list(
       list(pisa = "pisa_5", m = "m_1"),
-      list(pisa = "pisa_5", m = "m_2"),
+      list(pisa = "pisa_5", m = "m_2")
     ),
     `28` = list(
       list(pisa = "pisa_5", m = "m_1"),
-      list(pisa = "pisa_5", m = "m_2"),
-    )
+      list(pisa = "pisa_5", m = "m_2")
+    ),
     `29` = NULL,
     `30` = NULL
   )
@@ -314,7 +314,7 @@ exams_$JYU <- function(e) {
   e$select <- list()
   randomize_selection(
     e = e,
-    eq = exam_questions_jyu[[1]],
+    eq = exam_questions_jyu,
     continue = c("21", "22", "23", "25", "26", "27", "28"),
     data = data,
     params = params

@@ -160,10 +160,9 @@ exercises_[[3L]] <- function(e, write = TRUE) {
     `7`  = sum(auto$hp > 100),
     `8`  = rownames(auto[order(auto$wt, decreasing = TRUE), ])[1],
     `9`  = tapply(tomato$YIELD, tomato$STRAIN, mean),
-    `10` = str(tomato),
-    `11` = tomato[tomato$YIELD > 10 & tomato$YIELD < 15, ],
-    `12` = tomato[tomato$STRAIN == 1 & tomato$DENSITY > 10, ],
-    `13` = tomato[tomato$YIELD > 15 | tomato$DENSITY == 10, ]
+    `10` = tomato[tomato$YIELD > 10 & tomato$YIELD < 15, ],
+    `11` = tomato[tomato$STRAIN == 1 & tomato$DENSITY > 10, ],
+    `12` = tomato[tomato$YIELD > 15 | tomato$DENSITY == 10, ]
   )
   code <- list(
     `1`  = "x <- read.table(\"carbon.txt\")\nsubmit(x)",
@@ -175,15 +174,14 @@ exercises_[[3L]] <- function(e, write = TRUE) {
     `7`  = "x <- sum(auto$hp > 100)\nsubmit(x)",
     `8`  = "x <- rownames(auto[order(auto$wt, decreasing = TRUE), ])[1]\nsubmit(x)",
     `9`  = "tomato <- read.table(\"tomato.dat\", header = TRUE)\nx <- tapply(tomato$YIELD, tomato$STRAIN, mean)\nsubmit(x)",
-    `10` = "x <- str(tomato)\nsubmit(x)",
-    `11` = "x <- tomato[tomato$YIELD > 10 & tomato$YIELD < 15, ]\nsubmit(x)",
-    `12` = "x <- tomato[tomato$STRAIN == 1 & tomato$DENSITY > 10, ]\nsubmit(x)",
-    `13` = "x <- tomato[tomato$YIELD > 15 | tomato$DENSITY == 10, ]\nsubmit(x)"
+    `10` = "x <- tomato[tomato$YIELD > 10 & tomato$YIELD < 15, ]\nsubmit(x)",
+    `11` = "x <- tomato[tomato$STRAIN == 1 & tomato$DENSITY > 10, ]\nsubmit(x)",
+    `12` = "x <- tomato[tomato$YIELD > 15 | tomato$DENSITY == 10, ]\nsubmit(x)"
   )
   e$data <- list(tomato = tomato, auto = auto)
   data <- vector(mode = "list", length = length(code))
   data[7:8] <- list(list(auto = "auto"))
-  data[10:13] <- list(list(tomato = "tomato"))
+  data[10:12] <- list(list(tomato = "tomato"))
   e$ex <- compile(
     questions = section_questions[[3L]],
     solutions = solutions,
