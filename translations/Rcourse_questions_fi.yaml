@@ -130,9 +130,9 @@ Exam JYU:
     - "Laske aineiston muuttujien mathscore ja readscore välinen (Pearsonin) korrelaatiokerroin."
     - "Laske aineiston muuttujien readscore ja sciescore välinen (Pearsonin) korrelaatiokerroin."
   10:
-    - "Piirrä aineiston muuttujien mathscore ja sciescore välinen hajontakuvio käyttäen funktiota plot. Sijoita plot-komennon tulos muuttujaksi ja anna se tehtävän vastauksena."
-    - "Piirrä aineiston muuttujien mathscore ja readscore välinen hajontakuvio käyttäen funktiota plot. Sijoita plot-komennon tulos muuttujaksi ja anna se tehtävän vastauksena."
-    - "Piirrä aineiston muuttujien readscore ja sciescore välinen hajontakuvio käyttäen funktiota plot. Sijoita plot-komennon tulos muuttujaksi ja anna se tehtävän vastauksena."
+    - "Piirrä boxplot aineiston muuttujasta mathscore. Sijoita boxplot-komennon tulos muuttujaksi ja anna se tehtävän vastauksena."
+    - "Piirrä boxplot aineiston muuttujasta readscore. Sijoita boxplot-komennon tulos muuttujaksi ja anna se tehtävän vastauksena."
+    - "Piirrä boxplot aineiston muuttujasta sciescore. Sijoita boxplot-komennon tulos muuttujaksi ja anna se tehtävän vastauksena."
   11:
     - "Piirrä histogrammi aineiston muuttujasta mathscore käyttäen funktiota hist. Sijoita hist-komennon tulos muuttujaksi ja anna se tehtävän vastauksena."
     - "Piirrä histogrammi aineiston muuttujasta readscore käyttäen funktiota hist. Sijoita hist-komennon tulos muuttujaksi ja anna se tehtävän vastauksena."

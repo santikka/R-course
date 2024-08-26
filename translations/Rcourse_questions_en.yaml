@@ -130,9 +130,9 @@ Exam JYU:
     - "Compte the (Pearson) correlation coefficient of the variables 'mathscore' ja 'readscore'."
     - "Compte the (Pearson) correlation coefficient of the variables 'readscore' ja 'sciescore'."
   10:
-    - "Create a scatter plot of the variables 'mathscore' and 'sciescore'. Assign the result of the 'plot' command into a variable and give it as the answer."
-    - "Create a scatter plot of the variables 'mathscore' and 'readscore'. Assign the result of the 'plot' command into a variable and give it as the answer."
-    - "Create a scatter plot of the variables 'readscore' and 'sciescore'. Assign the result of the 'plot' command into a variable and give it as the answer."
+    - "Create a boxplot based on the variable 'mathscore'. Assign the result of the 'boxplot' command into a variable and give it as the answer."
+    - "Create a boxplot based on the variable 'readscore'. Assign the result of the 'boxplot' command into a variable and give it as the answer."
+    - "Create a boxplot based on the variable 'sciescore'. Assign the result of the 'boxplot' command into a variable and give it as the answer."
   11:
     - "Create a histogram of the variable 'readscore' such that the number of breaks is 6. Assign the result of the 'hist' command into a variable and give it as the answer."
     - "Create a histogram of the variable 'mathscore' such that the number of breaks is 6. Assign the result of the 'hist' command into a variable and give it as the answer."

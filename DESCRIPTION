@@ -7,7 +7,7 @@ Maintainer: Santtu Tikka <santtu.tikka@jyu.fi>
 Depends: R (>= 4.0.0)
 Description: The package contains interactive excercise sections for various topic areas.
 License: GPL-3
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 Encoding: UTF-8
 Suggests: testthat
 Collate: 
