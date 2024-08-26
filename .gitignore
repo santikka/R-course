@@ -14,3 +14,8 @@ data/heightweight.data
 verification_*
 Rcourse.Rcheck
 tests/testthat/_snaps/
+tests/testthat/Rplots.pdf
+tests/testthat/*.txt
+tests/testthat/*.dat
+tests/testthat/*.data
+tests/testthat/*.csv

@@ -1,6 +1,5 @@
 # Define the sections
-n_sections <- 7L
-sections_ <- vector(mode = "list", length = n_sections)
+sections_ <- vector(mode = "list", length = 7L)
 sections_[[1L]] <- create_section(1L)
 sections_[[2L]] <- create_section(2L)
 sections_[[3L]] <- create_section(3L, require_wd = TRUE)
@@ -13,7 +12,7 @@ sections_[[7L]] <- create_section(7L)
 section_ <- function(x) {
   if (!is.numeric(x)) {
     translate_message("Invalid section number!")
-  } else if (!x %in% seq_len(n_sections)) {
+  } else if (!x %in% seq_along(sections_)) {
     translate_message("Invalid section number!")
   } else {
     sections_[[x]]()

@@ -1,7 +1,7 @@
 # Define the exercises
-exercises_ <- vector(mode = "list", length = 11L)
+exercises_ <- vector(mode = "list", length = 7L)
 
-exercises_[[1L]] <- function(e) {
+exercises_[[1L]] <- function(e, ...) {
   len <- sample(501:1000, 1)
   mind <- sample(1:20, 1)
   maxd <- sample(100:120, 1)
@@ -62,7 +62,7 @@ exercises_[[1L]] <- function(e) {
   data <- vector(mode = "list", length = length(solutions))
   data[c(6:15, 18:21)] <- list(list(d = "d"))
   data[16:17] <- list(list(d = "d", g = "g"))
-  data[23:24] <- list(list(h = "h"))
+  data[22:23] <- list(list(h = "h"))
   e$ex <- compile(
     questions = section_questions[[1L]],
     solutions = solutions,
@@ -71,7 +71,7 @@ exercises_[[1L]] <- function(e) {
   )
 }
 
-exercises_[[2L]] <- function(e) {
+exercises_[[2L]] <- function(e, ...) {
   d <- sample(-10:10, 60, replace = TRUE)
   dimE <- sample(5:10, 2)
   f <- sample(-10:10, dimE[1L] * dimE[2L], replace = TRUE)
@@ -138,13 +138,17 @@ exercises_[[2L]] <- function(e) {
   )
 }
 
-exercises_[[3L]] <- function(e, write = TRUE) {
+exercises_[[3L]] <- function(e, write = TRUE, test = FALSE, ...) {
   if (write) {
     write.table(carbon, file = "carbon.txt", quote = FALSE)
     write.table(carbon, file = "carbon2.txt", quote = FALSE, sep = ",")
     write.table(carbon, file = "carbon3.txt", quote = FALSE, row.names = FALSE)
     write.table(auto, file = "automobile.txt", quote = TRUE)
     write.table(heightweight, file = "heightweight.data", quote = FALSE)
+  }
+  if (test) {
+    write.csv2(pigs, file = "pigs.csv", row.names = FALSE)
+    write.table(tomato, file = "tomato.dat", quote = FALSE, row.names = FALSE)
   }
   heightweight2 <- heightweight
   heightweight2$BMI <- 703 * heightweight$weight / heightweight$height^2
@@ -190,7 +194,7 @@ exercises_[[3L]] <- function(e, write = TRUE) {
   )
 }
 
-exercises_[[4L]] <- function(e) {
+exercises_[[4L]] <- function(e, ...) {
   x <- seq(-3, 3, by = 0.1)
   y <- x^2
   z <- x^3
@@ -252,13 +256,16 @@ exercises_[[4L]] <- function(e) {
   )
 }
 
-exercises_[[5L]] <- function(e) {
+exercises_[[5L]] <- function(e, test = FALSE, ...) {
   t1 <- t.test(Height ~ Gender2, data = children)
   boys <- subset(children, children$Gender2 == "Boy")
   girls <- subset(children, children$Gender2 == "Girl")
   girls2 <- girls[-1, ]
   t2 <- t.test(Height ~ Gender2, data = children2)
   m <- lm(Weight ~ Height, data = children2)
+  if (test) {
+    write.table(children, file = "Children2007.dat", quote = FALSE, row.names = FALSE)
+  }
   solutions <- list(
     `1`  = children,
     `2`  = "boys",
@@ -295,7 +302,7 @@ exercises_[[5L]] <- function(e) {
     `13` = "x <- cor(children2$Height, children2$Weight)\nsubmit(x)",
     `14` = "m <- lm(Weight ~ Height, data = children2)\nsubmit(m)",
     `15` = "x <- coef(m)\nsubmit(x)",
-    `16` = "x <- vcov(m)[2, 2]\nsubmit(x)",
+    `16` = "x <- sqrt(vcov(m)[2, 2])\nsubmit(x)",
     `17` = "x <- confint(m)[2, ]\nsubmit(x)",
     `18` = "x <- summary(m)$adj.r.squared\nsubmit(x)"
   )
@@ -312,19 +319,21 @@ exercises_[[5L]] <- function(e) {
   )
 }
 
-exercises_[[6L]] <- function(e) {
-  lev <- leveneTest(YIELD ~ fSTRAIN, data = ftomato)
+exercises_[[6L]] <- function(e, test = FALSE, ...) {
+  if (test) {
+    write.table(tomato, file = "tomato.dat", quote = FALSE, row.names = FALSE)
+  }
   fit1 <- lm(YIELD ~ fSTRAIN, data = ftomato)
+  fit1$call <- quote(lm(formula = YIELD ~ fSTRAIN, data = tomato))
   pred1 <- predict(fit1, newdata = data.frame(fSTRAIN = levels(ftomato$fSTRAIN)))
   fit2 <- lm(YIELD ~ fSTRAIN + DENSITY, data = ftomato)
+  fit2$call <- quote(lm(formula = YIELD ~ fSTRAIN + DENSITY, data = tomato))
   pred2 <- predict(fit2, newdata = data.frame(fSTRAIN = levels(ftomato$fSTRAIN), DENSITY = 20))
   mandatory <- c(rep(FALSE, 50), rep(TRUE, 62), rep(FALSE, 34), rep(TRUE, 64))
   firstyear <- c(rep(FALSE, 112), rep(TRUE, 210 - 112))
   fmandatory <- factor(mandatory, levels = c(TRUE, FALSE))
   ffirstyear <- factor(firstyear, levels = c(TRUE, FALSE))
   tab <- table(ffirstyear, fmandatory, dnn = c("firstyear", "mandatory"))
-  tab_rel1 <- prop.table(tab, margin = 1L)
-  tab_rel2 <- prop.table(tab, margin = 2L)
   chi <- chisq.test(tab)
   solutions <- list(
     `1`  = c(3, 2, 1),
@@ -343,14 +352,14 @@ exercises_[[6L]] <- function(e) {
   code <- list(
     `1`  = "tomato <- read.table(\"tomato.dat\", header = TRUE)\nboxplot(YIELD ~ STRAIN, data = tomato)\nx <- c(3,2,1)\nsubmit(x)",
     `2`  = "tomato$fSTRAIN <- factor(tomato$STRAIN, labels = paste0(\"STRAIN\", 1:3))\nsubmit(tomato)",
-    `3`  = "m <- lm(YIELD ~ fSTRAIN, data = tomato)\nsubmit(x)",
+    `3`  = "m <- lm(YIELD ~ fSTRAIN, data = tomato)\nsubmit(m)",
     `4`  = "qqnorm(m$residuals)\nqqline(m$residuals)\nx <- TRUE\nsubmit(x)",
     `5`  = "x <- predict(m, newdata = data.frame(fSTRAIN = levels(tomato$fSTRAIN)))\nsubmit(x)",
-    `6`  = "m2 <- lm(YIELD ~ fSTRAIN + DENSITY, data = tomato)\nsubmit(x)",
+    `6`  = "m2 <- lm(YIELD ~ fSTRAIN + DENSITY, data = tomato)\nsubmit(m2)",
     `7`  = "x <- predict(m2, newdata = data.frame(fSTRAIN = levels(tomato$fSTRAIN), DENSITY = 20))\nsubmit(x)",
     `8`  = "# We reverse the order of the values by converting both variables to factors and setting levels manually\nmandatory <- factor(mandatory, levels = c(TRUE, FALSE))\nfirstyear <- factor(firstyear, levels = c(TRUE, FALSE))\ntilp <- table(firstyear, mandatory)\nsubmit(tilp)",
-    `9`  = "x <- prop.table(tab, margin = 1)\nsubmit(x)",
-    `10` = "x <- prop.table(tab, margin = 2)\nsubmit(x)",
+    `9`  = "x <- prop.table(tilp, margin = 1)\nsubmit(x)",
+    `10` = "x <- prop.table(tilp, margin = 2)\nsubmit(x)",
     `11` = "x <- rowSums(tilp) %*% t(colSums(tilp)) / sum(tilp)\nx\n# Expected frequencies satisfy the assumptions\nx <- TRUE\nsubmit(x)",
     `12` = "chi <- chisq.test(tilp)\nx <- c(chi$statistic, chi$p.value)\nsubmit(x)"
   )
@@ -379,7 +388,7 @@ exercises_[[6L]] <- function(e) {
   )
 }
 
-exercises_[[7L]] <- function(e) {
+exercises_[[7L]] <- function(e, ...) {
   solutions <- list(
     `1` = dnorm(c(-1, 0, 2), 1, sqrt(2)),
     `2` = dt(c(-1, 0, 2), 15),
