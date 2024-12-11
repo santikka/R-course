@@ -102,7 +102,7 @@ Section 6:
 Section 7:
   1: "Compute the value of the probability density function for the normal distribution N(1, 2) (expected value is 1 and variance 2) at the points -1, 0, and 2. Give your answer as a vector that contains the density function values in the corresponding order."
   2: "Compute the value of the probability density function for the t-distribution t(15) (15 degrees of freedom) at the points -1, 0, and 2. Give your answer as a vector that contains the density function values in the corresponding order."
-  3: "Calculate the probability P(X <= 3) when X ~ N(3, 4), i.e., X is normally distributed with expected value of 3 and variance of 4.5."
+  3: "Calculate the probability P(X <= 3) when X ~ N(5, 4), i.e., X is normally distributed with expected value of 5 and variance of 4."
   4: "Calculate the probability P(X > 2) when X ~ N(1, 5), i.e., X is normally distributed with expected value of 1 and variance of 5."
   5: "Calculate the probability P(-1 < X < 2.5) when X ~ N(3, 1.5), i.e., X is normally distributed with expected value of 3 and variance of 1.5."
   6: "Find the value of y in P(X <= y) = 0.3. X ~ t(10), i.e., X follows a t-distribution with 10 degrees of freedom."

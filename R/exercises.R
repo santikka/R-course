@@ -392,7 +392,7 @@ exercises_[[7L]] <- function(e, ...) {
   solutions <- list(
     `1` = dnorm(c(-1, 0, 2), 1, sqrt(2)),
     `2` = dt(c(-1, 0, 2), 15),
-    `3` = pnorm(3, 3, 2),
+    `3` = pnorm(3, 5, 2),
     `4` = pnorm(2, 1, sqrt(5), lower.tail = FALSE),
     `5` = pnorm(2.5, 3, sqrt(1.5)) - pnorm(-1, 3, sqrt(1.5)),
     `6` = qt(0.3, 10),
@@ -401,7 +401,7 @@ exercises_[[7L]] <- function(e, ...) {
   code <- list(
     `1` = "x <- dnorm(c(-1, 0, 2), 1, sqrt(2))\nsubmit(x)",
     `2` = "x <- dt(c(-1, 0, 2), 15)\nsubmit(x)",
-    `3` = "x <- pnorm(3, 3, sqrt(4))\nsubmit(x)",
+    `3` = "x <- pnorm(3, 5, sqrt(4))\nsubmit(x)",
     `4` = "x <- pnorm(2, 1, sqrt(5), lower.tail = FALSE)\nsubmit(x)",
     `5` = "x <- pnorm(2.5, 3, sqrt(1.5)) - pnorm(-1, 3, sqrt(1.5))\nsubmit(x)",
     `6` = "x <- qt(0.3, 10)\nsubmit(x)",

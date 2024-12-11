@@ -40,7 +40,7 @@ create_section <- function(part, require_wd = FALSE, check_answers = TRUE, extra
         translate_message("Please change your working directory to where you have extracted the required data files (datasets.zip).")
         translate_message("You can view the location of the current working directory with the command getwd().")
         custom_message(
-          l() %a% "You can change the working directory with the command setwd(path), where path is the location of the data files, e.g.",
+          l() %a% "You can change the working directory with the command setwd(path), where path is the location of the data files, e.g.,",
           " setwd('U:/My Documents/')"
         )
       } else {

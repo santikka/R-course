@@ -102,7 +102,7 @@ Section 6:
 Section 7:
   1: "Laske normaalijakauman N(1, 2) (odotusarvo on 1 ja varianssi on 2) tiheysfunktion arvot pisteissä -1, 0, ja 2. Anna vastauksena vektori, joka sisältää tiheysfunktion arvot vastaavassa järjestyksessä."
   2: "Laske t-jakauman t(15) (vapausasteet 15) tiheysfunktion arvot pisteissä -1, 0, ja 2. Anna vastauksena vektori, joka sisältää tiheysfunktion arvot vastaavassa järjestyksessä."
-  3: "Laske todennäköisyys P(X <= 3), kun X ~ N(3, 4) ts. X noudattaa normaalijakaumaa odotusarvolla 3 ja varianssilla 4."
+  3: "Laske todennäköisyys P(X <= 3), kun X ~ N(5, 4) ts. X noudattaa normaalijakaumaa odotusarvolla 5 ja varianssilla 4."
   4: "Laske todennäköisyys P(X > 2), kun X ~ N(1, 5) ts. X noudattaa normaalijakaumaa odotusarvolla 1 ja varianssilla 5."
   5: "Laske todennäköisyys P(-1 < X < 2.5), kun X ~ N(3, 1.5) ts. X noudattaa normaalijakaumaa odotusarvolla 3 ja varianssilla 1.5."
   6: "Millä y:n arvolla P(X <= y) = 0.3, kun X ~ t(10) ts. X noudattaa t-jakaumaa vapausasteilla 10."
@@ -163,7 +163,7 @@ Exam JYU:
     - "Muodosta vektori, joka sisältää PISA-aineiston muuttujien nimet aakkosjärjestyksessä."
     - "Määritä PISA-aineiston havaintojen lukumäärä."
     - "Määritä PISA-aineiston muuttujien lukumäärä."
-  18: 
+  18:
     - "Kuinka monta sellaista havaintoa PISA-aineistossa on, joilla koulun sijainti (furban) on kaupunki ja alue (fregion) on Etelä-Suomi (Southern Finland)?"
     - "Kuinka monta sellaista havaintoa PISA-aineistossa on, joilla koulun sijainti (furban) on maaseutu ja alue (fregion) on Länsi-Suomi (Western Finland)?"
     - "Kuinka monta sellaista havaintoa PISA-aineistossa on, joilla koulun sijainti (furban) on kaupunki ja alue (fregion) on Itä-Suomi (Eastern Finland)?"
