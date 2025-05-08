@@ -4,7 +4,7 @@ An interactive R-course by University of Jyväskylä and University of Eastern F
 
 ## Acknowledgements
 
-The following people have contributed to this package: Santtu Tikka, Juho Kopra, Kasperi Kansanen.
+The following people have contributed to this package: Santtu Tikka, Juho Kopra, Kasper Kansanen.
 
 ## Contents
 
